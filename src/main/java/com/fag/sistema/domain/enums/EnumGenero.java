@@ -1,5 +1,5 @@
 package com.fag.sistema.domain.enums;
 
-public enum Desconto {
-    Tipo;
+public enum EnumGenero {
+     Tipo;
 }
