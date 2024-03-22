@@ -10,6 +10,6 @@ import java.util.Date;
 @Setter
 @AllArgsConstructor
 public class Dependente {
-    public String nome;
-    public Date data_nascimento;
+    private String nome;
+    private Date data_nascimento;
 }
