@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contrato {
+    
     private Date dataAdmissao;
     private String cargo;
     private String funcao;

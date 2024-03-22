@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Empregador {
+    
     private String cnjp;
     private String razaoSocial;
     private String nomeFantasia;
