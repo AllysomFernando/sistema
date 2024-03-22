@@ -13,8 +13,6 @@ public class Empregador {
     private String porteEmpresa;
     private String naturezaJuridica;
     private String ramoAtividade;
-
     private Inscricao inscricao;
     private Contato contato;
-    private Indicativo indicativo;
 }
