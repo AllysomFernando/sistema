@@ -1,5 +1,11 @@
 package com.fag.sistema.domain.enums;
 
 public enum EnumGenero {
-     Tipo;
+     MASCULINO,
+     FEMININO,
+     TRANSGENERO,
+     NEUTRO,
+     NAO_BINARIO,
+     AGENERO,
+     PANGENERO
 }
