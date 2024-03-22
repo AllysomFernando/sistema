@@ -1,10 +1,12 @@
 package com.fag.sistema.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Horario {
     private float hora_trabalhadas;
     private float hora_falta;
