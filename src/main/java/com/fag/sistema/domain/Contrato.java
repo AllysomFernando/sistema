@@ -1,5 +1,7 @@
 package com.fag.sistema.domain;
 
+import java.sql.Date;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
