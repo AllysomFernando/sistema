@@ -1,5 +1,9 @@
 package com.fag.sistema.domain.enums;
 
 public enum EnumDesconto {
-    Tipo;
+    CONTRIBUICAO_SINDICAL,
+    VALE_ALIMENTACAO,
+    FGTS,
+    INSS,
+    IRFF
 }
