@@ -196,4 +196,26 @@ public class EnumDescontoTest {
     assertEquals(salarioBruto.multiply(new BigDecimal("0.075")).setScale(2, RoundingMode.DOWN), discount);
   }
 
+  @Test
+  @Description("Should calculate IRRF with 15% discount and a 2826.66 salary")
+  public void shouldCalculateIRRFWithFifteenPercent() {
+    EnumDesconto enumDesconto = EnumDesconto.IRRF;
+    BigDecimal salarioBruto = new BigDecimal("2826.66");
+
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
+
+    assertEquals(salarioBruto.multiply(new BigDecimal("0.15")).setScale(2, RoundingMode.DOWN), discount);
+  }
+
+  @Test
+  @Description("Should calculate IRRF with 15% discount and a 3751.05 salary")
+  public void shouldCalculateIRRFWithFifteenPercent_Case2() {
+    EnumDesconto enumDesconto = EnumDesconto.IRRF;
+    BigDecimal salarioBruto = new BigDecimal("3751.05");
+
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
+
+    assertEquals(salarioBruto.multiply(new BigDecimal("0.15")).setScale(2, RoundingMode.DOWN), discount);
+  }
+
 }

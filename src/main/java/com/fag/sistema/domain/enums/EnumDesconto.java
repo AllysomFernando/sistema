@@ -63,7 +63,7 @@ public enum EnumDesconto {
             boolean sevenAndHalfPercent = salarioBruto.compareTo(new BigDecimal("1903.99")) >= 0
                     && salarioBruto.compareTo(new BigDecimal("2826.65")) <= 0;
 
-            boolean fifthteenPercent = salarioBruto.compareTo(new BigDecimal("2826.66")) >= 0
+            boolean fifteenPercent = salarioBruto.compareTo(new BigDecimal("2826.66")) >= 0
                     && salarioBruto.compareTo(new BigDecimal("3751.05")) <= 0;
 
             boolean twentyTwoAndHalfPercent = salarioBruto.compareTo(new BigDecimal("3751.06")) >= 0
@@ -77,7 +77,7 @@ public enum EnumDesconto {
                 discountValue = salarioBruto.multiply(new BigDecimal("0.075"));
             }
 
-            if (fifthteenPercent) {
+            if (fifteenPercent) {
                 discountValue = salarioBruto.multiply(new BigDecimal("0.15"));
             }
 
