@@ -15,9 +15,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.CONTRIBUICAO_SINDICAL;
     BigDecimal salarioBruto = new BigDecimal("1900");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(50f, discount);
+    assertEquals(new BigDecimal("50.00"), discount);
   }
 
   @Test
@@ -26,9 +26,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.VALE_ALIMENTACAO;
     BigDecimal salarioBruto = new BigDecimal("1900");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(285f, discount);
+    assertEquals(new BigDecimal("285.00"), discount);
   }
 
   @Test
@@ -37,9 +37,20 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.VALE_ALIMENTACAO;
     BigDecimal salarioBruto = new BigDecimal("4000");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(600f, discount);
+    assertEquals(new BigDecimal("600.00"), discount);
+  }
+
+  @Test
+  @Description("Should calculate 3% discount from Vale Transporte")
+  public void shouldCalculateValeTransporte() {
+    EnumDesconto enumDesconto = EnumDesconto.VALE_TRANSPORTE;
+    BigDecimal salarioBruto = new BigDecimal("3000");
+
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
+
+    assertEquals(new BigDecimal("90.00"), discount);
   }
 
   @Test
@@ -48,9 +59,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("1600");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(128.0f, discount);
+    assertEquals(new BigDecimal("128.00"), discount);
   }
 
   @Test
@@ -59,9 +70,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("1751.81");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(140.14f, discount);
+    assertEquals(new BigDecimal("140.14"), discount);
   }
 
   @Test
@@ -70,9 +81,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("1800");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(162.0f, discount);
+    assertEquals(new BigDecimal("162.00"), discount);
   }
 
   @Test
@@ -81,9 +92,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("1751.82");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(157.66f, discount);
+    assertEquals(new BigDecimal("157.66"), discount);
   }
 
   @Test
@@ -92,9 +103,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("2919.72");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(262.77f, discount);
+    assertEquals(new BigDecimal("262.77"), discount);
   }
 
   @Test
@@ -103,9 +114,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("4000");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(440.0f, discount);
+    assertEquals(new BigDecimal("440.00"), discount);
   }
 
   @Test
@@ -114,9 +125,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("2919.73");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(321.17f, discount);
+    assertEquals(new BigDecimal("321.17"), discount);
   }
 
   @Test
@@ -125,9 +136,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("5839.45");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(642.33f, discount);
+    assertEquals(new BigDecimal("642.33"), discount);
   }
 
   @Test
@@ -136,9 +147,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.INSS;
     BigDecimal salarioBruto = new BigDecimal("6000.0");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(642.34f, discount);
+    assertEquals(new BigDecimal("642.34"), discount);
   }
 
   @Test
@@ -146,9 +157,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.FGTS;
     BigDecimal salarioBruto = new BigDecimal("3000");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(240.0f, discount);
+    assertEquals(new BigDecimal("240.00"), discount);
   }
 
   @Test
@@ -157,9 +168,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.IRRF;
     BigDecimal salarioBruto = new BigDecimal("1900");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(0f, discount);
+    assertEquals(new BigDecimal("0.00"), discount);
   }
 
   @Test
@@ -168,9 +179,9 @@ public class EnumDescontoTest {
     EnumDesconto enumDesconto = EnumDesconto.IRRF;
     BigDecimal salarioBruto = new BigDecimal("1903.99");
 
-    Float discount = enumDesconto.calculate(salarioBruto);
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
-    assertEquals(142.79f, discount);
+    assertEquals(new BigDecimal("142.79"), discount);
   }
 
 }
