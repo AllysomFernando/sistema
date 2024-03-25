@@ -1,6 +1,8 @@
 package com.fag.sistema.domain.enums;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public enum EnumDesconto {
     CONTRIBUICAO_SINDICAL {
@@ -27,25 +29,32 @@ public enum EnumDesconto {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
 
-            boolean eightPercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(1751.81)) < 0;
-            boolean ninePercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(1751.82)) > 0
-            && salarioBruto.compareTo(BigDecimal.valueOf(2919.72)) < 0;
-            boolean elevenPercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(2919.73)) > 0
-            && salarioBruto.compareTo(BigDecimal.valueOf(5839.45)) < 0;
+            DecimalFormat format = new DecimalFormat("0.00");
+            format.setRoundingMode(RoundingMode.DOWN);
+
+            boolean eightPercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.81")) <= 0;
+
+            boolean ninePercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.82")) >= 0
+                    && salarioBruto.compareTo(new BigDecimal("2919.72")) <= 0;
+
+            boolean elevenPercentDiscount = salarioBruto.compareTo(new BigDecimal("2919.73")) >= 0
+                    && salarioBruto.compareTo(new BigDecimal("5839.45")) <= 0;
+
+            BigDecimal discountValue = new BigDecimal("642.34");
 
             if (eightPercentDiscount) {
-                return salarioBruto.multiply(new BigDecimal("0.08")).floatValue();
+                discountValue = salarioBruto.multiply(new BigDecimal("0.08"));
             }
 
             if (ninePercentDiscount) {
-                return salarioBruto.multiply(new BigDecimal("0.09")).floatValue();
+                discountValue = salarioBruto.multiply(new BigDecimal("0.09"));
             }
 
             if (elevenPercentDiscount) {
-                return salarioBruto.multiply(new BigDecimal("0.11")).floatValue();
+                discountValue = salarioBruto.multiply(new BigDecimal("0.11"));
             }
 
-            return new BigDecimal("642.34").floatValue();
+            return discountValue.setScale(2, RoundingMode.DOWN).floatValue();
         }
     },
     IRFF {
