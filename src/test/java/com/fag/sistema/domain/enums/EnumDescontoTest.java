@@ -3,6 +3,7 @@ package com.fag.sistema.domain.enums;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
@@ -182,6 +183,17 @@ public class EnumDescontoTest {
     BigDecimal discount = enumDesconto.calculate(salarioBruto);
 
     assertEquals(new BigDecimal("142.79"), discount);
+  }
+
+  @Test
+  @Description("Should calculate IRRF with 7,5% discount and a 2826.65 salary")
+  public void shouldCalculateIRRFWithSevenAndHalfPercent_Case2() {
+    EnumDesconto enumDesconto = EnumDesconto.IRRF;
+    BigDecimal salarioBruto = new BigDecimal("2826.65");
+
+    BigDecimal discount = enumDesconto.calculate(salarioBruto);
+
+    assertEquals(salarioBruto.multiply(new BigDecimal("0.075")).setScale(2, RoundingMode.DOWN), discount);
   }
 
 }
