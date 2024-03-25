@@ -2,21 +2,18 @@ package com.fag.sistema.domain.enums;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
 public enum EnumDesconto {
     CONTRIBUICAO_SINDICAL {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'calculate'");
+            return new BigDecimal("50").setScale(2, RoundingMode.DOWN).floatValue();
         }
     },
     VALE_ALIMENTACAO {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'calculate'");
+            return salarioBruto.multiply(new BigDecimal("0.15")).setScale(2, RoundingMode.DOWN).floatValue();
         }
     },
     FGTS {
@@ -28,9 +25,6 @@ public enum EnumDesconto {
     INSS() {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
-
-            DecimalFormat format = new DecimalFormat("0.00");
-            format.setRoundingMode(RoundingMode.DOWN);
 
             boolean eightPercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.81")) <= 0;
 
@@ -57,11 +51,39 @@ public enum EnumDesconto {
             return discountValue.setScale(2, RoundingMode.DOWN).floatValue();
         }
     },
-    IRFF {
+    IRRF {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'calculate'");
+            boolean sevenAndHalfPercent = salarioBruto.compareTo(new BigDecimal("1903.99")) >= 0
+                    && salarioBruto.compareTo(new BigDecimal("2826.65")) <= 0;
+
+            boolean fifthteenPercent = salarioBruto.compareTo(new BigDecimal("2826.66")) >= 0
+                    && salarioBruto.compareTo(new BigDecimal("3751.05")) <= 0;
+
+            boolean twentyTwoAndHalfPercent = salarioBruto.compareTo(new BigDecimal("3751.06")) >= 0
+                    && salarioBruto.compareTo(new BigDecimal("4664.68")) <= 0;
+
+            boolean twentySevenAndHalfPercent = salarioBruto.compareTo(new BigDecimal("4664.68")) >= 0;
+
+            BigDecimal discountValue = new BigDecimal("0");
+
+            if (sevenAndHalfPercent) {
+                discountValue = salarioBruto.multiply(new BigDecimal("0.075"));
+            }
+
+            if (fifthteenPercent) {
+                discountValue = salarioBruto.multiply(new BigDecimal("0.15"));
+            }
+
+            if (twentySevenAndHalfPercent) {
+                discountValue = salarioBruto.multiply(new BigDecimal("0.225"));
+            }
+
+            if (twentyTwoAndHalfPercent) {
+                discountValue = salarioBruto.multiply(new BigDecimal("0.275"));
+            }
+
+            return discountValue.setScale(2, RoundingMode.DOWN).floatValue();
         }
     };
 
