@@ -27,21 +27,25 @@ public enum EnumDesconto {
         @Override
         public Float calculate(BigDecimal salarioBruto) {
 
-            if (salarioBruto.compareTo(BigDecimal.valueOf(1751.81)) < 0) {
+            boolean eightPercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(1751.81)) < 0;
+            boolean ninePercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(1751.82)) > 0
+            && salarioBruto.compareTo(BigDecimal.valueOf(2919.72)) < 0;
+            boolean elevenPercentDiscount = salarioBruto.compareTo(BigDecimal.valueOf(2919.73)) > 0
+            && salarioBruto.compareTo(BigDecimal.valueOf(5839.45)) < 0;
+
+            if (eightPercentDiscount) {
                 return salarioBruto.multiply(new BigDecimal("0.08")).floatValue();
             }
 
-            if (salarioBruto.compareTo(BigDecimal.valueOf(1751.82)) > 0
-                    && salarioBruto.compareTo(BigDecimal.valueOf(2919.72)) < 0) {
+            if (ninePercentDiscount) {
                 return salarioBruto.multiply(new BigDecimal("0.09")).floatValue();
             }
 
-            if (salarioBruto.compareTo(BigDecimal.valueOf(2919.73)) > 0
-                    && salarioBruto.compareTo(BigDecimal.valueOf(5839.45)) < 0) {
+            if (elevenPercentDiscount) {
                 return salarioBruto.multiply(new BigDecimal("0.11")).floatValue();
             }
 
-            return salarioBruto.multiply(new BigDecimal("0.08")).floatValue();
+            return new BigDecimal("642.34").floatValue();
         }
     },
     IRFF {
