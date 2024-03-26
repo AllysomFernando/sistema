@@ -57,13 +57,13 @@ public enum EnumBeneficios {
   AUXILIO_CRECHE{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return salarioBruto.multiply(new BigDecimal("0.05"));
     }
   },
   DIARIAS_VIAGEM{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return new BigDecimal("1000.000");
     }
   };
 
