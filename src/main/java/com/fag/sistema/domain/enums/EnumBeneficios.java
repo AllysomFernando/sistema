@@ -10,7 +10,18 @@ public enum EnumBeneficios {
     @Override
     public BigDecimal calculate(Empregado colaborador) {
       BigDecimal valorHoraExtra = colaborador.getContrato().getSalario().getBruto().divide(new BigDecimal(220)).setScale(2, RoundingMode.HALF_UP);
-      return valorHoraExtra.multiply(new BigDecimal("0.5"));
+      Float hora_extra = colaborador.getHorario().getHoras_extras();
+      Float horas_extras_fds = colaborador.getHorario().getHoras_extras_final_de_semana();
+
+      BigDecimal totalHorasExtras = BigDecimal.ZERO;
+      if (hora_extra != null){
+        totalHorasExtras = totalHorasExtras.add(valorHoraExtra.multiply(new BigDecimal(hora_extra).multiply(new BigDecimal("0.05"))));
+      }
+      if (horas_extras_fds != null){
+        totalHorasExtras = totalHorasExtras.add(valorHoraExtra.multiply(new BigDecimal(horas_extras_fds).multiply(new BigDecimal("0.10"))));
+      }
+
+      return totalHorasExtras.setScale(2, RoundingMode.HALF_UP);
     }
   },
   COMISSAO {
@@ -30,7 +41,6 @@ public enum EnumBeneficios {
   QUINQUENIO{
     @Override
     public BigDecimal calculate(Empregado colaborador) {
-
       return colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.03"));
     }
   },
@@ -44,8 +54,18 @@ public enum EnumBeneficios {
     @Override
     public BigDecimal calculate(Empregado colaborador) {
 
-        Integer grauInsalubridade = colaborador.getContrato().getFuncao();
+        Integer grauInsalubridade = colaborador.getContrato().getGrauInsalubridade();
+        BigDecimal salarioBruto = colaborador.getContrato().getSalario().getBruto();
 
+        if(grauInsalubridade == 10) {
+          return salarioBruto.multiply(new BigDecimal("0.1"));
+        } else if (grauInsalubridade == 20) {
+          return salarioBruto.multiply(new BigDecimal("0.2"));
+        } else if (grauInsalubridade == 40) {
+          return salarioBruto.multiply(new BigDecimal("0.4"));
+        } else {
+          return salarioBruto.multiply(new BigDecimal("0.0"));
+        }
     }
   },
   ADICIONAL_PERICULOSIDADE{
