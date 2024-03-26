@@ -15,7 +15,6 @@ public class Horario {
 
     public Float calcularHorario(Float hora_trabalhadas, Float hora_falta, Boolean justificativa){
         Float horas = 1.0F;
-
         return horas;
     }
 }

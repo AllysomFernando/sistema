@@ -15,33 +15,37 @@ public enum EnumBeneficios {
   },
   COMISSAO {
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      BigDecimal valorVendas = BigDecimal.valueOf(1000);
+    public BigDecimal calculate(Empregado colaborador) {
+      BigDecimal valorVendas = new BigDecimal("1000.00");
       return valorVendas.multiply(new BigDecimal("0.06"));
     }
   },
   SALARIO_MATERNIDADE{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return salarioBruto.multiply(new BigDecimal("0.05")).multiply(new BigDecimal("6"));
+    public BigDecimal calculate(Empregado colaborador) {
+      BigDecimal beneficiolMensal = colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.05"));
+      return beneficiolMensal.multiply(new BigDecimal("6"));
     }
   },
   QUINQUENIO{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return salarioBruto.multiply(new BigDecimal("0.03"));
+    public BigDecimal calculate(Empregado colaborador) {
+
+      return colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.03"));
     }
   },
   ADICIONAL_NOTURNO{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return salarioBruto.multiply(new BigDecimal("0.15"));
+    public BigDecimal calculate(Empregado colaborador) {
+      return colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.15"));
     }
   },
   ADICIONAL_INSALUBRIDADE{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+    public BigDecimal calculate(Empregado colaborador) {
+
+        Integer grauInsalubridade = colaborador.getContrato().getFuncao();
+
     }
   },
   ADICIONAL_PERICULOSIDADE{
