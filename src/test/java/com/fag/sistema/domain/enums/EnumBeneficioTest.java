@@ -1,5 +1,8 @@
 package com.fag.sistema.domain.enums;
 
+import com.fag.sistema.domain.Contrato;
+import com.fag.sistema.domain.Empregado;
+import com.fag.sistema.domain.Salario;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
 
@@ -16,7 +19,7 @@ public class EnumBeneficioTest {
         Empregado colaborador = new Empregado();
         Contrato contrato = new Contrato();
         contrato.setGrauInsalubridade(10);
-        contrato.setSalario(new Salario(new BigDecimal("1900")));
+        contrato.setSalario(new Salario(new BigDecimal("1900.0"), new BigDecimal("1600")));
         colaborador.setContrato(contrato);
 
         BigDecimal beneficio = enumBeneficios.calculate(colaborador);
