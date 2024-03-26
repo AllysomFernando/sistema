@@ -1,13 +1,15 @@
 package com.fag.sistema.domain.enums;
 
+import com.fag.sistema.domain.Empregado;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public enum EnumBeneficios {
   HORA_EXTRA {
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      BigDecimal valorHoraExtra = salarioBruto.divide(new BigDecimal("220")).setScale(2, RoundingMode.HALF_UP);
+    public BigDecimal calculate(Empregado colaborador) {
+      BigDecimal valorHoraExtra = colaborador.getContrato().getSalario().getBruto().divide(new BigDecimal(220)).setScale(2, RoundingMode.HALF_UP);
       return valorHoraExtra.multiply(new BigDecimal("0.5"));
     }
   },
@@ -68,6 +70,6 @@ public enum EnumBeneficios {
     }
   };
 
-  public abstract BigDecimal calculate(BigDecimal salarioBruto);
+  public abstract BigDecimal calculate(Empregado colaborador);
 
 }
