@@ -20,13 +20,13 @@ public enum EnumBeneficios {
   SALARIO_MATERNIDADE{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return salarioBruto.multiply(new BigDecimal("0.05")).multiply(new BigDecimal("6"));
     }
   },
   QUINQUENIO{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return salarioBruto.multiply(new BigDecimal("0.03"));
     }
   },
   ADICIONAL_NOTURNO{
