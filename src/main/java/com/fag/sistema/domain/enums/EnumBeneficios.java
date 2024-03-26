@@ -6,23 +6,21 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public enum EnumBeneficios {
-  HORA_EXTRA {
-    @Override
-    public BigDecimal calculate(Empregado colaborador) {
-      BigDecimal valorHoraExtra = colaborador.getContrato().getSalario().getBruto().divide(new BigDecimal(220)).setScale(2, RoundingMode.HALF_UP);
-      Float hora_extra = colaborador.getHorario().getHoras_extras();
-      Float horas_extras_fds = colaborador.getHorario().getHoras_extras_final_de_semana();
+    HORA_EXTRA {
+      @Override
+      public BigDecimal calculate(Empregado colaborador) {
+        BigDecimal salarioBruto = colaborador.getContrato().getSalario().getBruto();
+        BigDecimal valorHora = salarioBruto.divide(new BigDecimal(220), 2, RoundingMode.HALF_UP);
 
-      BigDecimal totalHorasExtras = BigDecimal.ZERO;
-      if (hora_extra != null){
-        totalHorasExtras = totalHorasExtras.add(valorHoraExtra.multiply(new BigDecimal(hora_extra).multiply(new BigDecimal("0.05"))));
-      }
-      if (horas_extras_fds != null){
-        totalHorasExtras = totalHorasExtras.add(valorHoraExtra.multiply(new BigDecimal(horas_extras_fds).multiply(new BigDecimal("0.10"))));
-      }
+        float horaExtra = colaborador.getHorario().getHoraExtra();
+        float horaExtraFDS = colaborador.getHorario().getHoraExtraFDS();
 
-      return totalHorasExtras.setScale(2, RoundingMode.HALF_UP);
-    }
+        BigDecimal totalHorasExtras = BigDecimal.ZERO;
+        totalHorasExtras = totalHorasExtras.add(valorHora.multiply(new BigDecimal("0.5").multiply(new BigDecimal(horaExtra))));
+        totalHorasExtras = totalHorasExtras.add(valorHora.multiply(new BigDecimal("0.10").multiply(new BigDecimal(horaExtraFDS))));
+
+        return totalHorasExtras.setScale(2, RoundingMode.HALF_UP);
+      }
   },
   COMISSAO {
     @Override
