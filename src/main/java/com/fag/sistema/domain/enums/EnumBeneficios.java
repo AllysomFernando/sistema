@@ -70,26 +70,26 @@ public enum EnumBeneficios {
   },
   ADICIONAL_PERICULOSIDADE{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return salarioBruto.multiply(new BigDecimal("0.30"));
+    public BigDecimal calculate(Empregado colaborador) {
+      return colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.30"));
     }
   },
   SALARIO_FAMILIA{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
+    public BigDecimal calculate(Empregado colaborador) {
       BigDecimal salarioMinimo = new BigDecimal("1100.00");
       return salarioMinimo.multiply(new BigDecimal("0.05"));
     }
   },
   AUXILIO_CRECHE{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
-      return salarioBruto.multiply(new BigDecimal("0.05"));
+    public BigDecimal calculate(Empregado colaborador) {
+      return colaborador.getContrato().getSalario().getBruto().multiply(new BigDecimal("0.05"));
     }
   },
   DIARIAS_VIAGEM{
     @Override
-    public BigDecimal calculate(BigDecimal salarioBruto) {
+    public BigDecimal calculate(Empregado colaborador) {
       return new BigDecimal("1000.000");
     }
   };
