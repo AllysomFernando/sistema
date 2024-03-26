@@ -32,7 +32,7 @@ public enum EnumBeneficios {
   ADICIONAL_NOTURNO{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return salarioBruto.multiply(new BigDecimal("0.15"));
     }
   },
   ADICIONAL_INSALUBRIDADE{
@@ -44,13 +44,14 @@ public enum EnumBeneficios {
   ADICIONAL_PERICULOSIDADE{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      return salarioBruto.multiply(new BigDecimal("0.30"));
     }
   },
   SALARIO_FAMILIA{
     @Override
     public BigDecimal calculate(BigDecimal salarioBruto) {
-      return null;
+      BigDecimal salarioMinimo = new BigDecimal("1100.00");
+      return salarioMinimo.multiply(new BigDecimal("0.05"));
     }
   },
   AUXILIO_CRECHE{
