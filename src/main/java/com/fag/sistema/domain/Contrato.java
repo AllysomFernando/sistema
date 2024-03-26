@@ -10,13 +10,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contrato {
-    
+
     private Date dataAdmissao;
     private String cargo;
     private String funcao;
     private int pisPasep;
     private int horas;
-
+    private Integer grauInsalubridade;
     private Empregador empregador;
     private Salario salario;
 }
