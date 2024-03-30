@@ -1,9 +1,9 @@
 package com.fag.sistema.domain.enums;
 
-import com.fag.sistema.domain.Empregado;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+
+import com.fag.sistema.domain.entities.Empregado;
 
 public enum EnumBeneficios {
     HORA_EXTRA {

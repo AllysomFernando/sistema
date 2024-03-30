@@ -1,12 +1,13 @@
 package com.fag.sistema.domain.enums;
 
-import com.fag.sistema.domain.Contrato;
-import com.fag.sistema.domain.Empregado;
-import com.fag.sistema.domain.Horario;
-import com.fag.sistema.domain.Salario;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
+
+import com.fag.sistema.domain.entities.Contrato;
+import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.entities.Horario;
+import com.fag.sistema.domain.entities.Salario;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

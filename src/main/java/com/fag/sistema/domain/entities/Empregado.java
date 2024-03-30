@@ -1,4 +1,4 @@
-package com.fag.sistema.domain;
+package com.fag.sistema.domain.entities;
 
 import java.sql.Date;
 import java.util.List;
