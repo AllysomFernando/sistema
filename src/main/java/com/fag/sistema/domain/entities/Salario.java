@@ -12,4 +12,8 @@ import lombok.NoArgsConstructor;
 public class Salario {
   private BigDecimal bruto;
   private BigDecimal liquido;
+
+  public Salario(BigDecimal bruto) {
+    this.bruto = bruto;
+  }
 }
