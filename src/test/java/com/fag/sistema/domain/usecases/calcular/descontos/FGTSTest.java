@@ -1,4 +1,4 @@
-package com.fag.sistema.domain.usecases;
+package com.fag.sistema.domain.usecases.calcular.descontos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.Contrato;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Salario;
-import com.fag.sistema.domain.usecases.calcular.descontos.FGTS;
 
 public class FGTSTest {
   @Test

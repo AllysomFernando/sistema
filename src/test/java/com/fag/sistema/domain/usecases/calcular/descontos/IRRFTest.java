@@ -1,4 +1,4 @@
-package com.fag.sistema.domain.usecases;
+package com.fag.sistema.domain.usecases.calcular.descontos;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.Contrato;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Salario;
-import com.fag.sistema.domain.usecases.calcular.descontos.IRRF;
 
 public class IRRFTest {
 
