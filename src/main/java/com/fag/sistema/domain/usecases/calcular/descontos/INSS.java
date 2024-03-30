@@ -11,6 +11,7 @@ public class INSS implements IDescontoUseCase {
   public BigDecimal calculate(Empregado empregado) {
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
+    BigDecimal discountValue = new BigDecimal("642.34");
 
     boolean eightPercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.81")) <= 0;
 
@@ -19,8 +20,6 @@ public class INSS implements IDescontoUseCase {
 
     boolean elevenPercentDiscount = salarioBruto.compareTo(new BigDecimal("2919.73")) >= 0
         && salarioBruto.compareTo(new BigDecimal("5839.45")) <= 0;
-
-    BigDecimal discountValue = new BigDecimal("642.34");
 
     if (eightPercentDiscount) {
       discountValue = salarioBruto.multiply(new BigDecimal("0.08"));
