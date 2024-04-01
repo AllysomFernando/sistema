@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -11,5 +12,5 @@ import java.util.Date;
 @AllArgsConstructor
 public class Dependente {
     private String nome;
-    private Date data_nascimento;
+    private LocalDate dataNascimento;
 }
