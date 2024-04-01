@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.Contrato;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Salario;
+import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalPericulosidadeTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
@@ -35,7 +36,7 @@ public class AdicionalPericulosidadeTest {
   void shouldNotAddAdicionalPericulosidade() {
     AdicionalPericulosidade sut = new AdicionalPericulosidade();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"));
-    empregado.getContrato().setGrauInsalubridade(10);
+    empregado.getContrato().setGrauInsalubridade(EnumGrauInsalubridade.BAIXO);
 
     BigDecimal beneficio = sut.calculate(empregado);
 

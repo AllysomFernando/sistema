@@ -10,9 +10,11 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.Contrato;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Salario;
+import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalInsalubridadeTest {
-  private Empregado makeEmpregadoComSalarioEGrauDeInsalubridade(BigDecimal salarioBruto, Integer grauInsalubridade) {
+  private Empregado makeEmpregadoComSalarioEGrauDeInsalubridade(BigDecimal salarioBruto,
+      EnumGrauInsalubridade grauInsalubridade) {
     Empregado empregado = new Empregado();
     empregado.setContrato(new Contrato());
     empregado.getContrato().setSalario(new Salario(salarioBruto));
@@ -25,7 +27,8 @@ public class AdicionalInsalubridadeTest {
   @Description("Should calculate Adicional Insalubridade with grau 10")
   public void shouldCalculateAdicionalInsalubridade() {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
-    Empregado empregado = makeEmpregadoComSalarioEGrauDeInsalubridade(new BigDecimal("1900.0"), 10);
+    Empregado empregado = makeEmpregadoComSalarioEGrauDeInsalubridade(new BigDecimal("1900.0"),
+        EnumGrauInsalubridade.BAIXO);
 
     BigDecimal beneficio = sut.calculate(empregado);
 

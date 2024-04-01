@@ -3,14 +3,15 @@ package com.fag.sistema.domain.usecases.calcular.beneficios;
 import java.math.BigDecimal;
 
 import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalPericulosidade implements IBeneficioUseCase {
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
-    Integer grauInsalubridade = empregado.getContrato().getGrauInsalubridade();
+    EnumGrauInsalubridade grauInsalubridade = empregado.getContrato().getGrauInsalubridade();
 
-    if (grauInsalubridade > 0) {
+    if (grauInsalubridade != EnumGrauInsalubridade.NULO) {
       return BigDecimal.ZERO;
     }
 
