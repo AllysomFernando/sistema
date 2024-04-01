@@ -15,10 +15,10 @@ public class AuxilioCreche implements IBeneficioUseCase {
   public BigDecimal calculate(Empregado empregado) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
 
-    if (empregado.getDependente() == null || empregado.getDependente().isEmpty())
+    if (empregado.getDependentes() == null || empregado.getDependentes().isEmpty())
       return beneficio;
 
-    List<Dependente> dependentes = empregado.getDependente();
+    List<Dependente> dependentes = empregado.getDependentes();
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
     for (Dependente d : dependentes) {
