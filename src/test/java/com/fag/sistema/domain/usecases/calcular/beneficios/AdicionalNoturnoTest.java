@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.Description;
 
 import com.fag.sistema.domain.entities.Contrato;
 import com.fag.sistema.domain.entities.Empregado;
@@ -22,6 +23,7 @@ public class AdicionalNoturnoTest {
   }
 
   @Test
+  @Description("Should add adicional noturno if horario de trabalho is noturno")
   void shouldAddAdicionaNoturno() {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), EnumHorarioTrabalho.NOTURNO);
@@ -32,6 +34,7 @@ public class AdicionalNoturnoTest {
   }
 
   @Test
+  @Description("Should not add adicional noturno if horario de trabalho is not noturno")
   void shouldNotAddAdicionaNoturno() {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), EnumHorarioTrabalho.COMERCIAL);

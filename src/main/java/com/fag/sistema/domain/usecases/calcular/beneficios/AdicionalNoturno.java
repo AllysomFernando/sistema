@@ -12,7 +12,7 @@ public class AdicionalNoturno implements IBeneficioUseCase {
   public BigDecimal calculate(Empregado empregado) {
     EnumHorarioTrabalho horarioTrabalho = empregado.getContrato().getHorarioTrabalho();
 
-    if (horarioTrabalho.getHorarioInicio() > 18) {
+    if (horarioTrabalho == EnumHorarioTrabalho.NOTURNO) {
       BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
       return salarioBruto.multiply(new BigDecimal("0.15")).setScale(2, RoundingMode.DOWN);
     }

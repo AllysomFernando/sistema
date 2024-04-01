@@ -1,22 +1,24 @@
 package com.fag.sistema.domain.enums;
 
+import java.time.LocalTime;
+
 public enum EnumHorarioTrabalho {
-  COMERCIAL(8, 18),
-  NOTURNO(19, 4);
+  COMERCIAL(LocalTime.of(8, 0), LocalTime.of(18, 0)),
+  NOTURNO(LocalTime.of(22, 0), LocalTime.of(5, 0));
 
-  private int horarioInicio;
-  private int horarioTermino;
+  private LocalTime horarioInicio;
+  private LocalTime horarioTermino;
 
-  EnumHorarioTrabalho(int horarioInicio, int horarioTermino) {
+  EnumHorarioTrabalho(LocalTime horarioInicio, LocalTime horarioTermino) {
     this.horarioInicio = horarioInicio;
     this.horarioTermino = horarioTermino;
   }
 
-  public int getHorarioInicio() {
+  public LocalTime getHorarioInicio() {
     return horarioInicio;
   }
 
-  public int getHorarioTermino() {
+  public LocalTime getHorarioTermino() {
     return horarioTermino;
   }
 }
