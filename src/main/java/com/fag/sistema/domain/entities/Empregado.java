@@ -1,6 +1,6 @@
 package com.fag.sistema.domain.entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ public class Empregado {
     private List<Doenca> doencas;
     private Float peso;
     private String cpf;
-    private Date dataNascimento;
+    private LocalDate dataNascimento;
     private List<Dependente> dependentes;
     private Horario horario;
     private Contrato contrato;

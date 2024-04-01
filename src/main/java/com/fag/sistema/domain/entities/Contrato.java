@@ -1,6 +1,6 @@
 package com.fag.sistema.domain.entities;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 import com.fag.sistema.domain.enums.EnumHorarioTrabalho;
@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contrato {
-    private Date dataAdmissao;
+    private LocalDate dataAdmissao;
     private String cargo;
     private String funcao;
     private int pisPasep;

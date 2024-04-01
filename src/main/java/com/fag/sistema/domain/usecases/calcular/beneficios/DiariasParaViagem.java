@@ -6,6 +6,7 @@ import com.fag.sistema.domain.entities.Empregado;
 
 public class DiariasParaViagem implements IBeneficioUseCase {
 
+  // TODO: implementar verificação de viagem do empregado
   @Override
   public BigDecimal calculate(Empregado empregado) {
     return new BigDecimal("1000.00");
