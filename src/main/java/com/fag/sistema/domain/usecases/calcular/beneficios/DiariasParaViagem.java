@@ -8,7 +8,7 @@ public class DiariasParaViagem implements IBeneficioUseCase {
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
-    return new BigDecimal("1000.000");
+    return new BigDecimal("1000.00");
   }
-  
+
 }
