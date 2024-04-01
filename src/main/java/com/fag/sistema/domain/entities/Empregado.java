@@ -18,7 +18,6 @@ public class Empregado {
     private String cpf;
     private Date dataNascimento;
     private List<Dependente> dependente;
-
     private Horario horario;
     private Contrato contrato;
     private Endereco endereco;
