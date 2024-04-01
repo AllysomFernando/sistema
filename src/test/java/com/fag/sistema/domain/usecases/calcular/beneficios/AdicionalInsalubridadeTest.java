@@ -24,14 +24,50 @@ public class AdicionalInsalubridadeTest {
   }
 
   @Test
-  @Description("Should calculate Adicional Insalubridade with grau 10")
-  public void shouldCalculateAdicionalInsalubridade() {
+  @Description("Should calculate Adicional Insalubridade with grau BAIXO")
+  public void shouldCalculateAdicionalInsalubridadeGrauBaixo() {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
-    Empregado empregado = makeEmpregado(new BigDecimal("1900.0"),
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.BAIXO);
 
     BigDecimal beneficio = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("190.00"), beneficio);
+    assertEquals(new BigDecimal("200.00"), beneficio);
+  }
+
+  @Test
+  @Description("Should calculate Adicional Insalubridade with grau MEDIO")
+  public void shouldCalculateAdicionalInsalubridadeGrauMedio() {
+    AdicionalInsalubridade sut = new AdicionalInsalubridade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
+        EnumGrauInsalubridade.MEDIO);
+
+    BigDecimal beneficio = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("400.00"), beneficio);
+  }
+
+  @Test
+  @Description("Should calculate Adicional Insalubridade with grau ALTO")
+  public void shouldCalculateAdicionalInsalubridadeGrauAlto() {
+    AdicionalInsalubridade sut = new AdicionalInsalubridade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
+        EnumGrauInsalubridade.ALTO);
+
+    BigDecimal beneficio = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("800.00"), beneficio);
+  }
+
+  @Test
+  @Description("Should calculate Adicional Insalubridade with grau NULO")
+  public void shouldCalculateAdicionalInsalubridadeGrauNulo() {
+    AdicionalInsalubridade sut = new AdicionalInsalubridade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
+        EnumGrauInsalubridade.NULO);
+
+    BigDecimal beneficio = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("0.00"), beneficio);
   }
 }

@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
@@ -9,22 +10,12 @@ public class AdicionalInsalubridade implements IBeneficioUseCase {
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
-    EnumGrauInsalubridade grauInsalubridade = empregado.getContrato().getGrauInsalubridade();
+    EnumGrauInsalubridade insalubridade = empregado.getContrato().getGrauInsalubridade();
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
-    if (grauInsalubridade == EnumGrauInsalubridade.BAIXO) {
-      return salarioBruto.multiply(new BigDecimal("0.1"));
-    }
-
-    if (grauInsalubridade == EnumGrauInsalubridade.MEDIO) {
-      return salarioBruto.multiply(new BigDecimal("0.2"));
-    }
-
-    if (grauInsalubridade == EnumGrauInsalubridade.ALTO) {
-      return salarioBruto.multiply(new BigDecimal("0.4"));
-    }
+    BigDecimal beneficio = salarioBruto.multiply(insalubridade.getMultiplicador()); 
     
-    return salarioBruto.multiply(new BigDecimal("0.0"));
+    return beneficio.setScale(2, RoundingMode.DOWN);
   }
 
 }
