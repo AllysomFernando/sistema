@@ -13,7 +13,7 @@ import com.fag.sistema.domain.entities.Salario;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalInsalubridadeTest {
-  private Empregado makeEmpregadoComSalarioEGrauDeInsalubridade(BigDecimal salarioBruto,
+  private Empregado makeEmpregado(BigDecimal salarioBruto,
       EnumGrauInsalubridade grauInsalubridade) {
     Empregado empregado = new Empregado();
     empregado.setContrato(new Contrato());
@@ -27,7 +27,7 @@ public class AdicionalInsalubridadeTest {
   @Description("Should calculate Adicional Insalubridade with grau 10")
   public void shouldCalculateAdicionalInsalubridade() {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
-    Empregado empregado = makeEmpregadoComSalarioEGrauDeInsalubridade(new BigDecimal("1900.0"),
+    Empregado empregado = makeEmpregado(new BigDecimal("1900.0"),
         EnumGrauInsalubridade.BAIXO);
 
     BigDecimal beneficio = sut.calculate(empregado);
