@@ -44,4 +44,15 @@ public class QuinquenioTest {
     assertEquals(new BigDecimal("120.00"), beneficio);
   }
 
+  @Test
+  void shouldCalculateQuiquenioForEmpregadoWith6Years() {
+    Quinquenio sut = new Quinquenio();
+    LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 6, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
+
+    BigDecimal beneficio = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("60.00"), beneficio);
+  }
+
 }

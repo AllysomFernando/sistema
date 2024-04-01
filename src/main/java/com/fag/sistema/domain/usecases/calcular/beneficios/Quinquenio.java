@@ -16,13 +16,11 @@ public class Quinquenio implements IBeneficioUseCase {
     BigDecimal beneficio = BigDecimal.ZERO;
     Integer diferencaEmAnos = now.getYear() - dataAdimissao.getYear();
 
-    if (diferencaEmAnos % 5 == 0) {
-      Integer quinquenios = diferencaEmAnos / 5;
+    Integer quinquenios = Math.abs(diferencaEmAnos / 5);
 
-      beneficio = salarioBruto.multiply(new BigDecimal("0.03"));
+    beneficio = salarioBruto.multiply(new BigDecimal("0.03"));
 
-      beneficio = beneficio.multiply(new BigDecimal(quinquenios));
-    }
+    beneficio = beneficio.multiply(new BigDecimal(quinquenios));
 
     return beneficio.setScale(2, RoundingMode.DOWN);
   }
