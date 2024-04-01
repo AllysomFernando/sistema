@@ -8,6 +8,7 @@ import com.fag.sistema.domain.enums.EnumHorarioTrabalho;
 
 public class AdicionalNoturno implements IBeneficioUseCase {
 
+  // TODO: Baseado no valor da hora ou no salario bruto?
   @Override
   public BigDecimal calculate(Empregado empregado) {
     EnumHorarioTrabalho horarioTrabalho = empregado.getContrato().getHorarioTrabalho();

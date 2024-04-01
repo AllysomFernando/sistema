@@ -42,7 +42,7 @@ public class AuxilioCrecheTest {
   }
 
   @Test
-  @Description("Should not add auxilio creche if empregado has not dependente")
+  @Description("Should not add auxilio creche if empregado has no dependente")
   void shouldNotAddAuxilioCrecheIfEmpregadoHasNoDependente() {
     AuxilioCreche sut = new AuxilioCreche();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.00"));
@@ -64,6 +64,22 @@ public class AuxilioCrecheTest {
     BigDecimal beneficio = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("190.00"), beneficio);
+  }
+
+  @Test
+  @Description("Should add auxilio creche for one dependentes")
+  void shouldAddAuxilioCrecheForOneDependente() {
+    AuxilioCreche sut = new AuxilioCreche();
+    Empregado empregado = makeEmpregado(new BigDecimal("1900.00"));
+    List<Dependente> dependentes = List.of(
+      new Dependente("Rosie Robbins", LocalDate.of(2024, 01, 01))
+    );
+
+    empregado.setDependentes(dependentes);
+
+    BigDecimal beneficio = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("95.00"), beneficio);
   }
 
   @Test
