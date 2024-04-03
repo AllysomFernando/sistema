@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 import com.fag.sistema.domain.enums.EnumHorarioTrabalho;
 
+import com.fag.sistema.domain.enums.EnumTipoContrato;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,4 +23,6 @@ public class Contrato {
     private Empregador empregador;
     private Salario salario;
     private EnumHorarioTrabalho horarioTrabalho = EnumHorarioTrabalho.COMERCIAL;
+    private EnumTipoContrato tipoContrato;
+    private String descricao;
 }

@@ -4,11 +4,14 @@ import com.fag.sistema.domain.entities.Empregado;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
+@Component
 public class JsonFileReader {
     private ObjectMapper objectMapper;
 
@@ -17,8 +20,8 @@ public class JsonFileReader {
         objectMapper.registerModule(new JavaTimeModule());
     }
 
-    public List<Empregado> readEmpregadoList(String jsonFilePath) throws IOException {
-        return objectMapper.readValue(new File(jsonFilePath), new TypeReference<List<Empregado>>() {
-        });
+    public List<Empregado> readEmpregadoList(InputStream inputStream) throws IOException {
+       return objectMapper.readValue(inputStream, new TypeReference<List<Empregado>>() {
+       });
     }
 }

@@ -7,4 +7,6 @@ import java.util.Optional;
 
 public interface IEmpregadoVendor {
     List<Empregado> getAllEmpregados();
+
+    void addAllEmpregados(List<Empregado> empregadoList);
 }
