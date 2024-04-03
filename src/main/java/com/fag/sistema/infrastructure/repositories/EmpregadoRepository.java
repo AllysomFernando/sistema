@@ -1,4 +1,4 @@
-package com.fag.sistema.infrastructure.repository;
+package com.fag.sistema.infrastructure.repositories;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fag.sistema.domain.entities.Empregado;

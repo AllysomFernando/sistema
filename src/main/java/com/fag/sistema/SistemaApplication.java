@@ -2,14 +2,13 @@ package com.fag.sistema;
 
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.infrastructure.adapters.json.JsonFileReader;
-import com.fag.sistema.infrastructure.repository.EmpregadoRepository;
+import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.util.ResourceUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
