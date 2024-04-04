@@ -1,6 +1,7 @@
 package com.fag.sistema.infrastructure.adapters.json;
 
 import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.entities.Empregador;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -23,5 +24,9 @@ public class JsonFileReader {
     public List<Empregado> readEmpregadoList(InputStream inputStream) throws IOException {
        return objectMapper.readValue(inputStream, new TypeReference<List<Empregado>>() {
        });
+    }
+    public List<Empregador> readEmpresaList(InputStream inputStream) throws IOException {
+        return objectMapper.readValue(inputStream, new TypeReference<List<Empregador>>() {
+        });
     }
 }

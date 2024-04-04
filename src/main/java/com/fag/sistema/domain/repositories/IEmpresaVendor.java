@@ -1,0 +1,13 @@
+package com.fag.sistema.domain.repositories;
+
+import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.entities.Empregador;
+
+import java.util.List;
+
+public interface IEmpresaVendor {
+    List<Empregador> getAllEmpregador();
+
+    void addAllEmpresas(List<Empregador> empresaList);
+
+}
