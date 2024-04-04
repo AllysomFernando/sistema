@@ -40,6 +40,11 @@ public class EmpregadoRepository implements IEmpregadoVendor {
     }
 
     @Override
+    public Empregado getEmpregadoByCPF(String cpf) {
+        return empregados.get(cpf);
+    }
+
+    @Override
     public void addAllEmpregados(List<Empregado> empregadoList) {
         for (Empregado empregado : empregadoList) {
             this.empregados.put(empregado.getCPF(), empregado);
