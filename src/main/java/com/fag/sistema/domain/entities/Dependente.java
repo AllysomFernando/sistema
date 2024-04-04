@@ -12,4 +12,9 @@ public class Dependente {
     private LocalDate dataNascimento;
     private String parentesco;
     private String genero;
+
+    public Dependente (String nome, LocalDate dataNascimento) {
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+    }
 }
