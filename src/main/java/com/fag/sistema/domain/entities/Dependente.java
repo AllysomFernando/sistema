@@ -10,5 +10,5 @@ import lombok.*;
 public class Dependente {
     private String nome;
     private LocalDate dataNascimento;
-
 }
+

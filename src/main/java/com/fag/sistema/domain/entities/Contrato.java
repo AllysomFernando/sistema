@@ -2,15 +2,16 @@ package com.fag.sistema.domain.entities;
 
 import java.time.LocalDate;
 
+import com.fag.sistema.domain.dto.EmpregadoDTO;
+import com.fag.sistema.domain.dto.SalarioDTO;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 import com.fag.sistema.domain.enums.EnumHorarioTrabalho;
 
 import com.fag.sistema.domain.enums.EnumTipoContrato;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Contrato {

@@ -5,9 +5,8 @@ import java.util.List;
 
 import com.fag.sistema.domain.enums.EnumGenero;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Data
 @NoArgsConstructor
@@ -16,7 +15,6 @@ public class Empregado {
     private String nome;
     private EnumGenero genero;
     private List<Doenca> doencas;
-    private Float peso;
     @JsonProperty("CPF")
     private String CPF;
     private LocalDate dataNascimento;
