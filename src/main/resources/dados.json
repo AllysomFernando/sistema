@@ -2,13 +2,9 @@
   {
     "nome": "João Silva",
     "genero": "MASCULINO",
-    "CPF": "123.456.789-10",
+    "CPF": "12345678910",
     "dataNascimento": "1990-01-15",
-    "doencas": [
-      {
-        "descricao": "Esquizofrenia"
-      }
-    ],
+
     "dependentes": [
       {
         "nome": "Ana Silva",
@@ -30,7 +26,7 @@
       },
       "horarioTrabalho": "COMERCIAL",
       "empregador": {
-        "CNPJ": "12.345.678/0001-22",
+        "CNPJ": "12345678000122",
         "razaoSocial": "Empresa X",
         "nomeFantasia": "Empresa X",
         "endereco": {
@@ -39,7 +35,7 @@
           "bairro": "Centro",
           "municipio": "São Paulo",
           "estado": "SP",
-          "CEP": "98765-432"
+          "CEP": "98765432"
         }
       }
     },
@@ -49,7 +45,7 @@
       "bairro": "Bairro das Flores",
       "municipio": "São Paulo",
       "estado": "SP",
-      "CEP": "12345-678"
+      "CEP": "12345678"
     }
   }
 ]
