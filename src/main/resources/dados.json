@@ -4,6 +4,11 @@
     "genero": "MASCULINO",
     "CPF": "123.456.789-10",
     "dataNascimento": "1990-01-15",
+    "doencas": [
+      {
+        "descricao": "Esquizofrenia"
+      }
+    ],
     "dependentes": [
       {
         "nome": "Ana Silva",
@@ -13,6 +18,7 @@
     "contrato": {
       "dataAdmissao": "2020-02-01",
       "cargo": "Desenvolvedor de Software",
+      "funcao": "Programador Pleno",
       "pisPasep": 123456789,
       "horas": 160,
       "grauInsalubridade": "BAIXO",
