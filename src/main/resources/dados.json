@@ -7,9 +7,7 @@
     "dependentes": [
       {
         "nome": "Ana Silva",
-        "dataNascimento": "2015-06-30",
-        "parentesco": "FILHA",
-        "genero": "FEMININO"
+        "dataNascimento": "2015-06-30"
       }
     ],
     "contrato": {
