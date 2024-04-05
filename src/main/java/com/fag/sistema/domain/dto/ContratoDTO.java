@@ -21,6 +21,7 @@ public class ContratoDTO {
     private EnumGrauInsalubridade grauInsalubridade = EnumGrauInsalubridade.NULO;
     private Empregador empregador;
     private Salario salario;
+    private Boolean ativo;
     private EnumHorarioTrabalho horarioTrabalho = EnumHorarioTrabalho.COMERCIAL;
     private EnumTipoContrato tipoContrato;
     private String descricao;

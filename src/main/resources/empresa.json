@@ -1,0 +1,18 @@
+[
+  {
+
+      "CNPJ": "12345678000122",
+      "razaoSocial": "Empresa X",
+      "nomeFantasia": "Empresa X",
+      "naturezaJuridica": "SOCIEDADE EMPRESARIA LIMITADA",
+      "porteEmpresa": "MICRO EMPRESA",
+      "endereco": {
+        "rua": "Avenida dos Negócios",
+        "numero": 1000,
+        "bairro": "Centro",
+        "municipio": "São Paulo",
+        "estado": "SP",
+        "CEP": "98765432"
+      }
+    }
+]

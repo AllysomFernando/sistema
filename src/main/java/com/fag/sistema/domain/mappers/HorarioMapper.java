@@ -10,7 +10,8 @@ public class HorarioMapper {
                 dto.getHoraFalta(),
                 dto.getJustificativa(),
                 dto.getHoraExtra(),
-                dto.getHoraExtraFDS()
+                dto.getHoraExtraFDS(),
+                dto.getHorasNoturnas()
         );
     }
 
@@ -21,7 +22,7 @@ public class HorarioMapper {
         dto.setJustificativa(bo.getJustificativa());
         dto.setHoraExtra(bo.getHoraExtra());
         dto.setHoraExtraFDS(bo.getHoraExtraFDS());
-
+        dto.setHorasNoturnas(bo.getHorasNoturnas());
         return dto;
     }
 }

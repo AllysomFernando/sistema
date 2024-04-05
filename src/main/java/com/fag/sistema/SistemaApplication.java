@@ -40,7 +40,7 @@ public class SistemaApplication {
     @Bean
     CommandLineRunner initEmpresa(EmpresaRepository empresaRepository, JsonFileReader jsonFileReader) {
         return args -> {
-            Resource resource = new ClassPathResource("dados.json");
+            Resource resource = new ClassPathResource("empresa.json");
             try (InputStream inputStream = resource.getInputStream()) {
                 List<Empregador> empresas = jsonFileReader.readEmpresaList(inputStream);
                 empresaRepository.addAllEmpresas(empresas);

@@ -13,4 +13,5 @@ public class Horario {
     private Boolean justificativa;
     private float horaExtra;
     private float horaExtraFDS;
+    private float horasNoturnas;
 }

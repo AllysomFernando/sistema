@@ -24,22 +24,8 @@
         "bruto": 8000.00,
         "liquido": 6400.00
       },
+      "ativo": true,
       "horarioTrabalho": "COMERCIAL",
-      "empregador": {
-        "CNPJ": "12345678000122",
-        "razaoSocial": "Empresa X",
-        "nomeFantasia": "Empresa X",
-        "naturezaJuridica": "SOCIEDADE EMPRESARIA LIMITADA",
-        "porteEmpresa": "MICRO EMPRESA",
-        "endereco": {
-          "rua": "Avenida dos Negócios",
-          "numero": 1000,
-          "bairro": "Centro",
-          "municipio": "São Paulo",
-          "estado": "SP",
-          "CEP": "98765432"
-        }
-      }
     },
     "endereco": {
       "rua": "Rua das Árvores",
@@ -48,6 +34,30 @@
       "municipio": "São Paulo",
       "estado": "SP",
       "CEP": "12345678"
-    }
+    },
+    "empregador": {
+      "CNPJ": "12345678000122",
+      "razaoSocial": "Empresa X",
+      "nomeFantasia": "Empresa X",
+      "naturezaJuridica": "SOCIEDADE EMPRESARIA LIMITADA",
+      "porteEmpresa": "MICRO EMPRESA",
+      "endereco": {
+        "rua": "Avenida dos Negócios",
+        "numero": 1000,
+        "bairro": "Centro",
+        "municipio": "São Paulo",
+        "estado": "SP",
+        "CEP": "98765432"
+      }
+    },
+    "horario":
+          {
+            "horaTrabalhada": "220",
+            "horaFalta": "2",
+            "justificativo": "sim",
+            "horaExtra": "10",
+            "horaExtraFDS": "10",
+            "horaExtraNoturna": "5"
+          }
   }
-]
+]w

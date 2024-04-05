@@ -14,6 +14,7 @@ public class ContratoMapper {
                 dto.getGrauInsalubridade(),
                 dto.getEmpregador(),
                 dto.getSalario(),
+                dto.getAtivo(),
                 dto.getHorarioTrabalho(),
                 dto.getTipoContrato(),
                 dto.getDescricao()
@@ -30,6 +31,7 @@ public class ContratoMapper {
         dto.setGrauInsalubridade(bo.getGrauInsalubridade());
         dto.setEmpregador(bo.getEmpregador());
         dto.setSalario(bo.getSalario());
+        dto.setAtivo(bo.getAtivo());
         dto.setHorarioTrabalho(bo.getHorarioTrabalho());
         dto.setTipoContrato(bo.getTipoContrato());
         dto.setDescricao(bo.getDescricao());
