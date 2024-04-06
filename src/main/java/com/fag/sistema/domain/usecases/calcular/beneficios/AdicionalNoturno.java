@@ -17,9 +17,11 @@ public class AdicionalNoturno implements IBeneficioUseCase {
             BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
             int totalHoraMensais = empregado.getContrato().getHoras();
 
+            //TODO: trocar de salário bruto por salário base
+
 
             BigDecimal valorHora = salarioBruto.divide(new BigDecimal(totalHoraMensais), RoundingMode.HALF_UP);
-            int horasNoturnas = 0;//TODO: pegar as horas trabalhadas no periodo noturno;
+            int horasNoturnas = 0;// TODO: pegar as horas trabalhadas no periodo noturno;
             return salarioBruto.multiply(new BigDecimal("0.15")).setScale(2, RoundingMode.DOWN);
         }
 
