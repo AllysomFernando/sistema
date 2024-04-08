@@ -8,7 +8,8 @@ public class SalarioMapper {
     public static Salario toBO(SalarioDTO dto){
         return new Salario(
                 dto.getBruto(),
-                dto.getLiquido()
+                dto.getLiquido(),
+                dto.getBase()
         );
     }
     public static SalarioDTO toDTO(Salario bo){
@@ -16,6 +17,7 @@ public class SalarioMapper {
 
         dto.setBruto(bo.getBruto());
         dto.setLiquido(bo.getLiquido());
+        dto.setBase(bo.getBase());
 
         return dto;
     }

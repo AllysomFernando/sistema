@@ -10,4 +10,5 @@ import java.math.BigDecimal;
 public class SalarioDTO {
     private BigDecimal bruto;
     private BigDecimal liquido;
+    private BigDecimal base;
 }
