@@ -21,7 +21,7 @@ public class EmpresaRepository implements IEmpresaVendor {
     private Map<String, Empregador> empresas = new HashMap<>();
     private JsonFileReader mapper;
 
-    public EmpresaRepository(JsonFileReader jsonFileReader, @Value("${empregado.json.path}") String jsonFilePath) {
+    public EmpresaRepository(JsonFileReader jsonFileReader,  @Value("${empregador.json.path}") String jsonFilePath) {
         this.mapper = jsonFileReader;
         try {
             Resource resource = new ClassPathResource(jsonFilePath);
@@ -32,7 +32,7 @@ public class EmpresaRepository implements IEmpresaVendor {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException("Erro ao ler o arquivo JSON", e);
+            throw new RuntimeException("Erro ao carregar arquivo JSON", e);
         }
     }
 
