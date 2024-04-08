@@ -1,10 +1,13 @@
-package com.fag.sistema.domain.usecases.calcular.beneficios;
+package com.fag.sistema.service.beneficio;
 
 import java.math.BigDecimal;
 
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
+import com.fag.sistema.domain.usecases.calcular.beneficios.IBeneficioUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdicionalPericulosidade implements IBeneficioUseCase {
 
   @Override
@@ -18,5 +21,5 @@ public class AdicionalPericulosidade implements IBeneficioUseCase {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     return salarioBruto.multiply(new BigDecimal("0.3"));
   }
-  
+
 }

@@ -1,6 +1,7 @@
 package com.fag.sistema.infrastructure.repositories;
 
 
+import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
 import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.json.JsonFileReader;
@@ -39,6 +40,10 @@ public class EmpresaRepository implements IEmpresaVendor {
     @Override
     public List<Empregador> getAllEmpregador() {
         return new ArrayList<>(empresas.values());
+    }
+    @Override
+    public Empregador getEmpresaByCNPJ(String cnpj) {
+        return empresas.get(cnpj);
     }
     @Override
     public void addAllEmpresas(List<Empregador> empresaList) {

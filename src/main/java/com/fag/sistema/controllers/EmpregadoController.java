@@ -24,6 +24,8 @@ public class EmpregadoController {
     public List<EmpregadoDTO> listarEmpregados(){
         return empregadoService.getAllEmpregados();
     }
+
+    //TODO: verificar se essa rota vai existir
     @GetMapping("/{cpf}")
     public ResponseEntity<EmpregadoDTO> listarEmpregadoPorCPF(@PathVariable String cpf){
         EmpregadoDTO empregadoDTO = empregadoService.getEmpregadoporCPF(cpf);

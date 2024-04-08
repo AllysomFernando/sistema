@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
+import com.fag.sistema.service.descontos.ValeTransporte;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
 

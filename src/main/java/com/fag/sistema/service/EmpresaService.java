@@ -1,8 +1,11 @@
 package com.fag.sistema.service;
 
 
+import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.mappers.EmpregadoMapper;
 import com.fag.sistema.domain.mappers.EmpregadorMapper;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 import org.springframework.stereotype.Service;
@@ -23,5 +26,13 @@ public class EmpresaService {
         return empresaList.stream()
                 .map(EmpregadorMapper::toDTO)
                 .collect(Collectors.toList());
+    }
+    public EmpregadorDTO getEmpresaByCNPJ(String cnpj) {
+        Empregador empregador = empresaRepository.getEmpresaByCNPJ(cnpj);
+        if(empregador != null){
+            return EmpregadorMapper.toDTO(empregador);
+        }else{
+            return null;
+        }
     }
 }

@@ -1,10 +1,13 @@
-package com.fag.sistema.domain.usecases.calcular.descontos;
+package com.fag.sistema.service.descontos;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.usecases.calcular.descontos.IDescontoUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
 public class INSS implements IDescontoUseCase {
 
   @Override

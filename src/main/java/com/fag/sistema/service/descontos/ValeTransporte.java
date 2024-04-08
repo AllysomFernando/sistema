@@ -1,10 +1,13 @@
-package com.fag.sistema.domain.usecases.calcular.descontos;
+package com.fag.sistema.service.descontos;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.usecases.calcular.descontos.IDescontoUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ValeTransporte implements IDescontoUseCase {
 
   @Override
@@ -12,5 +15,5 @@ public class ValeTransporte implements IDescontoUseCase {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     return salarioBruto.multiply(new BigDecimal("0.03")).setScale(2, RoundingMode.DOWN);
   }
-  
+
 }

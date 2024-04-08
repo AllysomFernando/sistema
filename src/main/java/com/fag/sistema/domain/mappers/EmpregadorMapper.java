@@ -1,6 +1,5 @@
 package com.fag.sistema.domain.mappers;
 
-import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.entities.Empregador;
 

@@ -1,4 +1,4 @@
-package com.fag.sistema.domain.usecases.calcular.beneficios;
+package com.fag.sistema.service.beneficio;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -8,7 +8,10 @@ import java.util.List;
 
 import com.fag.sistema.domain.entities.Dependente;
 import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.usecases.calcular.beneficios.IBeneficioUseCase;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SalarioFamilia implements IBeneficioUseCase {
 
   private final BigDecimal SALARIO_MINIMO = new BigDecimal("1412.00");

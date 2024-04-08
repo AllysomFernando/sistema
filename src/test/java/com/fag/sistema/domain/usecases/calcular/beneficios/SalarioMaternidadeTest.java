@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
+import com.fag.sistema.service.beneficio.SalarioMaternidade;
 import org.junit.jupiter.api.Test;
 
 import com.fag.sistema.domain.entities.Contrato;
@@ -23,9 +24,9 @@ public class SalarioMaternidadeTest {
   void shouldCalculateSalarioMaternidade() {
     SalarioMaternidade sut = new SalarioMaternidade();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
-    
+
     BigDecimal beneficio = sut.calculate(empregado);
-    
+
     assertEquals(new BigDecimal("100.00"), beneficio);
   }
 }
