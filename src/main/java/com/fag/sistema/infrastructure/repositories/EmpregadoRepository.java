@@ -30,20 +30,17 @@ public class EmpregadoRepository implements IEmpregadoVendor {
                 }
             }
         } catch (IOException e) {
-            throw new RuntimeException("Erro ao ler o arquivo JSON", e);
+            throw new RuntimeException("Erro ao ler o arquivo JSON: " + e.getMessage());
         }
     }
-
     @Override
     public List<Empregado> getAllEmpregados() {
         return new ArrayList<>(empregados.values());
     }
-
     @Override
     public Empregado getEmpregadoByCPF(String cpf) {
         return empregados.get(cpf);
     }
-
     @Override
     public void addAllEmpregados(List<Empregado> empregadoList) {
         for (Empregado empregado : empregadoList) {

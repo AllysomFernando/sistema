@@ -26,7 +26,7 @@ public class SistemaApplication {
     @Bean
     CommandLineRunner initEmpregado(EmpregadoRepository empregadoRepository, JsonFileReader jsonFileReader) {
         return args -> {
-            Resource resource = new ClassPathResource("dados.json");
+            Resource resource = new ClassPathResource("empregado.json");
             try (InputStream inputStream = resource.getInputStream()) {
                 List<Empregado> empregados = jsonFileReader.readEmpregadoList(inputStream);
                 empregadoRepository.addAllEmpregados(empregados);
@@ -36,7 +36,6 @@ public class SistemaApplication {
             }
         };
     }
-
     @Bean
     CommandLineRunner initEmpresa(EmpresaRepository empresaRepository, JsonFileReader jsonFileReader) {
         return args -> {

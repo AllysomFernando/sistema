@@ -1,18 +1,27 @@
 [
   {
-
-      "CNPJ": "12345678000122",
-      "razaoSocial": "Empresa X",
-      "nomeFantasia": "Empresa X",
-      "naturezaJuridica": "SOCIEDADE EMPRESARIA LIMITADA",
-      "porteEmpresa": "MICRO EMPRESA",
-      "endereco": {
-        "rua": "Avenida dos Negócios",
-        "numero": 1000,
-        "bairro": "Centro",
-        "municipio": "São Paulo",
-        "estado": "SP",
-        "CEP": "98765432"
-      }
+    "CNPJ": "12345678000122",
+    "razaoSocial": "Empresa X",
+    "nomeFantasia": "Empresa X",
+    "naturezaJuridica": "SOCIEDADE EMPRESARIA LIMITADA",
+    "porteEmpresa": "MICRO EMPRESA",
+    "inscricao": {
+      "tipoInscricao": "CNPJ",
+      "numero": "12345678000122",
+      "inscricaoMunicipal": "123456",
+      "inscricaoEstadual": "123456"
+    },
+    "contato": {
+      "telefone": "11987654321",
+      "email": "empres@gmail.com"
+    },
+    "endereco": {
+      "rua": "Avenida dos Negócios",
+      "numero": 1000,
+      "bairro": "Centro",
+      "municipio": "São Paulo",
+      "estado": "SP",
+      "CEP": "98765432"
     }
+  }
 ]
