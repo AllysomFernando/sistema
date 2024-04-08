@@ -1,7 +1,6 @@
 package com.fag.sistema.infrastructure.repositories;
 
 
-import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
 import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.json.JsonFileReader;
