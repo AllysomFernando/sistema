@@ -1,7 +1,5 @@
 package com.fag.sistema.domain.entities;
 
-import com.fag.sistema.domain.usecases.calcular.beneficios.*;
-import com.fag.sistema.domain.usecases.calcular.descontos.*;
 import lombok.Getter;
 import lombok.Setter;
 

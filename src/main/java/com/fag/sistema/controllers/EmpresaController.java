@@ -1,14 +1,14 @@
 package com.fag.sistema.controllers;
 
 
-import com.fag.sistema.domain.dto.EmpregadoDTO;
-import com.fag.sistema.domain.dto.EmpregadorDTO;
-import com.fag.sistema.service.EmpresaService;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.service.EmpresaService;
 
 @RestController
 @RequestMapping("/empresas")

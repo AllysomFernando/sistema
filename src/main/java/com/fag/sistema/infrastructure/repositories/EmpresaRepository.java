@@ -1,21 +1,21 @@
 package com.fag.sistema.infrastructure.repositories;
 
 
-import com.fag.sistema.domain.entities.Empregado;
-import com.fag.sistema.domain.entities.Empregador;
-import com.fag.sistema.domain.repositories.IEmpresaVendor;
-import com.fag.sistema.infrastructure.adapters.json.JsonFileReader;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Repository;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Repository;
+
+import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.repositories.IEmpresaVendor;
+import com.fag.sistema.infrastructure.adapters.json.JsonFileReader;
 
 @Repository
 public class EmpresaRepository implements IEmpresaVendor {

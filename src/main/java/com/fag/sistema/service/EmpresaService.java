@@ -1,17 +1,15 @@
 package com.fag.sistema.service;
 
 
-import com.fag.sistema.domain.dto.EmpregadoDTO;
-import com.fag.sistema.domain.dto.EmpregadorDTO;
-import com.fag.sistema.domain.entities.Empregado;
-import com.fag.sistema.domain.entities.Empregador;
-import com.fag.sistema.domain.mappers.EmpregadoMapper;
-import com.fag.sistema.domain.mappers.EmpregadorMapper;
-import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.mappers.EmpregadorMapper;
+import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
 public class EmpresaService {

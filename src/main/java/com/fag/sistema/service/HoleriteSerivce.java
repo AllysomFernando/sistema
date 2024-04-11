@@ -1,12 +1,13 @@
 package com.fag.sistema.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.fag.sistema.domain.dto.HoleriteDTO;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
 import com.fag.sistema.domain.entities.Proventos;
 import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class HoleriteSerivce {
