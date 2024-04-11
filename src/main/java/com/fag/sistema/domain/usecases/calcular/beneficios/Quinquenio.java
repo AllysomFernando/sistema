@@ -1,11 +1,11 @@
-package com.fag.sistema.service.beneficio;
+package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
 import com.fag.sistema.domain.entities.Empregado;
-import com.fag.sistema.domain.usecases.calcular.beneficios.IBeneficioUseCase;
+
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,9 +1,9 @@
-package com.fag.sistema.service.beneficio;
+package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
 
 import com.fag.sistema.domain.entities.Empregado;
-import com.fag.sistema.domain.usecases.calcular.beneficios.IBeneficioUseCase;
+
 import org.springframework.stereotype.Service;
 
 @Service

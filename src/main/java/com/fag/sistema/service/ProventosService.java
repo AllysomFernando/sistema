@@ -1,10 +1,25 @@
 package com.fag.sistema.service;
 
+import org.springframework.stereotype.Service;
+
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Proventos;
-import com.fag.sistema.service.beneficio.*;
-import com.fag.sistema.service.descontos.*;
-import org.springframework.stereotype.Service;
+import com.fag.sistema.domain.usecases.calcular.beneficios.AdicionalInsalubridade;
+import com.fag.sistema.domain.usecases.calcular.beneficios.AdicionalNoturno;
+import com.fag.sistema.domain.usecases.calcular.beneficios.AdicionalPericulosidade;
+import com.fag.sistema.domain.usecases.calcular.beneficios.AuxilioCreche;
+import com.fag.sistema.domain.usecases.calcular.beneficios.Comissao;
+import com.fag.sistema.domain.usecases.calcular.beneficios.DiariasParaViagem;
+import com.fag.sistema.domain.usecases.calcular.beneficios.HorasExtras;
+import com.fag.sistema.domain.usecases.calcular.beneficios.Quinquenio;
+import com.fag.sistema.domain.usecases.calcular.beneficios.SalarioFamilia;
+import com.fag.sistema.domain.usecases.calcular.beneficios.SalarioMaternidade;
+import com.fag.sistema.domain.usecases.calcular.descontos.ContribuicaoSindical;
+import com.fag.sistema.domain.usecases.calcular.descontos.FGTS;
+import com.fag.sistema.domain.usecases.calcular.descontos.INSS;
+import com.fag.sistema.domain.usecases.calcular.descontos.IRRF;
+import com.fag.sistema.domain.usecases.calcular.descontos.ValeAlimentacao;
+import com.fag.sistema.domain.usecases.calcular.descontos.ValeTransporte;
 
 @Service
 public class ProventosService {

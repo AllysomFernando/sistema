@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
-import com.fag.sistema.service.beneficio.SalarioFamilia;
 import org.junit.jupiter.api.Test;
 
 import com.fag.sistema.domain.entities.Contrato;

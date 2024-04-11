@@ -11,18 +11,14 @@ import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
 public class HoleriteSerivce {
+    @Autowired
     private EmpregadoRepository empregadoRepository;
+    
+    @Autowired
     private EmpresaRepository empresaRepository;
-    private ProventosService proventosService;
 
     @Autowired
-    public HoleriteSerivce(EmpregadoRepository empregadoRepository,
-                           EmpresaRepository empresaRepository,
-                           ProventosService proventosService){
-        this.empregadoRepository = empregadoRepository;
-        this.empresaRepository = empresaRepository;
-        this.proventosService = proventosService;
-    }
+    private ProventosService proventosService;
 
     public HoleriteDTO criarHolerite(String cpf, String cnpj){
         Empregado empregado = empregadoRepository.getEmpregadoByCPF(cpf);

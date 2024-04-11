@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
-import com.fag.sistema.service.beneficio.SalarioMaternidade;
 import org.junit.jupiter.api.Test;
 
 import com.fag.sistema.domain.entities.Contrato;
