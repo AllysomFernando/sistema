@@ -2,9 +2,8 @@
   {
     "nome": "João Silva",
     "genero": "MASCULINO",
-    "cpf": "12345678910",
+    "CPF": "12345678910",
     "dataNascimento": "1990-01-15",
-    "ativo": true,
     "dependentes": [
       {
         "nome": "Ana Silva",
@@ -19,6 +18,7 @@
       "horas": 160,
       "grauInsalubridade": "BAIXO",
       "tipoContrato": "CLT",
+      "ativo": true,
       "descricao": "Contrato de trabalho efetivo.",
       "salario": {
         "bruto": 0,

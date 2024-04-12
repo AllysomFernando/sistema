@@ -17,8 +17,8 @@ public class HorasExtras implements IBeneficioUseCase {
     BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtraEmDiasDaSemana(valorHora);
     BigDecimal valorHoraExtraFimsDeSemana = this.valorHoraExtraEmFimsDeSemana(valorHora);
 
-    float quantidadeHorasExtra = empregado.getHorario().getHoraExtra();
-    float quantidadeHoraExtraFDS = empregado.getHorario().getHoraExtraFDS();
+    float quantidadeHorasExtra = empregado.getHorario().getHorasExtras();
+    float quantidadeHoraExtraFDS = empregado.getHorario().getHorasExtrasEmFinsDeSemana();
 
     BigDecimal totalHorasExtras = BigDecimal.ZERO;
 

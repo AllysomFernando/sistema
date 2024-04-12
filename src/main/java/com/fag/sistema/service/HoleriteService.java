@@ -1,4 +1,6 @@
 package com.fag.sistema.service;
+import com.fag.sistema.domain.entities.Holerite;
+import com.fag.sistema.domain.mappers.HoleriteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +12,10 @@ import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
-public class HoleriteSerivce {
+public class HoleriteService {
     @Autowired
     private EmpregadoRepository empregadoRepository;
-    
+
     @Autowired
     private EmpresaRepository empresaRepository;
 
@@ -25,13 +27,15 @@ public class HoleriteSerivce {
         Empregador empregador = empresaRepository.getEmpresaByCNPJ(cnpj);
 
         Proventos proventos = proventosService.calcularProventos(empregado);
-
-        HoleriteDTO holerite = new HoleriteDTO();
+        Holerite holerite = new Holerite();
         holerite.setEmpregado(empregado);
         holerite.setEmpregador(empregador);
         holerite.setProventos(proventos);
 
-        return holerite;
+        HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
+
+        return holeriteDTO;
     }
+
 
 }

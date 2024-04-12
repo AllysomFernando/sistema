@@ -13,7 +13,8 @@ public class Horario {
     private float horaTrabalhada;
     private float horaFalta;
     private Boolean justificativa;
-    private float horaExtra;
-    private float horaExtraFDS;
-    private float horasNoturnas;
+    private float horasExtras;
+    private float horasExtrasEmFinsDeSemana;
+    private float horasAdicionalNoturno;
+    private Integer horasEmDeficit;
 }
