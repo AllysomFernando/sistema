@@ -1,9 +1,9 @@
 package com.fag.sistema.service;
 
-
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fag.sistema.domain.dto.EmpregadorDTO;
@@ -13,11 +13,8 @@ import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
 public class EmpresaService {
+    @Autowired
     private EmpresaRepository empresaRepository;
-
-    public EmpresaService(EmpresaRepository empresaRepository) {
-        this.empresaRepository = empresaRepository;
-    }
 
     public List<EmpregadorDTO> getAllEmpresas() {
         List<Empregador> empresaList = empresaRepository.getAllEmpregador();
@@ -25,12 +22,12 @@ public class EmpresaService {
                 .map(EmpregadorMapper::toDTO)
                 .collect(Collectors.toList());
     }
+
     public EmpregadorDTO getEmpresaByCNPJ(String cnpj) {
         Empregador empregador = empresaRepository.getEmpresaByCNPJ(cnpj);
-        if(empregador != null){
+        if (empregador != null) {
             return EmpregadorMapper.toDTO(empregador);
-        }else{
-            return null;
         }
+        return null;
     }
 }

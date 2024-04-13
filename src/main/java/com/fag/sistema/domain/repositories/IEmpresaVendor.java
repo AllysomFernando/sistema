@@ -4,7 +4,7 @@ import com.fag.sistema.domain.entities.Empregador;
 
 import java.util.List;
 
-public interface IEmpresaVendor {
+public interface IEmpresaVendor<Empregador> {
     List<Empregador> getAllEmpregador();
 
     Empregador getEmpresaByCNPJ(String cnpj);

@@ -1,7 +1,5 @@
 package com.fag.sistema.domain.entities;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,8 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Empregador {
-    @JsonProperty("CNPJ")
-    private String CNPJ;
+    private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;
     private String classificacaoTributaria;
