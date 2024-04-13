@@ -21,7 +21,7 @@ public class EmpregadoMapper {
         dto.setNome(bo.getNome());
         dto.setGenero(bo.getGenero());
         dto.setDoencas(bo.getDoencas());
-        dto.setCPF(bo.getCPF());
+        dto.setCPF(bo.getCpf());
         dto.setDataNascimento(bo.getDataNascimento());
         dto.setDependentes(bo.getDependentes());
         dto.setHorario(bo.getHorario());
