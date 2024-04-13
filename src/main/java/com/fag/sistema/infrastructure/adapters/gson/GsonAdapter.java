@@ -1,10 +1,8 @@
 package com.fag.sistema.infrastructure.adapters.gson;
 
 import java.io.FileReader;
-import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.nio.file.FileSystems;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -29,14 +27,11 @@ public class GsonAdapter<T> implements IJsonReader<T> {
   }
 
   @Override
-  public T read() {
-    InputStream resource = this.getClass().getClassLoader().getResourceAsStream("empregado.json");
-    if (resource == null) {
-      throw new RuntimeException("Arquivo não encontrado no diretório");
-    }
+  public T readObjectFromJson(Class<T> clazz) {
+    JsonReader reader = new JsonReader(this.getResource());
 
-    List<T> data = Collections.singletonList(gson.fromJson(resource.toString(), listType));
-    return null;
+    T data = gson.fromJson(reader, clazz);
+    return data;
   }
 
   @Override
