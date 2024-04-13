@@ -3,16 +3,14 @@ package com.fag.sistema.infrastructure.adapters.gson;
 import java.io.FileReader;
 import java.lang.reflect.Type;
 import java.nio.file.FileSystems;
+import java.util.Arrays;
 import java.util.List;
-
-import org.springframework.stereotype.Component;
 
 import com.fag.sistema.infrastructure.interfaces.IJsonReader;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
-@Component
 public class GsonAdapter<T> implements IJsonReader<T> {
 
   private Gson gson;
@@ -35,11 +33,12 @@ public class GsonAdapter<T> implements IJsonReader<T> {
   }
 
   @Override
-  public List<T> readListFromJson() {
+  public List<T> readListFromJson(Class<T[]> clazz) {
     JsonReader reader = new JsonReader(this.getResource());
 
-    List<T> data = gson.fromJson(reader, this.listType);
-    return data;
+    T[] data = gson.fromJson(reader, clazz);
+
+    return Arrays.asList(data);
   }
 
   @Override

@@ -36,7 +36,7 @@ public class GsonAdapterTest {
   void shouldReadJsonContentAsList() {
     GsonAdapter<Empregador> sut = new GsonAdapter<Empregador>("data.json");
 
-    List<Empregador> empregadores = sut.readListFromJson();
+    List<Empregador> empregadores = sut.readListFromJson(Empregador[].class);
 
     assertNotNull(empregadores);
     assertEquals(1, empregadores.size());
