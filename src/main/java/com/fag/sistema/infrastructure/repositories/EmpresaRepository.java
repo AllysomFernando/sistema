@@ -1,9 +1,7 @@
 package com.fag.sistema.infrastructure.repositories;
 
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +11,6 @@ import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 
 @Repository
 public class EmpresaRepository implements IEmpresaVendor {
-    private Map<String, Empregador> empresas = new HashMap<>();
     private GsonAdapter<Empregador> data = new GsonAdapter<Empregador>("data.json");
 
     @Override
@@ -23,7 +20,15 @@ public class EmpresaRepository implements IEmpresaVendor {
     
     @Override
     public Empregador getEmpresaByCNPJ(String cnpj) {
-        return empresas.get(cnpj);
+        Empregador[] empresas = this.getAll();
+
+        for (Empregador empresa : empresas) {
+            if (empresa.getCnpj().equals(cnpj)) {
+                return empresa;
+            }
+        }
+
+        throw new RuntimeException("Empresa com o CNPJ [" + cnpj + "] não foi encontrada");
     }
 
     @Override
