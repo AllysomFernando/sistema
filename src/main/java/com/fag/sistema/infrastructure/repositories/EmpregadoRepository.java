@@ -1,8 +1,6 @@
 package com.fag.sistema.infrastructure.repositories;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +10,6 @@ import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 
 @Repository
 public class EmpregadoRepository implements IEmpregadoVendor {
-    private Map<String, Empregado> empregados = new HashMap<>();
     private GsonAdapter<Empregado> data;
 
     public EmpregadoRepository() {
@@ -26,13 +23,15 @@ public class EmpregadoRepository implements IEmpregadoVendor {
 
     @Override
     public Empregado getEmpregadoByCPF(String cpf) {
-        return empregados.get(cpf);
+        List<Empregado> result = this.data.readListFromJson(Empregado[].class);
+
+        for (Empregado empregado : result) {
+            if (empregado.getCpf().equals(cpf)) {
+                return empregado;
+            }
+        }
+
+        throw new RuntimeException("Empregado não encontrado");
     }
 
-    @Override
-    public void addAllEmpregados(List<Empregado> empregadoList) {
-        for (Empregado empregado : empregadoList) {
-            this.empregados.put(empregado.getCpf(), empregado);
-        }
-    }
 }

@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IEmpregadoVendor {
     List<Empregado> getAllEmpregados();
+
     Empregado getEmpregadoByCPF(String cpf);
-    void addAllEmpregados(List<Empregado> empregadoList);
 }

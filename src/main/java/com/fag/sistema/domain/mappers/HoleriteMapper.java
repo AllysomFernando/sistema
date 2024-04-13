@@ -11,6 +11,7 @@ public class HoleriteMapper {
         holerite.setProventos(dto.getProventos());
         return holerite;
     }
+
     public static HoleriteDTO toDTO(Holerite entity) {
         HoleriteDTO dto = new HoleriteDTO();
         dto.setEmpregador(entity.getEmpregador());

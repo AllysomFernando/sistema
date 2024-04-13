@@ -2,7 +2,7 @@
   {
     "nome": "João Silva",
     "genero": "MASCULINO",
-    "CPF": "12345678910",
+    "cpf": "12345678910",
     "dataNascimento": "1990-01-15",
     "dependentes": [
       {

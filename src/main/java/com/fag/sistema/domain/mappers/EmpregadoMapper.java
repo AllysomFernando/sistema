@@ -16,7 +16,8 @@ public class EmpregadoMapper {
                 dto.getContrato(),
                 dto.getEndereco());
     }
-    public static EmpregadoDTO toDTO(Empregado bo){
+
+    public static EmpregadoDTO toDTO(Empregado bo) {
         EmpregadoDTO dto = new EmpregadoDTO();
         dto.setNome(bo.getNome());
         dto.setGenero(bo.getGenero());

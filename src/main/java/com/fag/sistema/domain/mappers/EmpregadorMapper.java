@@ -15,10 +15,10 @@ public class EmpregadorMapper {
                 dto.getRamoAtividade(),
                 dto.getInscricao(),
                 dto.getContato(),
-                dto.getEndereco()
-        );
+                dto.getEndereco());
     }
-    public static EmpregadorDTO toDTO(Empregador bo){
+
+    public static EmpregadorDTO toDTO(Empregador bo) {
         EmpregadorDTO dto = new EmpregadorDTO();
 
         dto.setCNPJ(bo.getCnpj());
