@@ -1,14 +1,12 @@
 package com.fag.sistema.domain.repositories;
 
-import com.fag.sistema.domain.entities.Empregador;
-
 import java.util.List;
 
-public interface IEmpresaVendor<Empregador> {
+import com.fag.sistema.domain.entities.Empregador;
+
+public interface IEmpresaVendor extends IAbstractRepository<Empregador> {
     List<Empregador> getAllEmpregador();
 
     Empregador getEmpresaByCNPJ(String cnpj);
-
-    void addAllEmpresas(List<Empregador> empresaList);
 
 }

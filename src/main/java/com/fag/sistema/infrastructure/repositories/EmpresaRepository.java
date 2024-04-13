@@ -12,7 +12,7 @@ import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 
 @Repository
-public class EmpresaRepository implements IEmpresaVendor<Empregador> {
+public class EmpresaRepository implements IEmpresaVendor {
     private Map<String, Empregador> empresas = new HashMap<>();
     private GsonAdapter<Empregador> data = new GsonAdapter<Empregador>("data.json");
 
@@ -25,10 +25,9 @@ public class EmpresaRepository implements IEmpresaVendor<Empregador> {
     public Empregador getEmpresaByCNPJ(String cnpj) {
         return empresas.get(cnpj);
     }
+
     @Override
-    public void addAllEmpresas(List<Empregador> empresaList) {
-        for (Empregador empresa : empresaList) {
-            this.empresas.put(empresa.getCnpj(), empresa);
-        }
+    public Empregador[] getAll() {
+        return this.data.readArrayFromJson(Empregador[].class);
     }
 }

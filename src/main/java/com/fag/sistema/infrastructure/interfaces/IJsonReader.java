@@ -7,5 +7,5 @@ public interface IJsonReader<T> {
 
   public List<T> readListFromJson(Class<T[]> clazz);
 
-  public T[] readArrayFromJson();
+  public T[] readArrayFromJson(Class<T[]> clazz);
 }
