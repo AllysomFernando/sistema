@@ -2,11 +2,14 @@ package com.fag.sistema.infrastructure.adapters.gson;
 
 import java.io.FileReader;
 import java.nio.file.FileSystems;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
+import com.fag.sistema.infrastructure.adapters.gson.typeAdapters.LocalDateTypeAdapter;
 import com.fag.sistema.infrastructure.interfaces.IJsonReader;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
 public class GsonAdapter<T> implements IJsonReader<T> {
@@ -16,7 +19,7 @@ public class GsonAdapter<T> implements IJsonReader<T> {
   private String fileName;
 
   public GsonAdapter(String fileName) {
-    this.gson = new Gson();
+    this.gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter()).create();
     this.fileName = fileName;
   }
 
