@@ -2,7 +2,7 @@ package com.fag.sistema.domain.dto;
 
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
-import com.fag.sistema.domain.entities.Proventos;
+import com.fag.sistema.domain.entities.Provento;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,5 +11,5 @@ import lombok.Setter;
 public class HoleriteDTO {
    private Empregador empregador;
    private Empregado empregado;
-   private Proventos proventos;
+   private Provento proventos;
 }

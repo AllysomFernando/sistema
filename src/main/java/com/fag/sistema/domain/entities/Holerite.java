@@ -12,5 +12,5 @@ import lombok.Setter;
 public class Holerite {
     private Empregador empregador;
     private Empregado empregado;
-    private Proventos proventos;
+    private Provento proventos;
 }
