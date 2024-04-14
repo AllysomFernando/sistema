@@ -8,15 +8,21 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
-public class AuxilioCreche implements IBeneficioUseCase {
+public class AuxilioCreche extends Provento implements IBeneficioUseCase {
+
+  public AuxilioCreche() {
+    this.setDescricao("Auxilio Creche");
+  }
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
+    BigDecimal referencia = new BigDecimal("0.05");
 
     if (empregado.getDependentes() == null || empregado.getDependentes().isEmpty())
       return beneficio;
@@ -28,10 +34,12 @@ public class AuxilioCreche implements IBeneficioUseCase {
       LocalDate now = LocalDate.now();
       Long diferencaEmMeses = ChronoUnit.MONTHS.between(d.getDataNascimento(), now);
       if (diferencaEmMeses < 6) {
-        BigDecimal auxilioCreche = salarioBruto.multiply(new BigDecimal("0.05")).setScale(2, RoundingMode.HALF_UP);
+        BigDecimal auxilioCreche = salarioBruto.multiply(referencia).setScale(2, RoundingMode.HALF_UP);
         beneficio = beneficio.add(auxilioCreche);
       }
     }
+
+    this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
 
     return beneficio;
   }

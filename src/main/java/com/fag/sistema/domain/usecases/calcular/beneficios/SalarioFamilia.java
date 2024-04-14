@@ -8,13 +8,18 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
-public class SalarioFamilia implements IBeneficioUseCase {
+public class SalarioFamilia extends Provento implements IBeneficioUseCase {
 
   private final BigDecimal SALARIO_MINIMO = new BigDecimal("1412.00");
+
+  public SalarioFamilia() {
+    this.setDescricao("Salário Família");
+  }
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
@@ -35,11 +40,17 @@ public class SalarioFamilia implements IBeneficioUseCase {
       }
     }
 
+    this.setVencimento(beneficio);
+
     return beneficio;
   }
 
   private BigDecimal getBeneficio() {
-    return this.SALARIO_MINIMO.multiply(new BigDecimal("0.05")).setScale(2, RoundingMode.DOWN);
+    BigDecimal referencia = new BigDecimal("0.05");
+
+    this.setReferencia(referencia);
+
+    return this.SALARIO_MINIMO.multiply(referencia).setScale(2, RoundingMode.DOWN);
   }
 
 }

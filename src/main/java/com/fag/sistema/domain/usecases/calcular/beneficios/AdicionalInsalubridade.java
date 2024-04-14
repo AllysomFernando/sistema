@@ -23,16 +23,10 @@ public class AdicionalInsalubridade extends Provento implements IBeneficioUseCas
 
     BigDecimal beneficio = salarioBruto.multiply(insalubridade.getMultiplicador());
     BigDecimal formatedValue = beneficio.setScale(2, RoundingMode.DOWN); 
-    
 
-    this.setReferencia(this.getPorcentagem(insalubridade.getMultiplicador()));
-    this.setVencimento(formatedValue);
+    this.setProvento("Adicional de Insalubridade", insalubridade.getMultiplicador(), formatedValue, BigDecimal.ZERO);
 
     return formatedValue;
-  }
-
-  private Float getPorcentagem(BigDecimal value) {
-    return value.floatValue() * 100;
   }
 
 }

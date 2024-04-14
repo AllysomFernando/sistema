@@ -5,12 +5,15 @@ import java.math.RoundingMode;
 
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
-public class AdicionalNoturno implements IBeneficioUseCase {
+public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
+
     @Override
     public BigDecimal calculate(Empregado empregado) {
+        this.setDescricao("Adicional Noturno");
 
         Float horasNoturnas = empregado.getHorario().getHorasAdicionalNoturno();
         BigDecimal valorAdicionalNoturno = new BigDecimal("0");
@@ -29,6 +32,8 @@ public class AdicionalNoturno implements IBeneficioUseCase {
                         .subtract(valorHora)
                         .multiply(new BigDecimal(horasNoturnas))
                         .setScale(2, RoundingMode.DOWN);
+
+                this.setProvento(this.getDescricao(), porcentagem, valorAdicionalNoturno, BigDecimal.ZERO);
             }
         }
 

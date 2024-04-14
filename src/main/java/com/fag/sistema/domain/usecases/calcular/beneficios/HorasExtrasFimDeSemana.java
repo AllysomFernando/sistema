@@ -3,31 +3,28 @@ package com.fag.sistema.domain.usecases.calcular.beneficios;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.springframework.stereotype.Service;
-
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
-@Service
-public class HorasExtras extends Provento implements IBeneficioUseCase {
-
-  public HorasExtras() {
-    this.setDescricao("Horas extras");
+public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCase {
+  public HorasExtrasFimDeSemana() {
+    this.setDescricao("Horas extras em fins de semana");
   }
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220")).setScale(2, RoundingMode.HALF_UP);
-    BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtraEmDiasDaSemana(valorHora);
 
-    float quantidadeHorasExtra = empregado.getHorario().getHorasExtras();
+    BigDecimal valorHoraExtraFimsDeSemana = this.valorHoraExtraEmFimsDeSemana(valorHora);
+
+    float quantidadeHoraExtraFDS = empregado.getHorario().getHorasExtrasEmFinsDeSemana();
 
     BigDecimal totalHorasExtras = BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
 
-    if (quantidadeHorasExtra > 0) {
+    if (quantidadeHoraExtraFDS > 0) {
       totalHorasExtras = totalHorasExtras
-          .add(valorHoraExtraDiasDeSemana.multiply(new BigDecimal(quantidadeHorasExtra)));
+          .add(valorHoraExtraFimsDeSemana.multiply(new BigDecimal(quantidadeHoraExtraFDS)));
     }
 
     this.setVencimento(totalHorasExtras);
@@ -35,13 +32,12 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
     return totalHorasExtras;
   }
 
-  private BigDecimal valorHoraExtraEmDiasDaSemana(BigDecimal valorHoraDeTrabalho) {
-    BigDecimal referencia = new BigDecimal("0.5"); 
+  private BigDecimal valorHoraExtraEmFimsDeSemana(BigDecimal valorHoraDeTrabalho) {
+    BigDecimal referencia = new BigDecimal("1.0");
     BigDecimal result = referencia.multiply(valorHoraDeTrabalho);
 
     this.setReferencia(referencia);
 
     return result.add(valorHoraDeTrabalho);
   }
-
 }
