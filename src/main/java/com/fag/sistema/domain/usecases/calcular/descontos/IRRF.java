@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.enums.EnumIRRF;
+import com.fag.sistema.domain.enums.RelacaoIRRF;
 
 @Service
 public class IRRF extends Provento implements IDescontoUseCase {
@@ -22,9 +22,9 @@ public class IRRF extends Provento implements IDescontoUseCase {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0");
     BigDecimal discountValue = new BigDecimal("0");
-    EnumIRRF[] relacaoIrrf = EnumIRRF.values();
+    RelacaoIRRF[] relacaoIrrf = RelacaoIRRF.values();
 
-    for (EnumIRRF element : relacaoIrrf) {
+    for (RelacaoIRRF element : relacaoIrrf) {
       if (element.compare(salarioBruto)) {
         referencia = element.getReferencia();
         discountValue = salarioBruto.multiply(referencia);
