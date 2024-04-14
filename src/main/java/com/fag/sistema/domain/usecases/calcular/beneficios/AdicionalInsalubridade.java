@@ -1,7 +1,6 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import org.springframework.stereotype.Component;
 
@@ -22,9 +21,11 @@ public class AdicionalInsalubridade extends Provento implements IBeneficioUseCas
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
     BigDecimal beneficio = salarioBruto.multiply(insalubridade.getMultiplicador());
-    BigDecimal formatedValue = beneficio.setScale(2, RoundingMode.DOWN); 
+    BigDecimal formatedValue = beneficio.setScale(2); 
 
     this.setProvento("Adicional de Insalubridade", insalubridade.getMultiplicador(), formatedValue, BigDecimal.ZERO);
+
+    empregado.getContrato().getSalario().somarBasesDeCalculo(formatedValue);
 
     return formatedValue;
   }
