@@ -15,6 +15,7 @@ public class Salario {
   private BigDecimal base;
   private BigDecimal baseCalculoIRRF;
   private BigDecimal baseCalculoFGTS;
+  private BigDecimal FgtsMensal;
 
   public Salario(BigDecimal bruto) {
     this.bruto = bruto;
