@@ -12,9 +12,27 @@ public class SalarioTest {
   void shouldIncrementBasesDeCalculoEqualy() {
     Salario salario = new Salario(new BigDecimal("3000"));
     salario.somarBasesDeCalculo(new BigDecimal("300"));
-    
+
     assertEquals(new BigDecimal("3300"), salario.getBaseCalculoFGTS());
     assertEquals(new BigDecimal("3300"), salario.getBaseCalculoInss());
     assertEquals(new BigDecimal("3300"), salario.getBaseCalculoIRRF());
+  }
+
+  @Test
+  void basesDeCalculoShouldHaveSameValueOfSalarioBrutoOnInit() {
+    Salario salario = new Salario(new BigDecimal("3000"));
+
+    assertEquals(new BigDecimal("3000"), salario.getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("3000"), salario.getBaseCalculoInss());
+    assertEquals(new BigDecimal("3000"), salario.getBaseCalculoIRRF());
+  }
+
+  @Test
+  void basesDeCalculoShouldHaveSameValueOfSalarioBrutoOnInit_Case2() {
+    Salario salario = new Salario();
+
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoFGTS());
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoInss());
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoIRRF());
   }
 }
