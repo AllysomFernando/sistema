@@ -11,6 +11,7 @@ import com.fag.sistema.domain.entities.Holerite;
 import com.fag.sistema.domain.mappers.EmpregadoMapper;
 import com.fag.sistema.domain.mappers.EmpregadorMapper;
 import com.fag.sistema.domain.mappers.HoleriteMapper;
+import com.fag.sistema.domain.mappers.ProventosMapper;
 
 @Service
 public class HoleriteService {
@@ -37,7 +38,7 @@ public class HoleriteService {
 
         holerite.setEmpregado(EmpregadoMapper.toBO(empregado));
         holerite.setEmpregador(EmpregadorMapper.toBO(empregador));
-        holerite.setProventos(proventos);
+        holerite.setProventos(ProventosMapper.toBO(proventos));
 
         HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
 

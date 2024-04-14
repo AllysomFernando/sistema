@@ -21,9 +21,9 @@
       "ativo": true,
       "descricao": "Contrato de trabalho efetivo.",
       "salario": {
-        "bruto": 0,
+        "bruto": "3000",
         "liquido": 0,
-        "base": 8000.0
+        "base": "3000"
       }
     },
     "horario": {
