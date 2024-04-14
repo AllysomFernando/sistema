@@ -7,9 +7,9 @@ import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
 
-import com.fag.sistema.domain.entities.Contrato;
-import com.fag.sistema.domain.entities.Empregado;
-import com.fag.sistema.domain.entities.Salario;
+import com.fag.sistema.domain.entities.empregado.Contrato;
+import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empregado.Salario;
 
 public class ContribuicaoSindicalTest {
 

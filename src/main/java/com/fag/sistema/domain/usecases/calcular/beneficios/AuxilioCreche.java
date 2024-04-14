@@ -6,10 +6,10 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import com.fag.sistema.domain.entities.Dependente;
-import com.fag.sistema.domain.entities.Empregado;
-
 import org.springframework.stereotype.Service;
+
+import com.fag.sistema.domain.entities.empregado.Dependente;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
 public class AuxilioCreche implements IBeneficioUseCase {

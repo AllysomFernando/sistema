@@ -2,7 +2,7 @@ package com.fag.sistema.service;
 
 
 import com.fag.sistema.domain.dto.EmpregadoDTO;
-import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.mappers.EmpregadoMapper;
 import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 

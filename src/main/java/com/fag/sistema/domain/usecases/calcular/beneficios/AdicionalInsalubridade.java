@@ -5,8 +5,8 @@ import java.math.RoundingMode;
 
 import org.springframework.stereotype.Service;
 
-import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Provento;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 @Service

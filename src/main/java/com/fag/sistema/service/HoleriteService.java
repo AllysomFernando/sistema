@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.dto.HoleriteDTO;
-import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.dto.ProventosDTO;
 import com.fag.sistema.domain.entities.Empregador;
 import com.fag.sistema.domain.entities.Provento;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
@@ -28,7 +29,7 @@ public class HoleriteService {
         EmpregadoDTO empregado = empregadoService.getEmpregadoByCpf(cpf);
         EmpregadorDTO empregador = empresaService.getEmpresaByCNPJ(cnpj);
 
-        Provento proventos = new Provento();
+        ProventosDTO proventos = proventosService.calcularProventos(empregado);
 
         Holerite holerite = new Holerite();
         holerite.setEmpregado(empregado);

@@ -1,7 +1,7 @@
 package com.fag.sistema.domain.mappers;
 
 import com.fag.sistema.domain.dto.EmpregadoDTO;
-import com.fag.sistema.domain.entities.Empregado;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 
 public class EmpregadoMapper {
     public static Empregado toBO(EmpregadoDTO dto) {

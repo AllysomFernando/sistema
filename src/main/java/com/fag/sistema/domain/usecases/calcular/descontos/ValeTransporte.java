@@ -3,9 +3,9 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import com.fag.sistema.domain.entities.Empregado;
-
 import org.springframework.stereotype.Service;
+
+import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
 public class ValeTransporte implements IDescontoUseCase {

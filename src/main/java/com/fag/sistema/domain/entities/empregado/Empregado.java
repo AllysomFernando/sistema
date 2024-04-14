@@ -1,8 +1,10 @@
-package com.fag.sistema.domain.entities;
+package com.fag.sistema.domain.entities.empregado;
 
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fag.sistema.domain.entities.Endereco;
+import com.fag.sistema.domain.entities.Horario;
 import com.fag.sistema.domain.enums.EnumGenero;
 
 import lombok.AllArgsConstructor;
