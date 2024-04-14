@@ -17,4 +17,14 @@ public class ProventoTest {
     assertEquals(15.0f, provento.getReferencia());
   }
 
+  @Test
+  void shouldNotHaveNullAttributes() {
+    Provento provento = new Provento();
+
+    assertEquals("", provento.getDescricao());
+    assertEquals(0.0f, provento.getReferencia());
+    assertEquals(BigDecimal.ZERO, provento.getDesconto());
+    assertEquals(BigDecimal.ZERO, provento.getVencimento());
+  }
+
 }
