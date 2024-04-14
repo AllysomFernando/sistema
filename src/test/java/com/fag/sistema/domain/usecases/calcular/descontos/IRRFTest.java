@@ -17,6 +17,17 @@ public class IRRFTest {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
     Salario salario = new Salario(salarioBruto);
+
+    contrato.setSalario(salario);
+    empregado.setContrato(contrato);
+
+    return empregado;
+  }
+
+  private Empregado makeEmpregadoComInss(BigDecimal salarioBruto) {
+    Empregado empregado = new Empregado();
+    Contrato contrato = new Contrato();
+    Salario salario = new Salario(salarioBruto);
     INSS inss = new INSS();
 
     contrato.setSalario(salario);
@@ -28,10 +39,21 @@ public class IRRFTest {
   }
 
   @Test
-  @Description("Should calculate IRRF with no discount and a 1900 salary")
+  @Description("Should calculate IRRF with no discount and a 1900 salary with no inss")
   public void shouldCalculateIRRFWithNoDiscount() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("1900"));
+
+    BigDecimal discount = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("0.00"), discount);
+  }
+
+  @Test
+  @Description("Should calculate IRRF with no discount and a 1900 salary with inss")
+  public void shouldCalculateIRRFWithNoDiscount_INSS() {
+    IRRF sut = new IRRF();
+    Empregado empregado = makeEmpregadoComInss(new BigDecimal("1900"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -46,7 +68,9 @@ public class IRRFTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("142.79"), discount);
+    assertEquals(new BigDecimal("142.80"), discount);
+    assertEquals(7.5f, sut.getReferencia());
+    assertEquals(new BigDecimal("142.80"), sut.getDesconto());
   }
 
   @Test
@@ -91,6 +115,19 @@ public class IRRFTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("562.65"), discount);
+  }
+
+  @Test
+  @Description("Should calculate IRRF with 7,5% discount and a 3000.00 salary with INSS")
+  public void shouldCalculateIRRFWithSevenAndHalfPercent_INSS() {
+    IRRF sut = new IRRF();
+    Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
+
+    BigDecimal discount = sut.calculate(empregado);
+
+    assertEquals(new BigDecimal("200.25"), discount);
+    assertEquals(7.5f, sut.getReferencia());
+    assertEquals(new BigDecimal("200.25"), sut.getDesconto());
   }
 
 }
