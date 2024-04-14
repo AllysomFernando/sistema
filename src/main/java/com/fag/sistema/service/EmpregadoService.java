@@ -25,7 +25,7 @@ public class EmpregadoService {
                 .collect(Collectors.toList());
     }
     
-    public EmpregadoDTO getEmpregadoporCPF(String cpf) {
+    public EmpregadoDTO getEmpregadoByCpf(String cpf) {
         Empregado empregado = empregadoRepository.getEmpregadoByCPF(cpf);
         if(empregado != null){
             return EmpregadoMapper.toDTO(empregado);

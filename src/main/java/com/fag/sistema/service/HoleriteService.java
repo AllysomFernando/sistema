@@ -4,29 +4,32 @@ import com.fag.sistema.domain.mappers.HoleriteMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.dto.EmpregadoDTO;
+import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.dto.HoleriteDTO;
 import com.fag.sistema.domain.entities.Empregado;
 import com.fag.sistema.domain.entities.Empregador;
-import com.fag.sistema.domain.entities.Proventos;
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
 public class HoleriteService {
     @Autowired
-    private EmpregadoRepository empregadoRepository;
+    private EmpregadoService empregadoService;
 
     @Autowired
-    private EmpresaRepository empresaRepository;
+    private EmpresaService empresaService;
 
     @Autowired
     private ProventosService proventosService;
 
     public HoleriteDTO criarHolerite(String cpf, String cnpj){
-        Empregado empregado = empregadoRepository.getEmpregadoByCPF(cpf);
-        Empregador empregador = empresaRepository.getEmpresaByCNPJ(cnpj);
+        EmpregadoDTO empregado = empregadoService.getEmpregadoByCpf(cpf);
+        EmpregadorDTO empregador = empresaService.getEmpresaByCNPJ(cnpj);
 
-        Proventos proventos = proventosService.calcularProventos(empregado);
+        Provento proventos = new Provento();
+
         Holerite holerite = new Holerite();
         holerite.setEmpregado(empregado);
         holerite.setEmpregador(empregador);
