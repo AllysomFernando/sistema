@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.enums.EnumINSS;
+import com.fag.sistema.domain.enums.RelacaoINSS;
 
 @Service
 public class INSS extends Provento implements IDescontoUseCase {
@@ -23,9 +23,9 @@ public class INSS extends Provento implements IDescontoUseCase {
     BigDecimal discountValue = new BigDecimal("642.34");
     BigDecimal referencia = new BigDecimal("0");
 
-    EnumINSS[] relacaoInss = EnumINSS.values();
+    RelacaoINSS[] relacaoInss = RelacaoINSS.values();
 
-    for (EnumINSS inss : relacaoInss) {
+    for (RelacaoINSS inss : relacaoInss) {
       if (inss.compare(salarioBruto)) {
         referencia = inss.getReferencia();
         discountValue = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
