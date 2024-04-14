@@ -1,4 +1,4 @@
-package com.fag.sistema.domain.entities;
+package com.fag.sistema.domain.entities.empresa;
 
 import com.fag.sistema.domain.enums.EnumTipoInscricao;
 

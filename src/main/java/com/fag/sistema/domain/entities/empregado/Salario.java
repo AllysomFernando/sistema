@@ -13,6 +13,8 @@ public class Salario {
   private BigDecimal bruto;
   private BigDecimal liquido;
   private BigDecimal base;
+  private BigDecimal baseCalculoIRRF;
+  private BigDecimal baseCalculoFGTS;
 
   public Salario(BigDecimal bruto) {
     this.bruto = bruto;

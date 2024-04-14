@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 public class EmpresaRepositoryTest {
   

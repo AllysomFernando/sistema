@@ -4,6 +4,7 @@ import com.fag.sistema.domain.entities.*;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Doenca;
+import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.enums.EnumGenero;
 import lombok.Getter;
 import lombok.Setter;

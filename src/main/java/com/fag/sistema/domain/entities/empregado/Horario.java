@@ -1,4 +1,4 @@
-package com.fag.sistema.domain.entities;
+package com.fag.sistema.domain.entities.empregado;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

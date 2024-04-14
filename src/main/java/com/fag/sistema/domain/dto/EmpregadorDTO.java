@@ -2,7 +2,8 @@ package com.fag.sistema.domain.dto;
 
 import com.fag.sistema.domain.entities.Contato;
 import com.fag.sistema.domain.entities.Endereco;
-import com.fag.sistema.domain.entities.Inscricao;
+import com.fag.sistema.domain.entities.empresa.Inscricao;
+
 import lombok.Getter;
 import lombok.Setter;
 

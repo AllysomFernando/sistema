@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 

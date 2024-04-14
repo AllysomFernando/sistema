@@ -1,4 +1,7 @@
-package com.fag.sistema.domain.entities;
+package com.fag.sistema.domain.entities.empresa;
+
+import com.fag.sistema.domain.entities.Contato;
+import com.fag.sistema.domain.entities.Endereco;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

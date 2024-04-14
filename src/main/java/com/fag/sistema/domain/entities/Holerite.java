@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.entities;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

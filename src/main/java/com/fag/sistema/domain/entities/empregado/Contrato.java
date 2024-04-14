@@ -2,7 +2,7 @@ package com.fag.sistema.domain.entities.empregado;
 
 import java.time.LocalDate;
 
-import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 import com.fag.sistema.domain.enums.EnumHorarioTrabalho;
 

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fag.sistema.domain.dto.EmpregadorDTO;
-import com.fag.sistema.domain.entities.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.mappers.EmpregadorMapper;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 

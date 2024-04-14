@@ -8,9 +8,9 @@ import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.dto.HoleriteDTO;
 import com.fag.sistema.domain.dto.ProventosDTO;
-import com.fag.sistema.domain.entities.Empregador;
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
