@@ -1,6 +1,5 @@
 package com.fag.sistema.service;
-import com.fag.sistema.domain.entities.Holerite;
-import com.fag.sistema.domain.mappers.HoleriteMapper;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,11 +7,10 @@ import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.dto.HoleriteDTO;
 import com.fag.sistema.domain.dto.ProventosDTO;
-import com.fag.sistema.domain.entities.Provento;
-import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
-import com.fag.sistema.infrastructure.repositories.EmpregadoRepository;
-import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
+import com.fag.sistema.domain.entities.Holerite;
+import com.fag.sistema.domain.mappers.EmpregadoMapper;
+import com.fag.sistema.domain.mappers.EmpregadorMapper;
+import com.fag.sistema.domain.mappers.HoleriteMapper;
 
 @Service
 public class HoleriteService {
@@ -25,21 +23,25 @@ public class HoleriteService {
     @Autowired
     private ProventosService proventosService;
 
-    public HoleriteDTO criarHolerite(String cpf, String cnpj){
+    public HoleriteDTO criarHolerite(String cpf, String cnpj) {
         EmpregadoDTO empregado = empregadoService.getEmpregadoByCpf(cpf);
         EmpregadorDTO empregador = empresaService.getEmpresaByCNPJ(cnpj);
 
-        ProventosDTO proventos = proventosService.calcularProventos(empregado);
+        ProventosDTO proventos = proventosService.calcularProventos(EmpregadoMapper.toBO(empregado));
 
         Holerite holerite = new Holerite();
-        holerite.setEmpregado(empregado);
-        holerite.setEmpregador(empregador);
+
+        empregado.getContrato().getSalario()
+                .setLiquido((empregado.getContrato().getSalario().getBruto().add(proventos.getTotalBeneficios()))
+                        .subtract(proventos.getTotalDescontos()));
+
+        holerite.setEmpregado(EmpregadoMapper.toBO(empregado));
+        holerite.setEmpregador(EmpregadorMapper.toBO(empregador));
         holerite.setProventos(proventos);
 
         HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
 
         return holeriteDTO;
     }
-
 
 }
