@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.entities;
 
-import com.fag.sistema.domain.dto.ProventosDTO;
+import java.math.BigDecimal;
+
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empregador;
 
@@ -16,5 +17,9 @@ import lombok.Setter;
 public class Holerite {
     private Empregador empregador;
     private Empregado empregado;
-    private ProventosDTO proventos;
+    private Proventos proventos;
+    private BigDecimal baseCalculoIrrf;
+    private BigDecimal baseCalculoFgts;
+    private BigDecimal salarioContribuicaoInss;
+    private BigDecimal FgtsMensal;
 }
