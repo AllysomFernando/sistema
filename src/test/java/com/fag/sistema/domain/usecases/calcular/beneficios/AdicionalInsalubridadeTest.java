@@ -24,6 +24,21 @@ public class AdicionalInsalubridadeTest {
   }
 
   @Test
+  @Description("Should set provento info")
+  public void shouldSetProventoInfo() {
+    AdicionalInsalubridade sut = new AdicionalInsalubridade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
+        EnumGrauInsalubridade.BAIXO);
+
+    sut.calculate(empregado);
+
+    assertEquals("Adicional de Insalubridade", sut.getDescricao());
+    assertEquals(10f, sut.getReferencia());
+    assertEquals(new BigDecimal("200.00"), sut.getVencimento());
+    assertEquals(BigDecimal.ZERO, sut.getDesconto());
+  }
+
+  @Test
   @Description("Should calculate Adicional Insalubridade with grau BAIXO")
   public void shouldCalculateAdicionalInsalubridadeGrauBaixo() {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
