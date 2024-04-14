@@ -3,11 +3,15 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
+
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.enums.RelacaoINSS;
 
-
+@Component
+@Order(1)
 public class INSS extends Provento implements IDescontoUseCase {
 
   public INSS() {
@@ -30,6 +34,8 @@ public class INSS extends Provento implements IDescontoUseCase {
         break;
       }
     }
+
+    empregado.getContrato().getSalario().setBaseCalculoIRRF(salarioBruto.subtract(discountValue));
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, discountValue);
 

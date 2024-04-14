@@ -3,10 +3,13 @@ package com.fag.sistema.domain.usecases.calcular.beneficios;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.springframework.stereotype.Component;
+
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
+@Component
 public class AdicionalInsalubridade extends Provento implements IBeneficioUseCase {
 
   public AdicionalInsalubridade() {

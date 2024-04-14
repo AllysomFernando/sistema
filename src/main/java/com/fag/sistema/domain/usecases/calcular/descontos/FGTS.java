@@ -3,11 +3,13 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import org.springframework.stereotype.Component;
+
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
-
-public class FGTS extends Provento {
+@Component
+public class FGTS extends Provento implements IDescontoUseCase {
 
   public FGTS() {
     this.setDescricao("FGTS");
@@ -19,6 +21,7 @@ public class FGTS extends Provento {
     BigDecimal desconto = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, desconto);
+    empregado.getContrato().getSalario().setFgtsMensal(desconto);
 
     return desconto;
   }

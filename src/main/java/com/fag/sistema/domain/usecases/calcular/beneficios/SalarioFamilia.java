@@ -6,11 +6,13 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
-
+@Component
 public class SalarioFamilia extends Provento implements IBeneficioUseCase {
 
   private final BigDecimal SALARIO_MINIMO = new BigDecimal("1412.00");
