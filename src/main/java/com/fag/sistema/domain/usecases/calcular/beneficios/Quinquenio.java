@@ -4,12 +4,10 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 
-import org.springframework.stereotype.Service;
-
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
-@Service
+
 public class Quinquenio extends Provento implements IBeneficioUseCase {
 
   public Quinquenio() {

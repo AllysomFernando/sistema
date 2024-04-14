@@ -7,9 +7,7 @@ import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
-import org.springframework.stereotype.Service;
 
-@Service
 public class AdicionalPericulosidade extends Provento implements IBeneficioUseCase {
 
   public AdicionalPericulosidade() {

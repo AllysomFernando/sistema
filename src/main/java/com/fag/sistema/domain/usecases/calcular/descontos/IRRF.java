@@ -3,13 +3,11 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.springframework.stereotype.Service;
-
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.enums.RelacaoIRRF;
 
-@Service
+
 public class IRRF extends Provento implements IDescontoUseCase {
 
   public IRRF() {
