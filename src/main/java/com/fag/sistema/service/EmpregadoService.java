@@ -1,6 +1,5 @@
 package com.fag.sistema.service;
 
-
 import com.fag.sistema.domain.dto.EmpregadoDTO;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.mappers.EmpregadoMapper;
@@ -14,7 +13,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class EmpregadoService {
-    
+
     @Autowired
     private EmpregadoRepository empregadoRepository;
 
@@ -24,13 +23,13 @@ public class EmpregadoService {
                 .map(EmpregadoMapper::toDTO)
                 .collect(Collectors.toList());
     }
-    
+
     public EmpregadoDTO getEmpregadoByCpf(String cpf) {
         Empregado empregado = empregadoRepository.getEmpregadoByCPF(cpf);
-        if(empregado != null){
+        if (empregado != null) {
             return EmpregadoMapper.toDTO(empregado);
-        }else{
-            return null;
         }
+
+        return null;
     }
 }
