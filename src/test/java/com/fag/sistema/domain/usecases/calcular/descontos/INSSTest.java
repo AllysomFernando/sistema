@@ -13,10 +13,12 @@ import com.fag.sistema.domain.entities.empregado.Salario;
 
 public class INSSTest {
 
-  private Empregado makeEmpregadoComSalario(BigDecimal salarioBruto) {
+  private Empregado makeEmpregado(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
-    empregado.setContrato(new Contrato());
-    empregado.getContrato().setSalario(new Salario(salarioBruto));
+    Contrato contrato = new Contrato();
+    Salario salario = new Salario(salarioBruto);
+    contrato.setSalario(salario);
+    empregado.setContrato(contrato);
 
     return empregado;
   }
@@ -26,11 +28,12 @@ public class INSSTest {
   public void shouldCalculateINSSWithEightPercent() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1600.00"));
+    Empregado empregado = makeEmpregado(new BigDecimal("1600"));
 
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("128.00"), discount);
+    assertEquals(8.0f, sut.getReferencia());
   }
 
   @Test
@@ -38,7 +41,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithEightPercent_Case2() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1751.81"));
+    Empregado empregado = makeEmpregado(new BigDecimal("1751.81"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -50,7 +53,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithNinePercent() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1800.00"));
+    Empregado empregado = makeEmpregado(new BigDecimal("1800.00"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -62,7 +65,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithNinePercent_Case2() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1751.82"));
+    Empregado empregado = makeEmpregado(new BigDecimal("1751.82"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -74,7 +77,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithNinePercent_Case3() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("2919.72"));
+    Empregado empregado = makeEmpregado(new BigDecimal("2919.72"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -86,7 +89,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithElevenPercent() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("4000.00"));
+    Empregado empregado = makeEmpregado(new BigDecimal("4000.00"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -98,7 +101,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithElevenPercent_Case2() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("2919.73"));
+    Empregado empregado = makeEmpregado(new BigDecimal("2919.73"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -110,7 +113,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithElevenPercent_Case3() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("5839.45"));
+    Empregado empregado = makeEmpregado(new BigDecimal("5839.45"));
 
     BigDecimal discount = sut.calculate(empregado);
 
@@ -122,7 +125,7 @@ public class INSSTest {
   public void shouldCalculateINSSWithFixedDiscountValue() {
     INSS sut = new INSS();
 
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("6000.00"));
+    Empregado empregado = makeEmpregado(new BigDecimal("6000.00"));
 
     BigDecimal discount = sut.calculate(empregado);
 

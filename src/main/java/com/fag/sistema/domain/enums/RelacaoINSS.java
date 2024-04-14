@@ -6,7 +6,7 @@ import lombok.Getter;
 
 @Getter
 public enum RelacaoINSS {
-  OITO(new BigDecimal("1751.81"), BigDecimal.ZERO, new BigDecimal("0.075")) {
+  OITO(new BigDecimal("1751.81"), BigDecimal.ZERO, new BigDecimal("0.08")) {
     @Override
     public boolean compare(BigDecimal value) {
       return value.compareTo(this.getSalarioInicial()) <= 0;
