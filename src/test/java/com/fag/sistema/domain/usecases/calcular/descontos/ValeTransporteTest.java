@@ -29,6 +29,6 @@ public class ValeTransporteTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("90.00"), discount);
+    assertEquals(new BigDecimal("180.00"), discount);
   }
 }

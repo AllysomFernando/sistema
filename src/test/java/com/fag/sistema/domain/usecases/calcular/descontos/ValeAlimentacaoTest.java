@@ -25,11 +25,11 @@ public class ValeAlimentacaoTest {
   @Description("Should calculate Vale Alimentação")
   public void shouldCalculateValeAlimentacao_Case1() {
     ValeAlimentacao sut = new ValeAlimentacao();
-    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1900.00"));
+    Empregado empregado = makeEmpregadoComSalario(new BigDecimal("3000.00"));
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("285.00"), discount);
+    assertEquals(new BigDecimal("300.00"), discount);
   }
 
   @Test
@@ -40,6 +40,6 @@ public class ValeAlimentacaoTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("600.00"), discount);
+    assertEquals(new BigDecimal("400.00"), discount);
   }
 }
