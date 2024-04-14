@@ -28,7 +28,7 @@ public class Provento {
     }
 
     public Float getPorcentagem(BigDecimal value) {
-        return value.floatValue() * 100;
+        return value.floatValue() * 100.0f;
     }
 
     public void setReferencia(BigDecimal value) {
@@ -37,5 +37,9 @@ public class Provento {
 
     public void setReferencia(Float value) {
         this.referencia = value;
+    }
+
+    public Float getReferencia() {
+        return Math.round(this.referencia) * 1.0f;
     }
 }
