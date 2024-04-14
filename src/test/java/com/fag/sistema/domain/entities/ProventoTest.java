@@ -18,6 +18,25 @@ public class ProventoTest {
   }
 
   @Test
+  void shouldGetBigDecimalPercentage() {
+    Provento provento = new Provento();
+
+    Float value = provento.getPorcentagem(new BigDecimal("0.075"));
+
+    assertEquals(7.5f, value);
+  }
+
+
+  @Test
+  void shouldParseBigDecimalToPercent_Case2() {
+    Provento provento = new Provento();
+
+    provento.setReferencia(new BigDecimal("0.075"));
+
+    assertEquals(7.5f, provento.getReferencia());
+  }
+
+  @Test
   void shouldNotHaveNullAttributes() {
     Provento provento = new Provento();
 

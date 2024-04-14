@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.entities;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -28,11 +29,12 @@ public class Provento {
     }
 
     public Float getPorcentagem(BigDecimal value) {
-        return value.floatValue() * 100.0f;
+        return value.multiply(new BigDecimal("100")).setScale(2, RoundingMode.DOWN).floatValue() * 1.0f;
     }
 
     public void setReferencia(BigDecimal value) {
-        this.referencia = this.getPorcentagem(value);
+        Float porcentagem = this.getPorcentagem(value); 
+        this.referencia = porcentagem;
     }
 
     public void setReferencia(Float value) {
@@ -40,6 +42,6 @@ public class Provento {
     }
 
     public Float getReferencia() {
-        return Math.round(this.referencia) * 1.0f;
+        return this.referencia * 1.0f;
     }
 }
