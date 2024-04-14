@@ -34,6 +34,7 @@ public class INSSTest {
 
     assertEquals(new BigDecimal("128.00"), discount);
     assertEquals(8.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -46,6 +47,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("140.14"), discount);
+    assertEquals(8.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -58,6 +61,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("162.00"), discount);
+    assertEquals(9.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -70,6 +75,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("157.66"), discount);
+    assertEquals(9.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -82,6 +89,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("262.77"), discount);
+    assertEquals(9.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -94,6 +103,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("440.00"), discount);
+    assertEquals(11.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -106,6 +117,8 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("321.17"), discount);
+    assertEquals(11.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -117,7 +130,9 @@ public class INSSTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("642.33"), discount);
+    assertEquals(new BigDecimal("642.34"), discount);
+    assertEquals(11.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 
   @Test
@@ -130,5 +145,7 @@ public class INSSTest {
     BigDecimal discount = sut.calculate(empregado);
 
     assertEquals(new BigDecimal("642.34"), discount);
+    assertEquals(0.0f, sut.getReferencia());
+    assertEquals(discount, sut.getDesconto());
   }
 }

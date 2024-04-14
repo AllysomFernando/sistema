@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.usecases.calcular.descontos;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -29,7 +30,7 @@ public class INSS extends Provento implements IDescontoUseCase {
     for (RelacaoINSS inss : relacaoInss) {
       if (inss.compare(salarioBruto)) {
         referencia = inss.getReferencia();
-        discountValue = salarioBruto.multiply(referencia).setScale(2);
+        discountValue = salarioBruto.multiply(referencia).setScale(2, RoundingMode.HALF_DOWN);
         break;
       }
     }
