@@ -1,7 +1,6 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 import org.springframework.stereotype.Component;
 
@@ -26,7 +25,7 @@ public class AdicionalPericulosidade extends Provento implements IBeneficioUseCa
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0.03");
-    BigDecimal beneficio = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
+    BigDecimal beneficio = salarioBruto.multiply(referencia).setScale(2);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
 

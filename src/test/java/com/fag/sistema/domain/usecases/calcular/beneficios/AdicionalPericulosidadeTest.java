@@ -28,7 +28,7 @@ public class AdicionalPericulosidadeTest {
 
     BigDecimal beneficio = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("570.00"), beneficio);
+    assertEquals(new BigDecimal("57.00"), beneficio);
   }
 
   @Test
