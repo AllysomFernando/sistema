@@ -5,38 +5,37 @@ import java.math.RoundingMode;
 
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.enums.EnumINSS;
 
 @Service
-public class INSS implements IDescontoUseCase {
+public class INSS extends Provento implements IDescontoUseCase {
+
+  public INSS() {
+    this.setDescricao("INSS");
+  }
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal discountValue = new BigDecimal("642.34");
+    BigDecimal referencia = new BigDecimal("0");
 
-    boolean eightPercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.81")) <= 0;
+    EnumINSS[] relacaoInss = EnumINSS.values();
 
-    boolean ninePercentDiscount = salarioBruto.compareTo(new BigDecimal("1751.82")) >= 0
-        && salarioBruto.compareTo(new BigDecimal("2919.72")) <= 0;
-
-    boolean elevenPercentDiscount = salarioBruto.compareTo(new BigDecimal("2919.73")) >= 0
-        && salarioBruto.compareTo(new BigDecimal("5839.45")) <= 0;
-
-    if (eightPercentDiscount) {
-      discountValue = salarioBruto.multiply(new BigDecimal("0.08"));
+    for (EnumINSS inss : relacaoInss) {
+      if (inss.compare(salarioBruto)) {
+        referencia = inss.getReferencia();
+        discountValue = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
+        break;
+      }
     }
 
-    if (ninePercentDiscount) {
-      discountValue = salarioBruto.multiply(new BigDecimal("0.09"));
-    }
+    this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, discountValue);
 
-    if (elevenPercentDiscount) {
-      discountValue = salarioBruto.multiply(new BigDecimal("0.11"));
-    }
-
-    return discountValue.setScale(2, RoundingMode.DOWN);
+    return discountValue;
   }
 
 }

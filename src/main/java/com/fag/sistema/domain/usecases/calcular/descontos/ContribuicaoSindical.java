@@ -5,14 +5,22 @@ import java.math.RoundingMode;
 
 import org.springframework.stereotype.Service;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 
 @Service
-public class ContribuicaoSindical implements IDescontoUseCase {
+public class ContribuicaoSindical extends Provento implements IDescontoUseCase {
+
+  public ContribuicaoSindical() {
+    this.setDescricao("Contribuição Sindical");
+  }
 
   @Override
   public BigDecimal calculate(Empregado empregado) {
-    return new BigDecimal("50").setScale(2, RoundingMode.DOWN);
+    BigDecimal referencia = new BigDecimal("50").setScale(2, RoundingMode.DOWN);
+    
+    this.setProvento(getDescricao(), BigDecimal.ZERO, BigDecimal.ZERO, referencia);
+    return referencia;
   }
 
 }
