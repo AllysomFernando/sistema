@@ -43,8 +43,18 @@ public class Salario {
   }
 
   public void subtrairBasesDeCalculo(BigDecimal value) {
-    this.baseCalculoFGTS = this.baseCalculoFGTS.subtract(value);
-    this.baseCalculoInss = this.baseCalculoInss.subtract(value);
-    this.baseCalculoIRRF = this.baseCalculoIRRF.subtract(value);
+
+    if (this.baseCalculoFGTS.compareTo(BigDecimal.ZERO) > 0) {
+      this.baseCalculoFGTS = this.baseCalculoFGTS.subtract(value);
+    }
+
+    if (this.baseCalculoIRRF.compareTo(BigDecimal.ZERO) > 0) {
+      this.baseCalculoIRRF = this.baseCalculoIRRF.subtract(value);
+    }
+
+    if (this.baseCalculoInss.compareTo(BigDecimal.ZERO) > 0) {
+      this.baseCalculoInss = this.baseCalculoInss.subtract(value);
+    }
+
   }
 }

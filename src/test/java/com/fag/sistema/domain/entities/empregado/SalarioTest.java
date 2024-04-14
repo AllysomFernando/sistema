@@ -35,4 +35,24 @@ public class SalarioTest {
     assertEquals(BigDecimal.ZERO, salario.getBaseCalculoInss());
     assertEquals(BigDecimal.ZERO, salario.getBaseCalculoIRRF());
   }
+
+  @Test
+  void shouldSubtractBasesDeCalculoEqualy() {
+    Salario salario = new Salario(new BigDecimal("3000"));
+    salario.subtrairBasesDeCalculo(new BigDecimal("300"));
+
+    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoInss());
+    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoIRRF());
+  }
+
+  @Test
+  void shouldNotSubtractBasesDeCalculoIfTheyAreZero() {
+    Salario salario = new Salario();
+    salario.subtrairBasesDeCalculo(new BigDecimal("300"));
+
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoFGTS());
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoInss());
+    assertEquals(BigDecimal.ZERO, salario.getBaseCalculoIRRF());
+  }
 }
