@@ -28,7 +28,7 @@ public class HoleriteService {
         EmpregadoDTO empregado = empregadoService.getEmpregadoByCpf(cpf);
         EmpregadorDTO empregador = empresaService.getEmpresaByCNPJ(cnpj);
 
-        ProventosDTO proventos = proventosService.calcularProventos(EmpregadoMapper.toBO(empregado));
+        ProventosDTO proventos = proventosService.calcularProventos(EmpregadoMapper.toBO(empregado), EmpregadorMapper.toBO(empregador));
 
         Holerite holerite = new Holerite();
 
