@@ -27,7 +27,9 @@ public class IRRF extends Provento implements IDescontoUseCase {
     for (RelacaoIRRF element : relacaoIrrf) {
       if (element.compare(salarioParaIRRF)) {
         referencia = element.getReferencia();
-        discountValue = salarioParaIRRF.multiply(referencia).setScale(2, RoundingMode.HALF_DOWN);
+        BigDecimal porcentagemDoSalario = salarioParaIRRF.multiply(referencia).setScale(2, RoundingMode.DOWN);
+        discountValue = porcentagemDoSalario.subtract(element.getDeducao());
+        
         break;
       }
     }

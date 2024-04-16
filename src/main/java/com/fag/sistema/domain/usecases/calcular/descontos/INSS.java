@@ -31,6 +31,7 @@ public class INSS extends Provento implements IDescontoUseCase {
       if (inss.compare(salarioBruto)) {
         referencia = inss.getReferencia();
         discountValue = salarioBruto.multiply(referencia).setScale(2, RoundingMode.HALF_DOWN);
+        
         break;
       }
     }

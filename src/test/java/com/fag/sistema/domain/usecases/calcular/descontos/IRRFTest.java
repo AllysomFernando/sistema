@@ -68,9 +68,9 @@ public class IRRFTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("142.80"), discount);
+    assertEquals(new BigDecimal("0.00"), discount);
     assertEquals(7.5f, sut.getReferencia());
-    assertEquals(new BigDecimal("142.80"), sut.getDesconto());
+    assertEquals(new BigDecimal("0.00"), sut.getDesconto());
   }
 
   @Test
@@ -81,7 +81,7 @@ public class IRRFTest {
 
     BigDecimal discount = sut.calculate(empregado);
 
-    assertEquals(new BigDecimal("212.00"), discount);
+    assertEquals(new BigDecimal("69.20"), discount);
   }
 
   @Test
@@ -111,12 +111,13 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithSevenAndHalfPercent_INSS() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
+    empregado.getContrato().getSalario().setBaseCalculoIRRF(new BigDecimal("2722.60"));
 
     BigDecimal discount = sut.calculate(empregado);
-
-    assertEquals(new BigDecimal("200.25"), discount);
+    
+    assertEquals(new BigDecimal("61.40"), discount);
     assertEquals(7.5f, sut.getReferencia());
-    assertEquals(new BigDecimal("200.25"), sut.getDesconto());
+    assertEquals(new BigDecimal("61.40"), sut.getDesconto());
   }
 
 }
