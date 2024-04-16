@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 @Component
 public class ValeAlimentacao extends Provento implements IDescontoUseCase {
@@ -16,7 +17,7 @@ public class ValeAlimentacao extends Provento implements IDescontoUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado) {
+  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0.1");

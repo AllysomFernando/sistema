@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 
 @Component
@@ -21,7 +22,7 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado) {
+  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
     BigDecimal referencia = new BigDecimal("0.05");
 

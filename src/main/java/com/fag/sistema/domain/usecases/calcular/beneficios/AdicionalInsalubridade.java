@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 @Component
@@ -16,7 +17,7 @@ public class AdicionalInsalubridade extends Provento implements IBeneficioUseCas
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado) {
+  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
     EnumGrauInsalubridade insalubridade = empregado.getContrato().getGrauInsalubridade();
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 @Component
 public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCase {
@@ -15,7 +16,7 @@ public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCas
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado) {
+  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220"), 2, RoundingMode.HALF_UP).setScale(2,
         RoundingMode.HALF_UP);

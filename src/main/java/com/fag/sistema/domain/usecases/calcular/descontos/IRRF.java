@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.enums.RelacaoIRRF;
 
 @Component
@@ -17,7 +18,7 @@ public class IRRF extends Provento implements IDescontoUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado) {
+  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
 
     BigDecimal salarioParaIRRF = empregado.getContrato().getSalario().getBaseCalculoIRRF();
     BigDecimal referencia = new BigDecimal("0");
