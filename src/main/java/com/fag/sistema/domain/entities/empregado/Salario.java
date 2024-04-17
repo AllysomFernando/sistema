@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.entities.empregado;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,7 @@ public class Salario {
   private BigDecimal FgtsMensal;
 
   public Salario(BigDecimal bruto) {
-    this.bruto = bruto;
+    this.bruto = bruto.setScale(2, RoundingMode.HALF_DOWN);
     this.liquido = BigDecimal.ZERO;
     this.base = BigDecimal.ZERO;
     this.baseCalculoIRRF = this.bruto;
