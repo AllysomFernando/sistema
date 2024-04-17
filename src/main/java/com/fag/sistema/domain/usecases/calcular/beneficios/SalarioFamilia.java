@@ -19,12 +19,13 @@ public class SalarioFamilia extends Provento implements IBeneficioUseCase {
   private final BigDecimal SALARIO_MINIMO = new BigDecimal("1412.00");
 
   public SalarioFamilia() {
-    this.setDescricao("Salário Família");
+    super("Salário Família");
   }
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
+    Float quantidadeDependentesValidos = 0.0f;
 
     if (empregado.getDependentes() == null || empregado.getDependentes().isEmpty()) {
       return beneficio;
@@ -37,11 +38,13 @@ public class SalarioFamilia extends Provento implements IBeneficioUseCase {
       Long diferencaEmAnos = ChronoUnit.YEARS.between(d.getDataNascimento(), now);
 
       if (diferencaEmAnos < 14l) {
+        quantidadeDependentesValidos++;
         beneficio = beneficio.add(getBeneficio());
       }
     }
 
-    this.setVencimento(beneficio);
+    this.setProvento(getDescricao(), quantidadeDependentesValidos, beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
 
     return beneficio;
   }

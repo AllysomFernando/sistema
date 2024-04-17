@@ -14,7 +14,7 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class Quinquenio extends Provento implements IBeneficioUseCase {
 
   public Quinquenio() {
-    this.setDescricao("Quinquenio");
+    super("Quinquenio");
   }
 
   @Override
@@ -33,6 +33,7 @@ public class Quinquenio extends Provento implements IBeneficioUseCase {
     beneficio = beneficio.multiply(new BigDecimal(quinquenios)).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
 
     return beneficio;
   }

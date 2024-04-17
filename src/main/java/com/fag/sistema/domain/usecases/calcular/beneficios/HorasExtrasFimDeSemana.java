@@ -12,7 +12,7 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 @Component
 public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCase {
   public HorasExtrasFimDeSemana() {
-    this.setDescricao("Horas extras em fins de semana");
+    super("Horas extras em fins de semana");
   }
 
   @Override
@@ -32,7 +32,8 @@ public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCas
           .add(valorHoraExtraFimsDeSemana.multiply(new BigDecimal(quantidadeHoraExtraFDS)));
     }
 
-    this.setVencimento(totalHorasExtras);
+    this.setProvento(getDescricao(), quantidadeHoraExtraFDS, totalHorasExtras, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(totalHorasExtras);
 
     return totalHorasExtras;
   }

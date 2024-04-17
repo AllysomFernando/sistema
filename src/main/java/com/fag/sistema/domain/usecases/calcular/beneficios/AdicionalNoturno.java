@@ -12,9 +12,12 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 @Component
 public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
 
+    public AdicionalNoturno() {
+        super("Adicional Noturno");
+    }
+
     @Override
     public BigDecimal calculate(Empregado empregado, Empresa empresa) {
-        this.setDescricao("Adicional Noturno");
 
         Float horasNoturnas = empregado.getHorario().getHorasAdicionalNoturno();
         BigDecimal valorAdicionalNoturno = new BigDecimal("0");
@@ -37,6 +40,8 @@ public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
                 this.setProvento(this.getDescricao(), porcentagem, valorAdicionalNoturno, BigDecimal.ZERO);
             }
         }
+
+        empregado.getContrato().getSalario().setBaseCalculoFGTS(valorAdicionalNoturno);
 
         return valorAdicionalNoturno;
     }

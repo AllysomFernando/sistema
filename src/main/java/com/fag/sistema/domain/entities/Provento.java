@@ -21,9 +21,24 @@ public class Provento {
         this.desconto = BigDecimal.ZERO;
     }
 
+    public Provento(String descricao) {
+        this.descricao = descricao;
+        this.referencia = 0.0f;
+        this.vencimento = BigDecimal.ZERO;
+        this.desconto = BigDecimal.ZERO;
+    }
+
+
     public void setProvento(String descricao, BigDecimal referencia, BigDecimal vencimento, BigDecimal desconto) {
         this.descricao = descricao;
         this.referencia = this.getPorcentagem(referencia);
+        this.vencimento = vencimento;
+        this.desconto = desconto;
+    }
+
+    public void setProvento(String descricao, Float referencia, BigDecimal vencimento, BigDecimal desconto) {
+        this.descricao = descricao;
+        this.referencia = this.getPorcentagem(new BigDecimal(referencia));
         this.vencimento = vencimento;
         this.desconto = desconto;
     }

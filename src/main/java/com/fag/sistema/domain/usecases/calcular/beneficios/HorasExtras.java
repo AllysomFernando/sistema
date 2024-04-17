@@ -13,13 +13,14 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class HorasExtras extends Provento implements IBeneficioUseCase {
 
   public HorasExtras() {
-    this.setDescricao("Horas extras");
+    super("Horas extras");
   }
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
-    BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220"), 2, RoundingMode.HALF_UP).setScale(2, RoundingMode.HALF_UP);
+    BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220"), 2, RoundingMode.HALF_UP).setScale(2,
+        RoundingMode.HALF_UP);
     BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtraEmDiasDaSemana(valorHora);
 
     float quantidadeHorasExtra = empregado.getHorario().getHorasExtras();
@@ -31,13 +32,14 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
           .add(valorHoraExtraDiasDeSemana.multiply(new BigDecimal(quantidadeHorasExtra)));
     }
 
-    this.setVencimento(totalHorasExtras);
+    this.setProvento(getDescricao(), quantidadeHorasExtra, totalHorasExtras, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(totalHorasExtras);
 
     return totalHorasExtras;
   }
 
   private BigDecimal valorHoraExtraEmDiasDaSemana(BigDecimal valorHoraDeTrabalho) {
-    BigDecimal referencia = new BigDecimal("0.5"); 
+    BigDecimal referencia = new BigDecimal("0.5");
     BigDecimal result = referencia.multiply(valorHoraDeTrabalho);
 
     this.setReferencia(referencia);
