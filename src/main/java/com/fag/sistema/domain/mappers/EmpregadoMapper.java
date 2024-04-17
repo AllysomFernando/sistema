@@ -14,7 +14,9 @@ public class EmpregadoMapper {
                 dto.getDependentes(),
                 dto.getHorario(),
                 dto.getContrato(),
-                dto.getEndereco());
+                dto.getEndereco(),
+                dto.getTotalDeVendasNoMes(),
+                dto.getDiasEmViagem());
     }
 
     public static EmpregadoDTO toDTO(Empregado bo) {

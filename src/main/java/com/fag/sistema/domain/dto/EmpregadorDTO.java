@@ -1,7 +1,10 @@
 package com.fag.sistema.domain.dto;
 
+import java.util.List;
+
 import com.fag.sistema.domain.entities.Contato;
 import com.fag.sistema.domain.entities.Endereco;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Inscricao;
 
 import lombok.Getter;
@@ -22,4 +25,5 @@ public class EmpregadorDTO {
     private Inscricao inscricao;
     private Contato contato;
     private Endereco endereco;
+    private List<Empregado> empregados;
 }

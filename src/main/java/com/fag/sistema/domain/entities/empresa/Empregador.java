@@ -22,6 +22,8 @@ public class Empregador {
     private String naturezaJuridica;
     private String ramoAtividade;
     private Inscricao inscricao;
+    private Float cargaHorariaDiaria;
+    private Integer diasATrabalhar;
     private Contato contato;
     private Endereco endereco;
     private List<Empregado> empregados;

@@ -9,6 +9,7 @@ import com.fag.sistema.domain.enums.EnumGenero;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -24,4 +25,6 @@ public class EmpregadoDTO {
     private Horario horario;
     private Contrato contrato;
     private Endereco endereco;
+    private BigDecimal totalDeVendasNoMes;
+    private Integer diasEmViagem;
 }

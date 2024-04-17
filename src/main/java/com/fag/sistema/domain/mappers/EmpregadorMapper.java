@@ -15,7 +15,8 @@ public class EmpregadorMapper {
                 dto.getRamoAtividade(),
                 dto.getInscricao(),
                 dto.getContato(),
-                dto.getEndereco());
+                dto.getEndereco(),
+                dto.getEmpregados());
     }
 
     public static EmpregadorDTO toDTO(Empregador bo) {

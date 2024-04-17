@@ -1,5 +1,6 @@
 package com.fag.sistema.domain.entities.empregado;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -23,6 +24,8 @@ public class Empregado {
     private Horario horario;
     private Contrato contrato;
     private Endereco endereco;
+    private BigDecimal totalDeVendasNoMes;
+    private Integer diasEmViagem;
 
     public Boolean possuiDependente() {
         return this.dependentes != null && !this.dependentes.isEmpty();
