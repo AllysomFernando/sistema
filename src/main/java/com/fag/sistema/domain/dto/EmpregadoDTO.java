@@ -1,17 +1,17 @@
 package com.fag.sistema.domain.dto;
 
-import com.fag.sistema.domain.entities.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.List;
+
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Doenca;
 import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.enums.EnumGenero;
+
 import lombok.Getter;
 import lombok.Setter;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
-import java.util.List;
 
 @Getter
 @Setter
