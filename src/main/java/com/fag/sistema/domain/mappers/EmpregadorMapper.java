@@ -1,11 +1,11 @@
 package com.fag.sistema.domain.mappers;
 
 import com.fag.sistema.domain.dto.EmpregadorDTO;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class EmpregadorMapper {
-    public static Empregador toBO(EmpregadorDTO dto) {
-        return new Empregador(
+    public static Empresa toBO(EmpregadorDTO dto) {
+        return new Empresa(
                 dto.getCnpj(),
                 dto.getRazaoSocial(),
                 dto.getNomeFantasia(),
@@ -16,7 +16,7 @@ public class EmpregadorMapper {
                 dto.getEmpregados());
     }
 
-    public static EmpregadorDTO toDTO(Empregador bo) {
+    public static EmpregadorDTO toDTO(Empresa bo) {
         EmpregadorDTO dto = new EmpregadorDTO();
 
         dto.setCnpj(bo.getCnpj());

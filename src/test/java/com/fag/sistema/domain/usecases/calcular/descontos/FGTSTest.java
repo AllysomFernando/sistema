@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class FGTSTest {
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -32,7 +32,7 @@ public class FGTSTest {
   public void shouldCalculateFGTSIfSalaryIsThreeThousand() {
     FGTS sut = new FGTS();
     Empregado empregado = makeEmpregado();
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal discount = sut.calculate(empregado, empresa);
 

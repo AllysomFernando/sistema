@@ -7,13 +7,13 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 @Component
 public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
 
     @Override
-    public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+    public BigDecimal calculate(Empregado empregado, Empresa empresa) {
         this.setDescricao("Adicional Noturno");
 
         Float horasNoturnas = empregado.getHorario().getHorasAdicionalNoturno();

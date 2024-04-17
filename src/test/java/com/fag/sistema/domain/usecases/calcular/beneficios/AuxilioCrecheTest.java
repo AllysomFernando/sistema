@@ -16,7 +16,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.EnumGenero;
 
 public class AuxilioCrecheTest {
@@ -53,8 +53,8 @@ public class AuxilioCrecheTest {
     return empregados;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
     empresa.setEmpregados(this.makeEmpregadosComDependente());
 
     return empresa;
@@ -73,7 +73,7 @@ public class AuxilioCrecheTest {
   void shouldNotAddAuxilioCrecheIfEmpregadoHasNoDependente() {
     AuxilioCreche sut = new AuxilioCreche();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.00"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -88,7 +88,7 @@ public class AuxilioCrecheTest {
     List<Dependente> dependentes = makeDependentes();
 
     empregado.setDependentes(dependentes);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -104,7 +104,7 @@ public class AuxilioCrecheTest {
         new Dependente("Rosie Robbins", LocalDate.of(2024, 01, 01)));
 
     empregado.setDependentes(dependentes);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -119,7 +119,7 @@ public class AuxilioCrecheTest {
     List<Dependente> dependentes = makeInvalidDependentes();
 
     empregado.setDependentes(dependentes);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -131,7 +131,7 @@ public class AuxilioCrecheTest {
   void shouldNotchangeBaseDeCalculo() {
     AuxilioCreche sut = new AuxilioCreche();
     Empregado empregado = makeEmpregado(new BigDecimal("3000"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     sut.calculate(empregado, empresa);
 

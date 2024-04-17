@@ -14,7 +14,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class SalarioFamiliaTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
@@ -25,8 +25,8 @@ public class SalarioFamiliaTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -52,7 +52,7 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     List<Dependente> dependentes = List.of(
         new Dependente("Rosie Robbins", LocalDate.of(2020, 01, 01)));
@@ -69,7 +69,7 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
     List<Dependente> dependentes = makeValidDependentes();
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     empregado.setDependentes(dependentes);
 
@@ -83,7 +83,7 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
     List<Dependente> dependentes = makeInvalidDependentes();
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     empregado.setDependentes(dependentes);
 

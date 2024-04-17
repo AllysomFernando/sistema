@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Empregador {
+public class Empresa {
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;

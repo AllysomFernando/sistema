@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class GsonAdapterTest {
 
@@ -34,9 +34,9 @@ public class GsonAdapterTest {
 
   @Test
   void shouldReadJsonContentAsList() {
-    GsonAdapter<Empregador> sut = new GsonAdapter<Empregador>("data.json");
+    GsonAdapter<Empresa> sut = new GsonAdapter<Empresa>("data.json");
 
-    List<Empregador> empregadores = sut.readListFromJson(Empregador[].class);
+    List<Empresa> empregadores = sut.readListFromJson(Empresa[].class);
 
     assertNotNull(empregadores);
     assertEquals(1, empregadores.size());

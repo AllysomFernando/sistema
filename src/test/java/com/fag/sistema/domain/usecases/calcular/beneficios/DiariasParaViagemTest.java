@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class DiariasParaViagemTest {
 
@@ -21,8 +21,8 @@ public class DiariasParaViagemTest {
     return empregado;
   }
   
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -31,7 +31,7 @@ public class DiariasParaViagemTest {
   void shouldAddDiariasParaViagem() {
     DiariasParaViagem sut = new DiariasParaViagem();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 

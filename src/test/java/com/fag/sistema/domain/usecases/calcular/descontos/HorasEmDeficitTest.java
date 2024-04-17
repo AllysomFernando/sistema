@@ -10,7 +10,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class HorasEmDeficitTest {
   
@@ -29,8 +29,8 @@ public class HorasEmDeficitTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa(Float cargaHorariaDiaria) {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa(Float cargaHorariaDiaria) {
+    Empresa empresa = new Empresa();
     empresa.setCargaHorariaDiaria(cargaHorariaDiaria);
     empresa.setDiasATrabalhar(23);
 
@@ -40,7 +40,7 @@ public class HorasEmDeficitTest {
   @Test
   void shouldCalculateDiscountWith5HoursInDebt() {
     Empregado empregado = makEmpregado(new BigDecimal("3000.00"), 5);
-    Empregador empresa = makeEmpresa(8.0f);
+    Empresa empresa = makeEmpresa(8.0f);
 
     empregado.getHorario().setHoraTrabalhada(empresa.getCargaHorariaDiaria() * empresa.getDiasATrabalhar());
 

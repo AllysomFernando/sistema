@@ -2,11 +2,11 @@ package com.fag.sistema.domain.repositories;
 
 import java.util.List;
 
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
-public interface IEmpresaVendor extends IAbstractRepository<Empregador> {
-    List<Empregador> getAllEmpregador();
+public interface IEmpresaVendor extends IAbstractRepository<Empresa> {
+    List<Empresa> getAllEmpregador();
 
-    Empregador getEmpresaByCNPJ(String cnpj);
+    Empresa getEmpresaByCNPJ(String cnpj);
 
 }

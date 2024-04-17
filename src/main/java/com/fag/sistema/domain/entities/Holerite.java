@@ -3,7 +3,7 @@ package com.fag.sistema.domain.entities;
 import java.math.BigDecimal;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Holerite {
-    private Empregador empregador;
+    private Empresa empregador;
     private Empregado empregado;
     private Proventos proventos;
     private BigDecimal baseCalculoIrrf;

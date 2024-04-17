@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.EnumGenero;
 import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
@@ -14,22 +14,22 @@ import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 @Repository
 public class EmpresaRepository implements IEmpresaVendor {
     
-    private GsonAdapter<Empregador> data;
+    private GsonAdapter<Empresa> data;
 
     public EmpresaRepository() {
-        this.data = new GsonAdapter<Empregador>("data.json");
+        this.data = new GsonAdapter<Empresa>("data.json");
     }
 
     @Override
-    public List<Empregador> getAllEmpregador() {
-        return this.data.readListFromJson(Empregador[].class);
+    public List<Empresa> getAllEmpregador() {
+        return this.data.readListFromJson(Empresa[].class);
     }
 
     @Override
-    public Empregador getEmpresaByCNPJ(String cnpj) {
-        Empregador[] empresas = this.getAll();
+    public Empresa getEmpresaByCNPJ(String cnpj) {
+        Empresa[] empresas = this.getAll();
 
-        for (Empregador empresa : empresas) {
+        for (Empresa empresa : empresas) {
             if (empresa.getCnpj().equals(cnpj))
                 return empresa;
         }
@@ -38,12 +38,12 @@ public class EmpresaRepository implements IEmpresaVendor {
     }
 
     @Override
-    public Empregador[] getAll() {
-        return this.data.readArrayFromJson(Empregador[].class);
+    public Empresa[] getAll() {
+        return this.data.readArrayFromJson(Empresa[].class);
     }
 
     public List<Empregado> getAllFuncionariosMulheresByEmpresaCnpj(String cnpj) {
-        Empregador empresa = this.getEmpresaByCNPJ(cnpj);
+        Empresa empresa = this.getEmpresaByCNPJ(cnpj);
         List<Empregado> funcionaria = new ArrayList<Empregado>();
 
         for (Empregado e : empresa.getEmpregados()) {

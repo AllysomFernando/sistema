@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class HorasEmDeficit extends Provento implements IDescontoUseCase {
 
@@ -14,7 +14,7 @@ public class HorasEmDeficit extends Provento implements IDescontoUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+  public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal horasEmDeficit = new BigDecimal(empregado.getHorario().getHorasEmDeficit()).setScale(2, RoundingMode.DOWN);
     Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.EnumGenero;
 
 @Component
@@ -23,7 +23,7 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+  public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
     BigDecimal referencia = new BigDecimal("0.05");
     List<Empregado> empregadosDoGeneroFeminino = getEmpregadosDoGeneroFeminino(empresa);
@@ -58,7 +58,7 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
     return beneficio;
   }
 
-  private List<Empregado> getEmpregadosDoGeneroFeminino(Empregador empresa) {
+  private List<Empregado> getEmpregadosDoGeneroFeminino(Empresa empresa) {
     List<Empregado> empregados = new ArrayList<Empregado>();
 
     for (Empregado e : empresa.getEmpregados()) {

@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class ContribuicaoSindicalTest {
 
@@ -22,8 +22,8 @@ public class ContribuicaoSindicalTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -33,7 +33,7 @@ public class ContribuicaoSindicalTest {
   public void shouldCalculateContribuicaoSindical() {
     ContribuicaoSindical sut = new ContribuicaoSindical();
     Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1900.00"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal discount = sut.calculate(empregado, empresa);
 

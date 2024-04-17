@@ -11,7 +11,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class AdicionalNoturnoTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto, Float horasAdicionalNoturno) {
@@ -32,8 +32,8 @@ public class AdicionalNoturnoTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -43,7 +43,7 @@ public class AdicionalNoturnoTest {
   void shouldAddAdicionaNoturno() {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), 10.0f);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -56,7 +56,7 @@ public class AdicionalNoturnoTest {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), 0.0f);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 

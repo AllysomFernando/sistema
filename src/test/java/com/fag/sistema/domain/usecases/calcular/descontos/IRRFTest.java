@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class IRRFTest {
 
@@ -30,7 +30,7 @@ public class IRRFTest {
     Contrato contrato = new Contrato();
     Salario salario = new Salario(salarioBruto);
     INSS inss = new INSS();
-    Empregador empregador = makeEmpresa();
+    Empresa empregador = makeEmpresa();
     
     contrato.setSalario(salario);
     empregado.setContrato(contrato);
@@ -40,8 +40,8 @@ public class IRRFTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -51,7 +51,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithNoDiscount() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("1900"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("0.00"), discount);
@@ -62,7 +62,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithNoDiscount_INSS() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("1900"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("0.00"), discount);
@@ -73,7 +73,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithSevenAndHalfPercent() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("1903.99"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("0.00"), discount);
@@ -86,7 +86,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithSevenAndHalfPercent_Case2() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("2826.65"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("69.20"), discount);
@@ -97,7 +97,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithFifteenPercent() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("2826.66"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("424.00"), discount);
@@ -108,7 +108,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithFifteenPercent_Case2() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("3751.05"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("562.66"), discount);
@@ -120,7 +120,7 @@ public class IRRFTest {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
     empregado.getContrato().getSalario().setBaseCalculoIRRF(new BigDecimal("2722.60"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
     
     assertEquals(new BigDecimal("61.40"), discount);

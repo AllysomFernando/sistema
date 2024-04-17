@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.RelacaoINSS;
 
 @Component
@@ -20,7 +20,7 @@ public class INSS extends Provento implements IDescontoUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+  public BigDecimal calculate(Empregado empregado, Empresa empresa) {
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBaseCalculoInss();
     BigDecimal discountValue = new BigDecimal("642.34");

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 @Component
 public class Quinquenio extends Provento implements IBeneficioUseCase {
@@ -18,7 +18,7 @@ public class Quinquenio extends Provento implements IBeneficioUseCase {
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+  public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0.03");
     LocalDate dataAdimissao = empregado.getContrato().getDataAdmissao();

@@ -7,7 +7,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -25,8 +25,8 @@ public class JsonFileReader {
        return objectMapper.readValue(inputStream, new TypeReference<List<Empregado>>() {
        });
     }
-    public List<Empregador> readEmpresaList(InputStream inputStream) throws IOException {
-        return objectMapper.readValue(inputStream, new TypeReference<List<Empregador>>() {
+    public List<Empresa> readEmpresaList(InputStream inputStream) throws IOException {
+        return objectMapper.readValue(inputStream, new TypeReference<List<Empresa>>() {
         });
     }
 }

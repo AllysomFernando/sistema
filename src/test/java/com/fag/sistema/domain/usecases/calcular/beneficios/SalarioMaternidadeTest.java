@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class SalarioMaternidadeTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
@@ -21,8 +21,8 @@ public class SalarioMaternidadeTest {
   }
 
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -32,7 +32,7 @@ public class SalarioMaternidadeTest {
     SalarioMaternidade sut = new SalarioMaternidade();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 

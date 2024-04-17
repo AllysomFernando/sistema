@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class QuinquenioTest {
 
@@ -24,8 +24,8 @@ public class QuinquenioTest {
   }
 
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -36,7 +36,7 @@ public class QuinquenioTest {
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 5, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -48,7 +48,7 @@ public class QuinquenioTest {
     Quinquenio sut = new Quinquenio();
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 10, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -61,7 +61,7 @@ public class QuinquenioTest {
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 6, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 

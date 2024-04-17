@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class DescansoSemanalRemunerado extends Provento implements IBeneficioUseCase {
 
@@ -13,7 +13,7 @@ public class DescansoSemanalRemunerado extends Provento implements IBeneficioUse
   }
 
   @Override
-  public BigDecimal calculate(Empregado empregado, Empregador empresa) {
+  public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();
     BigDecimal valorDiaria = salarioBruto.divide(new BigDecimal(diasTrabalhados));

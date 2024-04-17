@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalInsalubridadeTest {
@@ -24,8 +24,8 @@ public class AdicionalInsalubridadeTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -36,7 +36,7 @@ public class AdicionalInsalubridadeTest {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.BAIXO);
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     sut.calculate(empregado, empresa);
 
@@ -53,7 +53,7 @@ public class AdicionalInsalubridadeTest {
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.BAIXO);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -67,7 +67,7 @@ public class AdicionalInsalubridadeTest {
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.MEDIO);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -81,7 +81,7 @@ public class AdicionalInsalubridadeTest {
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.ALTO);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
@@ -95,7 +95,7 @@ public class AdicionalInsalubridadeTest {
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
         EnumGrauInsalubridade.NULO);
 
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 

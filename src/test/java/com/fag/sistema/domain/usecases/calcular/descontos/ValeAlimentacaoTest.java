@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
-import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class ValeAlimentacaoTest {
 
@@ -22,8 +22,8 @@ public class ValeAlimentacaoTest {
     return empregado;
   }
 
-  private Empregador makeEmpresa() {
-    Empregador empresa = new Empregador();
+  private Empresa makeEmpresa() {
+    Empresa empresa = new Empresa();
 
     return empresa;
   }
@@ -33,7 +33,7 @@ public class ValeAlimentacaoTest {
   public void shouldCalculateValeAlimentacao_Case1() {
     ValeAlimentacao sut = new ValeAlimentacao();
     Empregado empregado = makeEmpregadoComSalario(new BigDecimal("3000.00"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
 
     BigDecimal discount = sut.calculate(empregado, empresa);
 
@@ -45,7 +45,7 @@ public class ValeAlimentacaoTest {
   public void shouldCalculateValeAlimentacao_Case2() {
     ValeAlimentacao sut = new ValeAlimentacao();
     Empregado empregado = makeEmpregadoComSalario(new BigDecimal("4000.00"));
-    Empregador empresa = makeEmpresa();
+    Empresa empresa = makeEmpresa();
     
     BigDecimal discount = sut.calculate(empregado, empresa);
 
