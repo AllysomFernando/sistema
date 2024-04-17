@@ -13,16 +13,19 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class SalarioMaternidade extends Provento implements IBeneficioUseCase {
 
   public SalarioMaternidade() {
-    this.setDescricao("Salário Maternidade");
+    super("Salário Maternidade");
   }
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
+    if (!empregado.getContrato().getBeneficios().getSalarioMaternidade()) return BigDecimal.ZERO;
+
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0.05");
     BigDecimal beneficiolMensal = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, beneficiolMensal, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficiolMensal);
 
     return beneficiolMensal;
   }

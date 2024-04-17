@@ -24,4 +24,5 @@ public class Contrato {
     private Boolean ativo;
     private EnumHorarioTrabalho horarioTrabalho = EnumHorarioTrabalho.COMERCIAL;
     private EnumTipoContrato tipoContrato;
+    private Beneficios beneficios;
 }
