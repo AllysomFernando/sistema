@@ -20,7 +20,7 @@ public class Quinquenio extends Provento implements IBeneficioUseCase {
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
-    BigDecimal referencia = new BigDecimal("0.03");
+    BigDecimal referencia = new BigDecimal("0.3");
     LocalDate dataAdimissao = empregado.getContrato().getDataAdmissao();
     LocalDate now = LocalDate.now();
     BigDecimal beneficio = BigDecimal.ZERO;
@@ -33,7 +33,7 @@ public class Quinquenio extends Provento implements IBeneficioUseCase {
     beneficio = beneficio.multiply(new BigDecimal(quinquenios)).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
     return beneficio;
   }
