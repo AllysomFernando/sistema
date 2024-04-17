@@ -16,7 +16,7 @@ import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.enums.EnumGenero;
 
-public class EmpregadorMapperTest {
+public class EmpregadoMapperTest {
 
   private EmpregadoDTO makeDto() {
     EmpregadoDTO dto = new EmpregadoDTO();
