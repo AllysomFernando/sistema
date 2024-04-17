@@ -22,7 +22,7 @@ public class INSS extends Provento implements IDescontoUseCase {
   @Override
   public BigDecimal calculate(Empregado empregado, Empregador empresa) {
 
-    BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
+    BigDecimal salarioBruto = empregado.getContrato().getSalario().getBaseCalculoInss();
     BigDecimal discountValue = new BigDecimal("642.34");
     BigDecimal referencia = new BigDecimal("0");
 
