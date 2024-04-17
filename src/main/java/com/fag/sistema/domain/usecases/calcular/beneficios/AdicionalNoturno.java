@@ -41,7 +41,7 @@ public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
             }
         }
 
-        empregado.getContrato().getSalario().setBaseCalculoFGTS(valorAdicionalNoturno);
+        empregado.getContrato().getSalario().somarBasesDeCalculo(valorAdicionalNoturno);
 
         return valorAdicionalNoturno;
     }

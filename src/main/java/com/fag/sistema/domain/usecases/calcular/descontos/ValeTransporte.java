@@ -25,6 +25,7 @@ public class ValeTransporte extends Provento implements IDescontoUseCase {
     BigDecimal desconto = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, desconto);
+    empregado.getContrato().getSalario().subtrairBasesDeCalculo(desconto);
 
     return desconto;
   }

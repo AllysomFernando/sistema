@@ -24,12 +24,14 @@ public class AdicionalPericulosidade extends Provento implements IBeneficioUseCa
       return BigDecimal.ZERO;
     }
 
+    if (!empregado.getContrato().getBeneficios().getAdicionalPericulosidade()) return BigDecimal.ZERO;
+
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal referencia = new BigDecimal("0.03");
     BigDecimal beneficio = salarioBruto.multiply(referencia).setScale(2);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
     return beneficio;
   }

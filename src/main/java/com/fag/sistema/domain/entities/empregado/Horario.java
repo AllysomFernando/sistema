@@ -9,8 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Horario {
     private float horaTrabalhada;
-    private float horaFalta;
-    private Boolean justificativa;
+    private Boolean justificativa; // TODO: validar justificativa de horas
     private float horasExtras;
     private float horasExtrasEmFinsDeSemana;
     private float horasAdicionalNoturno;

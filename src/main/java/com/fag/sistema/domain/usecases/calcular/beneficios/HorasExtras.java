@@ -18,6 +18,7 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
+    if (empregado.getHorario().getHorasExtras() < 0) return BigDecimal.ZERO;
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220"), 2, RoundingMode.HALF_UP).setScale(2,
         RoundingMode.HALF_UP);
@@ -33,7 +34,7 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
     }
 
     this.setProvento(getDescricao(), quantidadeHorasExtra, totalHorasExtras, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(totalHorasExtras);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(totalHorasExtras);
 
     return totalHorasExtras;
   }

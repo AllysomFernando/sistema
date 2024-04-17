@@ -18,13 +18,14 @@ public class Comissao extends Provento implements IBeneficioUseCase {
 
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal valorVendas = empregado.getTotalDeVendasNoMes();
+    if (valorVendas.compareTo(BigDecimal.ZERO) >= 0) return BigDecimal.ZERO;
+    
     BigDecimal referencia = new BigDecimal("0.06");
 
     BigDecimal beneficio = valorVendas.multiply(referencia).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
-    empregado.getContrato().getSalario().setBaseCalculoInss(beneficio);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
     return beneficio;
   }

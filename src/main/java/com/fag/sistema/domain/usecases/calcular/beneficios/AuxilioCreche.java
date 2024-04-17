@@ -54,7 +54,7 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
     }
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
     return beneficio;
   }

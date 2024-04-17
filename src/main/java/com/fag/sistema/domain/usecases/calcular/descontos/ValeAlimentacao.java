@@ -25,6 +25,7 @@ public class ValeAlimentacao extends Provento implements IDescontoUseCase {
     BigDecimal desconto = salarioBruto.multiply(referencia).setScale(2, RoundingMode.DOWN);
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, desconto);
+    empregado.getContrato().getSalario().setBaseCalculoInss(desconto.negate());
 
     return desconto;
   }

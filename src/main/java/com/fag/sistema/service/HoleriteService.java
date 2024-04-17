@@ -3,12 +3,10 @@ package com.fag.sistema.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fag.sistema.domain.dto.HoleriteDTO;
 import com.fag.sistema.domain.dto.ProventosDTO;
 import com.fag.sistema.domain.entities.Holerite;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empresa;
-import com.fag.sistema.domain.mappers.HoleriteMapper;
 import com.fag.sistema.domain.mappers.ProventosMapper;
 
 @Service
@@ -22,9 +20,13 @@ public class HoleriteService {
     @Autowired
     private ProventosService proventosService;
 
-    public HoleriteDTO criarHolerite(String cpf, String cnpj) {
+    public Holerite criarHolerite(String cpf, String cnpj) {
         Empresa empregador = empresaService.getEmpresaByCnpj(cnpj);
         Empregado empregado = empregadoService.getEmpregadoByCpf(cpf, empregador.getEmpregados());
+
+        empregado.getContrato().getSalario().setBaseCalculoFGTS(empregado.getContrato().getSalario().getBruto());
+        empregado.getContrato().getSalario().setBaseCalculoIRRF(empregado.getContrato().getSalario().getBruto());
+        empregado.getContrato().getSalario().setBaseCalculoInss(empregado.getContrato().getSalario().getBruto());
 
         ProventosDTO proventos = proventosService.calcularProventos(empregado, empregador);
 
@@ -37,10 +39,13 @@ public class HoleriteService {
         holerite.setEmpregado(empregado);
         holerite.setEmpregador(empregador);
         holerite.setProventos(ProventosMapper.toBO(proventos));
+        holerite.setBaseCalculoFgts(empregado.getContrato().getSalario().getBaseCalculoFGTS());
+        holerite.setBaseCalculoIrrf(empregado.getContrato().getSalario().getBaseCalculoIRRF());
+        holerite.setSalarioContribuicaoInss(empregado.getContrato().getSalario().getBaseCalculoInss());
 
-        HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
+        // HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
 
-        return holeriteDTO;
+        return holerite;
     }
 
 }

@@ -19,13 +19,15 @@
         "cpf": "12345678910",
         "dataNascimento": "1990-01-15",
         "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
         "contrato": {
           "dataAdmissao": "2020-02-01",
           "cargo": "Desenvolvedor de Software",
           "funcao": "Programador Pleno",
           "pisPasep": 123456789,
           "horas": 160,
-          "grauInsalubridade": "BAIXO",
+          "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
@@ -37,15 +39,16 @@
           "beneficios": {
             "valeAlimentacao": true,
             "valeTransporte": true,
-            "salarioMaternidade": false
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false
           }
         },
         "horario": {
-          "horasEmDeficit": 2,
+          "horasEmDeficit": 0,
           "justificativa": true,
-          "horasExtras": 10,
-          "horasExtrasEmFinsDeSemana": 10,
-          "horasAdicionalNoturno": 5
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
         }
       },
       {

@@ -20,7 +20,7 @@ public class DescansoSemanalRemunerado extends Provento implements IBeneficioUse
 
     this.setProvento(getDescricao(), new BigDecimal(diasTrabalhados), valorDiaria, BigDecimal.ZERO);
 
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(valorDiaria);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(valorDiaria);
 
     return valorDiaria;
 

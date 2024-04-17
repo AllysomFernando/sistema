@@ -42,14 +42,6 @@ public class Salario {
     this.baseCalculoIRRF = this.baseCalculoIRRF.add(value);
   }
 
-  public void setBaseCalculoFGTS(BigDecimal value) {
-    this.baseCalculoFGTS = baseCalculoFGTS.add(value);
-  }
-
-  public void setBaseCalculoInss(BigDecimal value) {
-    this.baseCalculoInss = baseCalculoInss.add(value);
-  }
-
   public void subtrairBasesDeCalculo(BigDecimal value) {
 
     if (this.baseCalculoFGTS.compareTo(BigDecimal.ZERO) > 0) {
@@ -64,5 +56,13 @@ public class Salario {
       this.baseCalculoInss = this.baseCalculoInss.subtract(value);
     }
 
+  }
+
+  public void setBaseCalculoFGTS(BigDecimal value) {
+    this.baseCalculoFGTS = baseCalculoFGTS.add(value);
+  }
+
+  public void setBaseCalculoInss(BigDecimal value) {
+    this.baseCalculoInss = baseCalculoInss.add(value);
   }
 }
