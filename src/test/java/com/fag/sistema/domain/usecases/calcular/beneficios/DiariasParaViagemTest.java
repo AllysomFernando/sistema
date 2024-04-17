@@ -13,10 +13,11 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class DiariasParaViagemTest {
 
-  private Empregado makeEmpregado(BigDecimal salarioBruto) {
+  private Empregado makeEmpregado(BigDecimal salarioBruto, Integer diasViajados) {
     Empregado empregado = new Empregado();
     empregado.setContrato(new Contrato());
     empregado.getContrato().setSalario(new Salario(salarioBruto));
+    empregado.setDiasEmViagem(diasViajados);
 
     return empregado;
   }
@@ -30,11 +31,22 @@ public class DiariasParaViagemTest {
   @Test
   void shouldAddDiariasParaViagem() {
     DiariasParaViagem sut = new DiariasParaViagem();
-    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), 2);
     Empresa empresa = makeEmpresa();
 
-    BigDecimal beneficio = sut.calculate(empregado, empresa);
+    sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("1000.00"), beneficio);
+    assertEquals(new BigDecimal("1000.00"), sut.getVencimento());
+  }
+
+  @Test
+  void shouldSetZeroIfEmpregadoHanstTravel() {
+    DiariasParaViagem sut = new DiariasParaViagem();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), 0);
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("0.00"), sut.getVencimento());
   }
 }
