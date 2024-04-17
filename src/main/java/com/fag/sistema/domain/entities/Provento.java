@@ -36,6 +36,13 @@ public class Provento {
         this.desconto = desconto;
     }
 
+    public void setProvento(String descricao, Integer referencia, BigDecimal vencimento, BigDecimal desconto) {
+        this.descricao = descricao;
+        this.referencia = (float) referencia;
+        this.vencimento = vencimento;
+        this.desconto = desconto;
+    }
+
     public void setProvento(String descricao, Float referencia, BigDecimal vencimento, BigDecimal desconto) {
         this.descricao = descricao;
         this.referencia = this.getPorcentagem(new BigDecimal(referencia));

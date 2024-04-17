@@ -11,19 +11,20 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 @Component
 public class DiariasParaViagem extends Provento implements IBeneficioUseCase {
 
-  // TODO: implementar verificação de viagem do empregado
-
   public DiariasParaViagem() {
-    this.setDescricao("Diarias para Viagem");
+    super("Diarias para Viagem");
   }
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
-    BigDecimal referencia = new BigDecimal("1000.00");
+    if (empregado.getDiasEmViagem() < 0) return BigDecimal.ZERO;
 
-    this.setProvento(getDescricao(), BigDecimal.ZERO, referencia, BigDecimal.ZERO);
+    BigDecimal referencia = new BigDecimal("500.00");
+    BigDecimal beneficio = referencia.multiply(new BigDecimal(empregado.getDiasEmViagem()));
 
-    return new BigDecimal("1000.00");
+    this.setProvento(getDescricao(), empregado.getDiasEmViagem(), beneficio, BigDecimal.ZERO);
+
+    return BigDecimal.ZERO;
   }
 
 }

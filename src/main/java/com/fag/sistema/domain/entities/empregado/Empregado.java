@@ -22,7 +22,7 @@ public class Empregado {
     private Horario horario;
     private Contrato contrato;
     private BigDecimal totalDeVendasNoMes;
-    private Integer diasEmViagem; // TODO calculo de diarias para viagem
+    private Integer diasEmViagem;
 
     public Boolean possuiDependente() {
         return this.dependentes != null && !this.dependentes.isEmpty();
