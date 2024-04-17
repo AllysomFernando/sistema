@@ -16,7 +16,7 @@ public class SalarioMaternidadeTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
-    contrato.setBeneficios(new Beneficios(false, false, true));
+    contrato.setBeneficios(new Beneficios(false, false, true, false));
     contrato.setSalario(new Salario(salarioBruto));
 
     empregado.setContrato(contrato);

@@ -6,15 +6,20 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 
+@SpringBootTest
 public class EmpresaRepositoryTest {
+
+  @Autowired
+  private EmpresaRepository sut;
   
   @Test
   void shouldReturnAListOfEmpresas() {
-    EmpresaRepository sut = new EmpresaRepository();
     List<Empresa> empresas = sut.getAllEmpregador();
 
     assertNotNull(empresas);
@@ -24,7 +29,6 @@ public class EmpresaRepositoryTest {
 
   @Test
   void shouldAllEmpregadosFeminino() {
-    EmpresaRepository sut = new EmpresaRepository();
     List<Empregado> funcionarias = sut.getAllFuncionariosMulheresByEmpresaCnpj("12345678000122");
 
     assertEquals(1, funcionarias.size());

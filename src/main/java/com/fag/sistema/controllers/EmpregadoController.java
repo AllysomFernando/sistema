@@ -22,7 +22,7 @@ public class EmpregadoController {
     private EmpregadoService empregadoService;
 
     @GetMapping
-    public List<EmpregadoDTO> listarEmpregados() {
+    public List<Empregado> listarEmpregados() {
         return empregadoService.getAllEmpregados();
     }
 
