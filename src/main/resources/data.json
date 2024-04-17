@@ -24,6 +24,8 @@
       "estado": "SP",
       "CEP": "98765432"
     },
-    "empregados": [{}]
+    "empregados": [{
+      "genero": "FEMININO"
+    }]
   }
 ]

@@ -1,10 +1,13 @@
 package com.fag.sistema.infrastructure.repositories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.enums.EnumGenero;
 import com.fag.sistema.domain.repositories.IEmpresaVendor;
 import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 
@@ -37,5 +40,18 @@ public class EmpresaRepository implements IEmpresaVendor {
     @Override
     public Empregador[] getAll() {
         return this.data.readArrayFromJson(Empregador[].class);
+    }
+
+    public List<Empregado> getAllFuncionariosMulheresByEmpresaCnpj(String cnpj) {
+        Empregador empresa = this.getEmpresaByCNPJ(cnpj);
+        List<Empregado> funcionaria = new ArrayList<Empregado>();
+
+        for (Empregado e : empresa.getEmpregados()) {
+            if (e.getGenero() == EnumGenero.FEMININO) {
+                funcionaria.add(e);
+            }
+        }
+
+        return funcionaria;
     }
 }

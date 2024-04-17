@@ -1,7 +1,10 @@
 package com.fag.sistema.domain.entities.empresa;
 
+import java.util.List;
+
 import com.fag.sistema.domain.entities.Contato;
 import com.fag.sistema.domain.entities.Endereco;
+import com.fag.sistema.domain.entities.empregado.Empregado;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,4 +24,5 @@ public class Empregador {
     private Inscricao inscricao;
     private Contato contato;
     private Endereco endereco;
+    private List<Empregado> empregados;
 }
