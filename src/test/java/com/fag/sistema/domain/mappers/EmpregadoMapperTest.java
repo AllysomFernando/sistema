@@ -9,7 +9,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.fag.sistema.domain.dto.EmpregadoDTO;
-import com.fag.sistema.domain.entities.Endereco;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
@@ -22,8 +21,6 @@ public class EmpregadoMapperTest {
     EmpregadoDTO dto = new EmpregadoDTO();
     Horario horario = new Horario();
     Contrato contrato = new Contrato();
-    Endereco endereco = new Endereco();
-
     horario.setHoraTrabalhada(3.5f);
 
     dto.setNome("Maude Lucas");
@@ -35,7 +32,6 @@ public class EmpregadoMapperTest {
         new Dependente("Peter Simpson", LocalDate.now())));
     dto.setHorario(horario);
     dto.setContrato(contrato);
-    dto.setEndereco(endereco);
     dto.setTotalDeVendasNoMes(new BigDecimal("6000"));
     dto.setDiasEmViagem(6);
 
@@ -46,7 +42,6 @@ public class EmpregadoMapperTest {
     Empregado bo = new Empregado();
     Horario horario = new Horario();
     Contrato contrato = new Contrato();
-    Endereco endereco = new Endereco();
 
     horario.setHoraTrabalhada(3.5f);
 
@@ -59,7 +54,6 @@ public class EmpregadoMapperTest {
         new Dependente("Peter Simpson", LocalDate.now())));
     bo.setHorario(horario);
     bo.setContrato(contrato);
-    bo.setEndereco(endereco);
     bo.setTotalDeVendasNoMes(new BigDecimal("6000"));
     bo.setDiasEmViagem(6);
 
@@ -79,7 +73,6 @@ public class EmpregadoMapperTest {
     assertEquals(dto.getDependentes(), bo.getDependentes());
     assertEquals(dto.getHorario(), bo.getHorario());
     assertEquals(dto.getContrato(), bo.getContrato());
-    assertEquals(dto.getEndereco(), bo.getEndereco());
     assertEquals(dto.getTotalDeVendasNoMes(), bo.getTotalDeVendasNoMes());
     assertEquals(dto.getDiasEmViagem(), bo.getDiasEmViagem());
   }
@@ -98,7 +91,6 @@ public class EmpregadoMapperTest {
     assertEquals(bo.getDependentes(), dto.getDependentes());
     assertEquals(bo.getHorario(), dto.getHorario());
     assertEquals(bo.getContrato(), dto.getContrato());
-    assertEquals(bo.getEndereco(), dto.getEndereco());
     assertEquals(bo.getTotalDeVendasNoMes(), dto.getTotalDeVendasNoMes());
     assertEquals(bo.getDiasEmViagem(), dto.getDiasEmViagem());
   }

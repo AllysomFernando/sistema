@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.fag.sistema.domain.entities.Endereco;
 import com.fag.sistema.domain.enums.EnumGenero;
 
 import lombok.AllArgsConstructor;
@@ -23,7 +22,6 @@ public class Empregado {
     private List<Dependente> dependentes;
     private Horario horario;
     private Contrato contrato;
-    private Endereco endereco;
     private BigDecimal totalDeVendasNoMes;
     private Integer diasEmViagem; // TODO calculo de diarias para viagem
 

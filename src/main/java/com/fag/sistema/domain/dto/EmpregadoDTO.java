@@ -24,7 +24,6 @@ public class EmpregadoDTO {
     private List<Dependente> dependentes;
     private Horario horario;
     private Contrato contrato;
-    private Endereco endereco;
     private BigDecimal totalDeVendasNoMes;
     private Integer diasEmViagem;
 }
