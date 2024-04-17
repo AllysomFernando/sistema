@@ -125,4 +125,17 @@ public class AuxilioCrecheTest {
 
     assertEquals(new BigDecimal("0.00"), beneficio);
   }
+
+  @Test
+  @Description("Should not change base de calculo de inss, fgts e irrf")
+  void shouldNotchangeBaseDeCalculo() {
+    AuxilioCreche sut = new AuxilioCreche();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"));
+    Empregador empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(empregado.getContrato().getSalario().getBruto(), empregado.getContrato().getSalario().getBaseCalculoFGTS());
+    assertEquals(empregado.getContrato().getSalario().getBruto(), empregado.getContrato().getSalario().getBaseCalculoInss());
+  }
 }
