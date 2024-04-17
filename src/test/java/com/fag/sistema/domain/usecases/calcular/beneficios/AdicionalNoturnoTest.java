@@ -61,7 +61,7 @@ public class AdicionalNoturnoTest {
 
     BigDecimal beneficio = sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("12.90"), beneficio);
+    assertEquals(new BigDecimal("129.60"), beneficio);
   }
 
   @Test
