@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empregador;
-
+import com.fag.sistema.domain.enums.EnumGenero;
 
 @Component
 public class AuxilioCreche extends Provento implements IBeneficioUseCase {
@@ -25,17 +26,28 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
   public BigDecimal calculate(Empregado empregado, Empregador empresa) {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
     BigDecimal referencia = new BigDecimal("0.05");
+    List<Empregado> empregadosDoGeneroFeminino = getEmpregadosDoGeneroFeminino(empresa);
 
-    if (empregado.getDependentes() == null || empregado.getDependentes().isEmpty())
-      return beneficio;
+    if (!empregado.possuiDependente()) return beneficio;
+
+    if (empregadosDoGeneroFeminino.size() < 30) return beneficio;
+
+    for (Empregado funcionaria : empregadosDoGeneroFeminino) {
+      if (!funcionaria.possuiDependente()) return beneficio;
+
+      for (Dependente d : funcionaria.getDependentes()) {
+        Boolean estaApto = this.dependenteAptoParaBeneficio(d);
+
+        if (!estaApto) return beneficio;
+      }
+    }
 
     List<Dependente> dependentes = empregado.getDependentes();
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
     for (Dependente d : dependentes) {
-      LocalDate now = LocalDate.now();
-      Long diferencaEmMeses = ChronoUnit.MONTHS.between(d.getDataNascimento(), now);
-      if (diferencaEmMeses < 6) {
+      Boolean estaApto = this.dependenteAptoParaBeneficio(d);
+      if (estaApto) {
         BigDecimal auxilioCreche = salarioBruto.multiply(referencia).setScale(2, RoundingMode.HALF_UP);
         beneficio = beneficio.add(auxilioCreche);
       }
@@ -46,4 +58,23 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
     return beneficio;
   }
 
+  private List<Empregado> getEmpregadosDoGeneroFeminino(Empregador empresa) {
+    List<Empregado> empregados = new ArrayList<Empregado>();
+
+    for (Empregado e : empresa.getEmpregados()) {
+      if (e.getGenero() == EnumGenero.FEMININO) {
+        empregados.add(e);
+      }
+    }
+
+    return empregados;
+  }
+
+  private Boolean dependenteAptoParaBeneficio(Dependente dependente) {
+    LocalDate now = LocalDate.now();
+    Long diferencaEmMeses = ChronoUnit.MONTHS.between(dependente.getDataNascimento(), now);
+    if (diferencaEmMeses < 6) return true;
+
+    return false;
+  }
 }

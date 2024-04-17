@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,4 +23,8 @@ public class Empregado {
     private Horario horario;
     private Contrato contrato;
     private Endereco endereco;
+
+    public Boolean possuiDependente() {
+        return this.dependentes != null && !this.dependentes.isEmpty();
+    }
 }
