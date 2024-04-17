@@ -47,6 +47,22 @@ public class AdicionalInsalubridadeTest {
   }
 
   @Test
+  @Description("Should update base de calculos")
+  public void shouldUpdateBaseDeCalculos() {
+    AdicionalInsalubridade sut = new AdicionalInsalubridade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"),
+        EnumGrauInsalubridade.BAIXO);
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoInss());
+    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF());
+    
+  }
+
+  @Test
   @Description("Should calculate Adicional Insalubridade with grau BAIXO")
   public void shouldCalculateAdicionalInsalubridadeGrauBaixo() {
     AdicionalInsalubridade sut = new AdicionalInsalubridade();
