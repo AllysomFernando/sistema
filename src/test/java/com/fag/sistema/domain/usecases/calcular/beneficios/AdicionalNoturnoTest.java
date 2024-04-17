@@ -18,15 +18,15 @@ public class AdicionalNoturnoTest {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
 
-    Salario salario = new Salario();
-    salario.setBase(salarioBruto);
+    Salario salario = new Salario(salarioBruto);
 
     Horario horario = new Horario();
     horario.setHorasAdicionalNoturno(horasAdicionalNoturno);
-    horario.setHoraTrabalhada(220);
+    horario.setHoraTrabalhada(220f);
+
+    contrato.setSalario(salario);
 
     empregado.setContrato(contrato);
-    contrato.setSalario(salario);
     empregado.setHorario(horario);
 
     return empregado;
@@ -36,6 +36,20 @@ public class AdicionalNoturnoTest {
     Empresa empresa = new Empresa();
 
     return empresa;
+  }
+
+  @Test
+  @Description("Should update base de calculos")
+  public void shouldUpdateBaseDeCalculos() {
+    AdicionalNoturno sut = new AdicionalNoturno();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000"), 10.0f);
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("2136.35"), empregado.getContrato().getSalario().getBaseCalculoInss());
+    assertEquals(new BigDecimal("2136.35"), empregado.getContrato().getSalario().getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("2136.35"), empregado.getContrato().getSalario().getBaseCalculoIRRF());
   }
 
   @Test
