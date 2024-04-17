@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.usecases.calcular.descontos;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 import com.fag.sistema.domain.entities.Provento;
@@ -19,11 +20,13 @@ public class HorasEmDeficit extends Provento implements IDescontoUseCase {
     BigDecimal horasEmDeficit = new BigDecimal(empregado.getHorario().getHorasEmDeficit()).setScale(2, RoundingMode.DOWN);
     Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();
 
-    BigDecimal valorDiaria = salarioBruto.divide(new BigDecimal(diasTrabalhados).setScale(2, RoundingMode.HALF_EVEN)).setScale(2, RoundingMode.CEILING);
+    BigDecimal diasTrabalhadosBigDecimal = new BigDecimal(Float.toString(diasTrabalhados));
 
-    BigDecimal valorHoras = valorDiaria.divide(new BigDecimal(empresa.getCargaHorariaDiaria())).setScale(2, RoundingMode.DOWN);
+    BigDecimal valorDiaria = salarioBruto.divide(diasTrabalhadosBigDecimal, MathContext.DECIMAL128);
 
-    BigDecimal desconto = valorHoras.multiply(horasEmDeficit);
+    BigDecimal valorHoras = valorDiaria.divide(new BigDecimal(empresa.getCargaHorariaDiaria())).setScale(2, RoundingMode.HALF_DOWN);
+
+    BigDecimal desconto = valorHoras.multiply(horasEmDeficit).setScale(2);
 
     this.setProvento(getDescricao(), horasEmDeficit, BigDecimal.ZERO, desconto);
 

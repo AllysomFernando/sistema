@@ -48,6 +48,7 @@ public class HorasEmDeficitTest {
 
     BigDecimal discount = sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("75.00"), discount);
+    assertEquals(new BigDecimal("81.50"), discount);
+    assertEquals(new BigDecimal("2918.50"), empregado.getContrato().getSalario().getBaseCalculoFGTS());
   }
 }
