@@ -2,15 +2,33 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 
 import java.math.BigDecimal;
 
+import com.fag.sistema.domain.entities.Provento;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empregador;
 
-public class HorasEmDeficit implements IDescontoUseCase{
+public class HorasEmDeficit extends Provento implements IDescontoUseCase {
+
+  public HorasEmDeficit() {
+    this.setDescricao("Horas em Deficit");
+  }
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empregador empresa) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'calculate'");
+    BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
+    BigDecimal horasEmDeficit = new BigDecimal(empregado.getHorario().getHorasEmDeficit()).setScale(2);
+    Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();
+    BigDecimal valorDiaria = salarioBruto.divide(new BigDecimal(diasTrabalhados));
+    BigDecimal valorHoras = valorDiaria.divide(new BigDecimal(empresa.getCargaHorariaDiaria()));
+
+    BigDecimal desconto = valorHoras.multiply(horasEmDeficit);
+
+    this.setProvento(getDescricao(), horasEmDeficit, BigDecimal.ZERO, desconto);
+
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(desconto.negate());
+    empregado.getContrato().getSalario().setBaseCalculoInss(desconto.negate());
+
+    return desconto;
+
   }
-  
+
 }
