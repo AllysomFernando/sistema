@@ -27,4 +27,8 @@ public class Empregador {
     private Contato contato;
     private Endereco endereco;
     private List<Empregado> empregados;
+
+    public void adicionarEmpregado(Empregado empregado) {
+        this.empregados.add(empregado);
+    }
 }

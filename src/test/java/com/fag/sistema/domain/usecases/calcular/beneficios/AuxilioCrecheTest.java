@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,7 @@ import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
 import com.fag.sistema.domain.entities.empresa.Empregador;
+import com.fag.sistema.domain.enums.EnumGenero;
 
 public class AuxilioCrecheTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
@@ -34,8 +36,26 @@ public class AuxilioCrecheTest {
     return dependentes;
   }
 
+  private List<Empregado> makeEmpregadosComDependente() {
+    List<Empregado> empregados = new ArrayList<>();
+    List<Dependente> dependentes = this.makeDependentes();
+
+    for (int i = 0; i < 30; i++) {
+      Empregado funcionaria = new Empregado();
+      funcionaria.setNome("Kyle Nichols");
+      funcionaria.setGenero(EnumGenero.FEMININO);
+      funcionaria.setDataNascimento(LocalDate.of(2000, 03, 01));
+      funcionaria.setDependentes(dependentes);
+
+      empregados.add(funcionaria);
+    }
+
+    return empregados;
+  }
+
   private Empregador makeEmpresa() {
     Empregador empresa = new Empregador();
+    empresa.setEmpregados(this.makeEmpregadosComDependente());
 
     return empresa;
   }
