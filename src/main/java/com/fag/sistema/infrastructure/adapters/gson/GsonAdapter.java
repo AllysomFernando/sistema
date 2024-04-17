@@ -6,19 +6,23 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import com.fag.sistema.infrastructure.adapters.gson.typeAdapters.LocalDateTypeAdapter;
 import com.fag.sistema.infrastructure.interfaces.IJsonReader;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 
+@Component
 public class GsonAdapter<T> implements IJsonReader<T> {
 
   private Gson gson;
 
   private String fileName;
 
-  public GsonAdapter(String fileName) {
+  public GsonAdapter(@Value("${data.json.path}") String fileName) {
     this.gson = new GsonBuilder().registerTypeAdapter(LocalDate.class, new LocalDateTypeAdapter()).create();
     this.fileName = fileName;
   }
@@ -55,7 +59,7 @@ public class GsonAdapter<T> implements IJsonReader<T> {
       FileReader file = new FileReader(filePath);
       return file;
     } catch (Exception e) {
-      throw new RuntimeException("Arquivo não encontrado");
+      throw new RuntimeException("Arquivo não encontrado. Procurando por: " + this.fileName);
     }
   }
 
