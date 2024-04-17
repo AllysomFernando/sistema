@@ -21,9 +21,11 @@ public class EmpregadorMapper {
     public static EmpregadorDTO toDTO(Empregador bo) {
         EmpregadorDTO dto = new EmpregadorDTO();
 
+        dto.setId(bo.getCnpj());
         dto.setCNPJ(bo.getCnpj());
         dto.setRazaoSocial(bo.getRazaoSocial());
         dto.setNomeFantasia(bo.getNomeFantasia());
+        dto.setNome(bo.getNomeFantasia());
         dto.setClassificacaoTributaria(bo.getClassificacaoTributaria());
         dto.setPorteEmpresa(bo.getPorteEmpresa());
         dto.setNaturezaJuridica(bo.getNaturezaJuridica());

@@ -14,6 +14,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Dependente;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 public class SalarioFamiliaTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
@@ -22,6 +23,12 @@ public class SalarioFamiliaTest {
     empregado.getContrato().setSalario(new Salario(salarioBruto));
 
     return empregado;
+  }
+
+  private Empregador makeEmpresa() {
+    Empregador empresa = new Empregador();
+
+    return empresa;
   }
 
   private List<Dependente> makeValidDependentes() {
@@ -45,12 +52,14 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
 
+    Empregador empresa = makeEmpresa();
+
     List<Dependente> dependentes = List.of(
         new Dependente("Rosie Robbins", LocalDate.of(2020, 01, 01)));
 
     empregado.setDependentes(dependentes);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("70.60"), beneficio);
   }
@@ -60,10 +69,11 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
     List<Dependente> dependentes = makeValidDependentes();
+    Empregador empresa = makeEmpresa();
 
     empregado.setDependentes(dependentes);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("141.20"), beneficio);
   }
@@ -73,10 +83,11 @@ public class SalarioFamiliaTest {
     SalarioFamilia sut = new SalarioFamilia();
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
     List<Dependente> dependentes = makeInvalidDependentes();
+    Empregador empresa = makeEmpresa();
 
     empregado.setDependentes(dependentes);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("0.00"), beneficio);
   }

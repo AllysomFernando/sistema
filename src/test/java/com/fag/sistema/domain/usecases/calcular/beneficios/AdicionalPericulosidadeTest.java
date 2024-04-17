@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 
 public class AdicionalPericulosidadeTest {
@@ -21,12 +22,19 @@ public class AdicionalPericulosidadeTest {
     return empregado;
   }
 
+  private Empregador makeEmpresa() {
+    Empregador empresa = new Empregador();
+
+    return empresa;
+  }
+
   @Test
   void shouldAddAdicionalPericulosidade() {
     AdicionalPericulosidade sut = new AdicionalPericulosidade();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"));
+    Empregador empregador = makeEmpresa();
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empregador);
 
     assertEquals(new BigDecimal("57.00"), beneficio);
   }
@@ -37,8 +45,9 @@ public class AdicionalPericulosidadeTest {
     AdicionalPericulosidade sut = new AdicionalPericulosidade();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"));
     empregado.getContrato().setGrauInsalubridade(EnumGrauInsalubridade.BAIXO);
+    Empregador empregador = makeEmpresa();
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empregador);
 
     assertEquals(BigDecimal.ZERO, beneficio);
   }

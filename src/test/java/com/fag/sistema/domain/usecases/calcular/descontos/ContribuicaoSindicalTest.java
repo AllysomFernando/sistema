@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Description;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 public class ContribuicaoSindicalTest {
 
@@ -21,13 +22,20 @@ public class ContribuicaoSindicalTest {
     return empregado;
   }
 
+  private Empregador makeEmpresa() {
+    Empregador empresa = new Empregador();
+
+    return empresa;
+  }
+
   @Test
   @Description("Should calculate Contribuicao Sindical")
   public void shouldCalculateContribuicaoSindical() {
     ContribuicaoSindical sut = new ContribuicaoSindical();
     Empregado empregado = makeEmpregadoComSalario(new BigDecimal("1900.00"));
+    Empregador empresa = makeEmpresa();
 
-    BigDecimal discount = sut.calculate(empregado);
+    BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("50.00"), discount);
   }

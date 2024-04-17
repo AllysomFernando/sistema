@@ -10,9 +10,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class EmpregadorDTO {
+    private String id;
     private String CNPJ;
     private String razaoSocial;
     private String nomeFantasia;
+    private String nome;
     private String classificacaoTributaria;
     private String porteEmpresa;
     private String naturezaJuridica;

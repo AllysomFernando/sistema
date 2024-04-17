@@ -11,6 +11,7 @@ import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.entities.empregado.Salario;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 public class AdicionalNoturnoTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto, Float horasAdicionalNoturno) {
@@ -31,13 +32,20 @@ public class AdicionalNoturnoTest {
     return empregado;
   }
 
+  private Empregador makeEmpresa() {
+    Empregador empresa = new Empregador();
+
+    return empresa;
+  }
+
   @Test
   @Description("Should add adicional noturno if horario de trabalho is noturno")
   void shouldAddAdicionaNoturno() {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), 10.0f);
+    Empregador empresa = makeEmpresa();
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("12.90"), beneficio);
   }
@@ -48,7 +56,9 @@ public class AdicionalNoturnoTest {
     AdicionalNoturno sut = new AdicionalNoturno();
     Empregado empregado = makeEmpregado(new BigDecimal("1900.0"), 0.0f);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    Empregador empresa = makeEmpresa();
+
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(BigDecimal.ZERO, beneficio);
   }

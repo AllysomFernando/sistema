@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
+import com.fag.sistema.domain.entities.empresa.Empregador;
 
 public class QuinquenioTest {
 
@@ -22,13 +23,22 @@ public class QuinquenioTest {
     return empregado;
   }
 
+
+  private Empregador makeEmpresa() {
+    Empregador empresa = new Empregador();
+
+    return empresa;
+  }
+
   @Test
   void shouldCalculateQuiquenioForEmpregadoWith5Years() {
     Quinquenio sut = new Quinquenio();
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 5, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    Empregador empresa = makeEmpresa();
+
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("60.00"), beneficio);
   }
@@ -38,8 +48,9 @@ public class QuinquenioTest {
     Quinquenio sut = new Quinquenio();
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 10, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
+    Empregador empresa = makeEmpresa();
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("120.00"), beneficio);
   }
@@ -50,7 +61,9 @@ public class QuinquenioTest {
     LocalDate dataAdmissao = LocalDate.of(LocalDate.now().getYear() - 6, LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth());
     Empregado empregado = makeEmpregado(new BigDecimal("2000.00"), dataAdmissao);
 
-    BigDecimal beneficio = sut.calculate(empregado);
+    Empregador empresa = makeEmpresa();
+
+    BigDecimal beneficio = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("60.00"), beneficio);
   }
