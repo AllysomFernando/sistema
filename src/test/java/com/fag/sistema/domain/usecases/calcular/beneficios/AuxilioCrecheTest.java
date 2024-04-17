@@ -69,6 +69,23 @@ public class AuxilioCrecheTest {
   }
 
   @Test
+  @Description("Should update base de calculos")
+  public void shouldUpdateBaseDeCalculos() {
+    AuxilioCreche sut = new AuxilioCreche();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000"));
+    Empresa empresa = makeEmpresa();
+    List<Dependente> dependentes = List.of(
+        new Dependente("Rosie Robbins", LocalDate.of(2024, 01, 01)));
+        empregado.setDependentes(dependentes);
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("2100.00"), empregado.getContrato().getSalario().getBaseCalculoInss());
+    assertEquals(new BigDecimal("2100.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("2100.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF());
+  }
+
+  @Test
   @Description("Should not add auxilio creche if empregado has no dependente")
   void shouldNotAddAuxilioCrecheIfEmpregadoHasNoDependente() {
     AuxilioCreche sut = new AuxilioCreche();
