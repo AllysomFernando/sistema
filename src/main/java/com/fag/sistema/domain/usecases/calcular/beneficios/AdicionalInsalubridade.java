@@ -13,7 +13,7 @@ import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 public class AdicionalInsalubridade extends Provento implements IBeneficioUseCase {
 
   public AdicionalInsalubridade() {
-    this.setDescricao("Adicional de Insalubridade");
+    super("Adicional de Insalubridade");
   }
 
   @Override
@@ -21,14 +21,12 @@ public class AdicionalInsalubridade extends Provento implements IBeneficioUseCas
     EnumGrauInsalubridade insalubridade = empregado.getContrato().getGrauInsalubridade();
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
-    BigDecimal beneficio = salarioBruto.multiply(insalubridade.getMultiplicador());
-    BigDecimal formatedValue = beneficio.setScale(2); 
+    BigDecimal beneficio = salarioBruto.multiply(insalubridade.getMultiplicador()).setScale(2);
 
-    this.setProvento("Adicional de Insalubridade", insalubridade.getMultiplicador(), formatedValue, BigDecimal.ZERO);
+    this.setProvento(getDescricao(), insalubridade.getMultiplicador(), beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
-    empregado.getContrato().getSalario().somarBasesDeCalculo(formatedValue);
-
-    return formatedValue;
+    return beneficio;
   }
 
 }

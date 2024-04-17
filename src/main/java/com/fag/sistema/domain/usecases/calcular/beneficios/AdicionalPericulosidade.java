@@ -13,7 +13,7 @@ import com.fag.sistema.domain.enums.EnumGrauInsalubridade;
 public class AdicionalPericulosidade extends Provento implements IBeneficioUseCase {
 
   public AdicionalPericulosidade() {
-    this.setDescricao("Adicional de Periculosidade");
+    super("Adicional de Periculosidade");
   }
 
   @Override
@@ -29,6 +29,7 @@ public class AdicionalPericulosidade extends Provento implements IBeneficioUseCa
     BigDecimal beneficio = salarioBruto.multiply(referencia).setScale(2);
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
 
     return beneficio;
   }

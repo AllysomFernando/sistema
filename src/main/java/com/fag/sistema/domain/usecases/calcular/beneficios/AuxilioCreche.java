@@ -19,7 +19,7 @@ import com.fag.sistema.domain.enums.EnumGenero;
 public class AuxilioCreche extends Provento implements IBeneficioUseCase {
 
   public AuxilioCreche() {
-    this.setDescricao("Auxilio Creche");
+    super("Auxilio Creche");
   }
 
   @Override
@@ -54,6 +54,7 @@ public class AuxilioCreche extends Provento implements IBeneficioUseCase {
     }
 
     this.setProvento(getDescricao(), referencia, beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
 
     return beneficio;
   }

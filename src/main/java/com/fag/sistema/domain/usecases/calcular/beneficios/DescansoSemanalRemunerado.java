@@ -9,7 +9,7 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class DescansoSemanalRemunerado extends Provento implements IBeneficioUseCase {
 
   public DescansoSemanalRemunerado() {
-    this.setDescricao("DSR - Descanso Semanal Remunerado");
+    super("DSR - Descanso Semanal Remunerado");
   }
 
   @Override
