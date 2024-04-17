@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
 
+import com.fag.sistema.domain.entities.empregado.Beneficios;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
@@ -14,8 +15,11 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class SalarioMaternidadeTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
-    empregado.setContrato(new Contrato());
-    empregado.getContrato().setSalario(new Salario(salarioBruto));
+    Contrato contrato = new Contrato();
+    contrato.setBeneficios(new Beneficios(false, false, true));
+    contrato.setSalario(new Salario(salarioBruto));
+
+    empregado.setContrato(contrato);
 
     return empregado;
   }

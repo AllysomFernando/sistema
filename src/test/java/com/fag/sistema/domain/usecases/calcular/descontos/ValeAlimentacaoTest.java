@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
 
+import com.fag.sistema.domain.entities.empregado.Beneficios;
 import com.fag.sistema.domain.entities.empregado.Contrato;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empregado.Salario;
@@ -16,8 +17,11 @@ public class ValeAlimentacaoTest {
 
   private Empregado makeEmpregadoComSalario(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
-    empregado.setContrato(new Contrato());
-    empregado.getContrato().setSalario(new Salario(salarioBruto));
+    Contrato contrato = new Contrato();
+    contrato.setBeneficios(new Beneficios(true, false, false));
+    contrato.setSalario(new Salario(salarioBruto));
+
+    empregado.setContrato(contrato);
 
     return empregado;
   }

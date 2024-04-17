@@ -18,12 +18,7 @@
         "genero": "MASCULINO",
         "cpf": "12345678910",
         "dataNascimento": "1990-01-15",
-        "dependentes": [
-          {
-            "nome": "Ana Silva",
-            "dataNascimento": "2015-06-30"
-          }
-        ],
+        "dependentes": [],
         "contrato": {
           "dataAdmissao": "2020-02-01",
           "cargo": "Desenvolvedor de Software",
@@ -38,6 +33,11 @@
             "bruto": "3000",
             "liquido": 0,
             "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false
           }
         },
         "horario": {
