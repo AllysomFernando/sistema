@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fag.sistema.domain.dto.EmpregadoDTO;
+import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.mappers.EmpregadoMapper;
 import com.fag.sistema.service.EmpregadoService;
 
 @RestController
@@ -26,9 +28,9 @@ public class EmpregadoController {
 
     @GetMapping("/{cpf}")
     public ResponseEntity<EmpregadoDTO> listarEmpregadoPorCPF(@PathVariable String cpf) {
-        EmpregadoDTO empregadoDTO = empregadoService.getEmpregadoByCpf(cpf);
-        if (empregadoDTO != null) {
-            return ResponseEntity.ok(empregadoDTO);
+        Empregado empregado = empregadoService.findEmpregadoByCpf(cpf);
+        if (empregado != null) {
+            return ResponseEntity.ok(EmpregadoMapper.toDTO(empregado));
         } else {
             return ResponseEntity.notFound().build();
         }

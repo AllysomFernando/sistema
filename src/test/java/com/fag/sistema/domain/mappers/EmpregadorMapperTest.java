@@ -55,7 +55,7 @@ public class EmpregadorMapperTest {
   void shouldMapToBO() {
     EmpregadorDTO empresa = makeDto();
 
-    Empresa bo = EmpregadorMapper.toBO(empresa);
+    Empresa bo = EmpresaMapper.toBO(empresa);
 
     assertEquals(empresa.getCnpj(), bo.getCnpj());
     assertEquals(empresa.getNomeFantasia(), bo.getNomeFantasia());
@@ -71,7 +71,7 @@ public class EmpregadorMapperTest {
   void shouldMapToDto() {
     Empresa empresa = makeBO();
 
-    EmpregadorDTO bo = EmpregadorMapper.toDTO(empresa);
+    EmpregadorDTO bo = EmpresaMapper.toDTO(empresa);
 
     assertEquals(empresa.getCnpj(), bo.getCnpj());
     assertEquals(empresa.getNomeFantasia(), bo.getNomeFantasia());

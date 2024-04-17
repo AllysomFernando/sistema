@@ -12,8 +12,107 @@
       "inscricaoMunicipal": "123456",
       "inscricaoEstadual": "123456"
     },
-    "empregados": [{
-      "genero": "FEMININO"
-    }]
+    "empregados": [
+      {
+        "nome": "João Silva",
+        "genero": "MASCULINO",
+        "cpf": "12345678910",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2015-06-30"
+          }
+        ],
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "pisPasep": 123456789,
+          "horas": 160,
+          "grauInsalubridade": "BAIXO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": 0,
+            "base": "3000"
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 2,
+          "justificativa": true,
+          "horasExtras": 10,
+          "horasExtrasEmFinsDeSemana": 10,
+          "horasAdicionalNoturno": 5
+        }
+      },
+      {
+        "nome": "Barry Bush",
+        "genero": "MASCULINO",
+        "cpf": "12345678911",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2015-06-30"
+          }
+        ],
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "pisPasep": 123456789,
+          "horas": 160,
+          "grauInsalubridade": "BAIXO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": 0,
+            "base": "3000"
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 2,
+          "justificativa": true,
+          "horasExtras": 10,
+          "horasExtrasEmFinsDeSemana": 10,
+          "horasAdicionalNoturno": 5
+        }
+      },
+      {
+        "nome": "Eugenia Knight",
+        "genero": "FEMININO",
+        "cpf": "97766548356",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [],
+        "contrato": {
+          "dataAdmissao": "2010-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "pisPasep": 123456789,
+          "horas": 160,
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": 0,
+            "base": "3000"
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      }
+    ]
   }
 ]

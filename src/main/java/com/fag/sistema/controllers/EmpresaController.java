@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.domain.entities.empresa.Empresa;
+import com.fag.sistema.domain.mappers.EmpresaMapper;
 import com.fag.sistema.service.EmpresaService;
 
 @RestController
@@ -25,7 +27,8 @@ public class EmpresaController {
 
     @GetMapping("/{cnpj}")
     public EmpregadorDTO getEmpresaByCnpj(@PathVariable(value = "cnpj") String cnpj) {
-        return empresaService.getEmpresaByCNPJ(cnpj);
+        Empresa empresa = empresaService.getEmpresaByCnpj(cnpj);
+        return EmpresaMapper.toDTO(empresa);
     }
 
 }

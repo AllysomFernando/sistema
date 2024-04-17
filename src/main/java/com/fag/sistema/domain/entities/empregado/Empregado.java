@@ -16,7 +16,6 @@ import lombok.NoArgsConstructor;
 public class Empregado {
     private String nome;
     private EnumGenero genero;
-    private List<Doenca> doencas;
     private String cpf;
     private LocalDate dataNascimento;
     private List<Dependente> dependentes;

@@ -8,7 +8,6 @@ public class EmpregadoMapper {
         return new Empregado(
                 dto.getNome(),
                 dto.getGenero(),
-                dto.getDoencas(),
                 dto.getCpf(),
                 dto.getDataNascimento(),
                 dto.getDependentes(),
@@ -22,7 +21,6 @@ public class EmpregadoMapper {
         EmpregadoDTO dto = new EmpregadoDTO();
         dto.setNome(bo.getNome());
         dto.setGenero(bo.getGenero());
-        dto.setDoencas(bo.getDoencas());
         dto.setCpf(bo.getCpf());
         dto.setDataNascimento(bo.getDataNascimento());
         dto.setDependentes(bo.getDependentes());

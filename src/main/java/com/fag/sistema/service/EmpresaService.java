@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.entities.empresa.Empresa;
-import com.fag.sistema.domain.mappers.EmpregadorMapper;
+import com.fag.sistema.domain.mappers.EmpresaMapper;
 import com.fag.sistema.infrastructure.repositories.EmpresaRepository;
 
 @Service
@@ -19,14 +19,14 @@ public class EmpresaService {
     public List<EmpregadorDTO> getAllEmpresas() {
         List<Empresa> empresaList = empresaRepository.getAllEmpregador();
         return empresaList.stream()
-                .map(EmpregadorMapper::toDTO)
+                .map(EmpresaMapper::toDTO)
                 .collect(Collectors.toList());
     }
 
-    public EmpregadorDTO getEmpresaByCNPJ(String cnpj) {
+    public Empresa getEmpresaByCnpj(String cnpj) {
         Empresa empregador = empresaRepository.getEmpresaByCNPJ(cnpj);
         if (empregador != null) {
-            return EmpregadorMapper.toDTO(empregador);
+            return empregador;
         }
         return null;
     }

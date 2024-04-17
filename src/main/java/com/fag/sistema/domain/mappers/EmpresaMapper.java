@@ -3,7 +3,7 @@ package com.fag.sistema.domain.mappers;
 import com.fag.sistema.domain.dto.EmpregadorDTO;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 
-public class EmpregadorMapper {
+public class EmpresaMapper {
     public static Empresa toBO(EmpregadorDTO dto) {
         return new Empresa(
                 dto.getCnpj(),
