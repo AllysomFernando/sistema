@@ -19,7 +19,7 @@ public class EmpregadoDTO {
     private String nome;
     private EnumGenero genero;
     private List<Doenca> doencas;
-    private String CPF;
+    private String cpf;
     private LocalDate dataNascimento;
     private List<Dependente> dependentes;
     private Horario horario;

@@ -9,7 +9,7 @@ public class EmpregadoMapper {
                 dto.getNome(),
                 dto.getGenero(),
                 dto.getDoencas(),
-                dto.getCPF(),
+                dto.getCpf(),
                 dto.getDataNascimento(),
                 dto.getDependentes(),
                 dto.getHorario(),
@@ -24,13 +24,15 @@ public class EmpregadoMapper {
         dto.setNome(bo.getNome());
         dto.setGenero(bo.getGenero());
         dto.setDoencas(bo.getDoencas());
-        dto.setCPF(bo.getCpf());
+        dto.setCpf(bo.getCpf());
         dto.setDataNascimento(bo.getDataNascimento());
         dto.setDependentes(bo.getDependentes());
         dto.setHorario(bo.getHorario());
         dto.setHorario(bo.getHorario());
         dto.setContrato(bo.getContrato());
         dto.setEndereco(bo.getEndereco());
+        dto.setTotalDeVendasNoMes(bo.getTotalDeVendasNoMes());
+        dto.setDiasEmViagem(bo.getDiasEmViagem());
 
         return dto;
     }
