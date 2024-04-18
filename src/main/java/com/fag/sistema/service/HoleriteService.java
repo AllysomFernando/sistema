@@ -24,7 +24,7 @@ public class HoleriteService {
 
     public Holerite criarHolerite(String cpf, String cnpj) {
         Empresa empregador = empresaService.getEmpresaByCnpj(cnpj);
-        Empregado empregado = empregadoService.getEmpregadoByCpf(cpf, empregador.getEmpregados());
+        Empregado empregado = empregadoService.findEmpregadoByCpf(cpf);
         BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
         empregado.getContrato().getSalario().setBaseCalculoFGTS(salarioBruto);
@@ -35,9 +35,12 @@ public class HoleriteService {
 
         Holerite holerite = new Holerite();
 
+        BigDecimal salarioLiquido = empregado.getContrato().getSalario().getBruto().add(proventos.getTotalBeneficios());
+
+        BigDecimal salarioLiquidoDescontado = salarioLiquido.subtract(proventos.getTotalDescontos());
+
         empregado.getContrato().getSalario()
-                .setLiquido((empregado.getContrato().getSalario().getBruto().add(proventos.getTotalBeneficios()))
-                        .subtract(proventos.getTotalDescontos()));
+                .setLiquido(salarioLiquidoDescontado);
 
         holerite.setEmpregado(empregado);
         holerite.setEmpregador(empregador);
@@ -47,7 +50,9 @@ public class HoleriteService {
         holerite.setSalarioContribuicaoInss(empregado.getContrato().getSalario().getBaseCalculoInss());
         holerite.setFgtsMensal(empregado.getContrato().getSalario().getFgtsMensal());
 
-        // HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
+        empregado = null;
+        proventos = null;
+        empregador = null;
 
         return holerite;
     }

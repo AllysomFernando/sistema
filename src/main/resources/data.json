@@ -33,7 +33,7 @@
           "descricao": "Contrato de trabalho efetivo.",
           "salario": {
             "bruto": "3000",
-            "liquido": 0,
+            "liquido": "0",
             "base": "3000"
           },
           "beneficios": {

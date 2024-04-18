@@ -37,6 +37,10 @@ public class Salario {
     this.FgtsMensal = BigDecimal.ZERO;
   }
 
+  public void setLiquido(BigDecimal liquido) {
+    this.liquido = liquido;
+  }
+
   public void somarBasesDeCalculo(BigDecimal value) {
     this.baseCalculoFGTS = this.baseCalculoFGTS.add(value);
     this.baseCalculoInss = this.baseCalculoInss.add(value);

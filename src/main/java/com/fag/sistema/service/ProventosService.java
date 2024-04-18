@@ -15,9 +15,6 @@ import com.fag.sistema.domain.usecases.calcular.descontos.IDescontoUseCase;
 
 @Service
 public class ProventosService {
-    private BigDecimal totalBeneficios;
-    private BigDecimal totalDescontos;
-
     @Autowired
     private List<IBeneficioUseCase> beneficios;
 
@@ -27,23 +24,20 @@ public class ProventosService {
     @Autowired
     private List<IDescontoEmFolhaUseCase> descontosEmFolha;
 
-    public ProventosService() {
-        this.totalBeneficios = BigDecimal.ZERO;
-        this.totalDescontos = BigDecimal.ZERO;
-    }
-
     public ProventosDTO calcularProventos(Empregado empregado, Empresa empresa) {
+        BigDecimal totalBeneficios = BigDecimal.ZERO;
+        BigDecimal totalDescontos = BigDecimal.ZERO;
 
         for (IBeneficioUseCase beneficio : beneficios) {
-            this.totalBeneficios = this.totalBeneficios.add(beneficio.calculate(empregado, empresa));
+            totalBeneficios = totalBeneficios.add(beneficio.calculate(empregado, empresa));
         }
 
         for (IDescontoUseCase desconto : descontos) {
-            this.totalDescontos = this.totalDescontos.add(desconto.calculate(empregado, empresa));
+            totalDescontos = totalDescontos.add(desconto.calculate(empregado, empresa));
         }
 
         for (IDescontoEmFolhaUseCase desconto : descontosEmFolha) {
-            this.totalDescontos = this.totalDescontos.add(desconto.calculate(empregado, empresa));
+            totalDescontos = totalDescontos.add(desconto.calculate(empregado, empresa));
         }
 
         ProventosDTO proventos = new ProventosDTO();
