@@ -19,7 +19,7 @@ public class AdicionalPericulosidadeTest {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
     Salario salario = new Salario(salarioBruto);
-    Beneficios beneficios = new Beneficios(false, false, false, true);
+    Beneficios beneficios = new Beneficios(false, false, false, true, false);
 
     contrato.setSalario(salario);
     contrato.setBeneficios(beneficios);

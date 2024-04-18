@@ -18,7 +18,7 @@ public class ValeTransporteTest {
   private Empregado makeEmpregadoComSalario(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
-    contrato.setBeneficios(new Beneficios(false, true, false, false));
+    contrato.setBeneficios(new Beneficios(false, true, false, false, false));
     contrato.setSalario(new Salario(salarioBruto));
 
     empregado.setContrato(contrato);

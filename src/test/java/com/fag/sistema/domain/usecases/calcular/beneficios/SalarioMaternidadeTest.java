@@ -18,7 +18,7 @@ public class SalarioMaternidadeTest {
   private Empregado makeEmpregado(BigDecimal salarioBruto) {
     Empregado empregado = new Empregado();
     Contrato contrato = new Contrato();
-    contrato.setBeneficios(new Beneficios(false, false, true, false));
+    contrato.setBeneficios(new Beneficios(false, false, true, false, false));
     contrato.setSalario(new Salario(salarioBruto));
 
     empregado.setContrato(contrato);
@@ -45,8 +45,8 @@ public class SalarioMaternidadeTest {
 
     assertAll("Base de Calculo",
         () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoInss()),
-        () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS()),
-        () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF()));
+        () -> assertEquals(new BigDecimal("2100.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS()),
+        () -> assertEquals(new BigDecimal("2100.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF()));
 
   }
 
