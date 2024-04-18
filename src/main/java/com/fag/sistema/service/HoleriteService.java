@@ -44,12 +44,10 @@ public class HoleriteService {
 
         Holerite holerite = new Holerite();
 
-        BigDecimal salarioLiquido = empregado.getContrato().getSalario().getBruto().add(proventos.getTotalBeneficios());
-
-        BigDecimal salarioLiquidoDescontado = salarioLiquido.subtract(proventos.getTotalDescontos());
+        BigDecimal salarioLiquido = proventos.getTotalBeneficios().subtract(proventos.getTotalDescontos());
 
         empregado.getContrato().getSalario()
-                .setLiquido(salarioLiquidoDescontado);
+                .setLiquido(salarioLiquido);
 
         holerite.setEmpregado(empregado);
         holerite.setEmpregador(empregador);
