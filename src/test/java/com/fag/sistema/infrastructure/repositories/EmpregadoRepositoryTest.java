@@ -24,7 +24,7 @@ public class EmpregadoRepositoryTest {
     List<Empregado> empregados = sut.getAllEmpregados();
 
     assertNotNull(empregados);
-    assertEquals(1, empregados.size());
+    assertEquals(3, empregados.size());
     assertNotNull(empregados.get(0).getCpf());
   }
 

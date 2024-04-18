@@ -1,11 +1,13 @@
 package com.fag.sistema.infrastructure.repositories;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.repositories.IEmpregadoVendor;
 import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 
@@ -13,20 +15,31 @@ import com.fag.sistema.infrastructure.adapters.gson.GsonAdapter;
 public class EmpregadoRepository implements IEmpregadoVendor {
 
     @Autowired
-    private GsonAdapter<Empregado> data;
+    private GsonAdapter<Empresa> data;
 
     @Override
     public List<Empregado> getAllEmpregados() {
-        return this.data.readListFromJson(Empregado[].class);
+        List<Empresa> list = this.data.readListFromJson(Empresa[].class);
+        List<Empregado> empregados = new ArrayList<Empregado>();
+
+        for (Empresa empresa : list) {
+            for (Empregado empregado : empresa.getEmpregados()) {
+                empregados.add(empregado);
+            }
+        }
+
+        return empregados;
     }
 
     @Override
     public Empregado getEmpregadoByCPF(String cpf) {
-        List<Empregado> result = this.data.readListFromJson(Empregado[].class);
+        List<Empresa> result = this.data.readListFromJson(Empresa[].class);
 
-        for (Empregado empregado : result) {
-            if (empregado.getCpf().equals(cpf)) {
-                return empregado;
+        for (Empresa empresa : result) {
+            for (Empregado empregado : empresa.getEmpregados()) {
+                if (empregado.getCpf().equals(cpf)) {
+                    return empregado;
+                }
             }
         }
 

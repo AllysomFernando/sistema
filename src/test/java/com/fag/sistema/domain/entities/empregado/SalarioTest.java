@@ -41,9 +41,9 @@ public class SalarioTest {
     Salario salario = new Salario(new BigDecimal("3000"));
     salario.subtrairBasesDeCalculo(new BigDecimal("300"));
 
-    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoFGTS());
-    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoInss());
-    assertEquals(new BigDecimal("2700"), salario.getBaseCalculoIRRF());
+    assertEquals(new BigDecimal("2700.00"), salario.getBaseCalculoFGTS());
+    assertEquals(new BigDecimal("2700.00"), salario.getBaseCalculoInss());
+    assertEquals(new BigDecimal("2700.00"), salario.getBaseCalculoIRRF());
   }
 
   @Test

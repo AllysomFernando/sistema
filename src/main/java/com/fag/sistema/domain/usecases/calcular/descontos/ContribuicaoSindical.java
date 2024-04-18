@@ -13,7 +13,7 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class ContribuicaoSindical extends Provento implements IDescontoUseCase {
 
   public ContribuicaoSindical() {
-    this.setDescricao("Contribuição Sindical");
+    super("Contribuição Sindical");
   }
 
   @Override

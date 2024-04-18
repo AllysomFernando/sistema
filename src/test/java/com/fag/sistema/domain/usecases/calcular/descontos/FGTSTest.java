@@ -1,5 +1,6 @@
 package com.fag.sistema.domain.usecases.calcular.descontos;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
@@ -37,5 +38,31 @@ public class FGTSTest {
     BigDecimal discount = sut.calculate(empregado, empresa);
 
     assertEquals(new BigDecimal("240.00"), discount);
+  }
+
+  @Test
+  void shouldSetFgtsMensal() {
+    FGTS sut = new FGTS();
+    Empregado empregado = makeEmpregado();
+    Empresa empresa = makeEmpresa();
+
+    BigDecimal discount = sut.calculate(empregado, empresa);
+
+    assertEquals(discount, empregado.getContrato().getSalario().getFgtsMensal());
+  }
+
+  @Test
+  void shouldNotUpdateBaseDeCalculos() {
+    FGTS sut = new FGTS();
+    Empregado empregado = makeEmpregado();
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertAll("Base de Calculo",
+        () -> assertEquals(new BigDecimal("3000.00"), empregado.getContrato().getSalario().getBaseCalculoInss()),
+        () -> assertEquals(new BigDecimal("3000.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS()),
+        () -> assertEquals(new BigDecimal("3000.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF()));
+
   }
 }

@@ -21,6 +21,7 @@ public class HorasEmDeficitTest {
     Salario salario = new Salario(salarioBruto);
 
     horario.setHorasEmDeficit(horasEmDebito);
+    horario.setJustificativa(false);
     contrato.setSalario(salario);
 
     empregado.setContrato(contrato);
