@@ -1,10 +1,12 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.Description;
 
 import com.fag.sistema.domain.entities.empregado.Beneficios;
 import com.fag.sistema.domain.entities.empregado.Contrato;
@@ -29,6 +31,23 @@ public class SalarioMaternidadeTest {
     Empresa empresa = new Empresa();
 
     return empresa;
+  }
+
+
+  @Test
+  @Description("Should not update base de calculos")
+  public void shouldNotUpdateBaseDeCalculos() {
+    SalarioMaternidade sut = new SalarioMaternidade();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000.00"));
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertAll("Base de Calculo",
+        () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoInss()),
+        () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS()),
+        () -> assertEquals(new BigDecimal("2000.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF()));
+
   }
 
   @Test

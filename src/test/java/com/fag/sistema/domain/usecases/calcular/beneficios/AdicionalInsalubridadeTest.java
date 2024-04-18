@@ -1,5 +1,6 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
+import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
@@ -56,10 +57,11 @@ public class AdicionalInsalubridadeTest {
 
     sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoInss());
-    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS());
-    assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF());
-    
+    assertAll("Base de Calculo",
+        () -> assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoInss()),
+        () -> assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoFGTS()),
+        () -> assertEquals(new BigDecimal("2200.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF()));
+
   }
 
   @Test
