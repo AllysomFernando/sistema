@@ -28,6 +28,8 @@ public class HoleriteService {
         Empregado empregado = empregadoService.findEmpregadoByCpf(cpf);
         BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
+        if (!empregado.getContrato().getAtivo()) throw new RuntimeException("Funcionário inativo");
+
         empregado.getContrato().getSalario().setBaseCalculoFGTS(salarioBruto);
         empregado.getContrato().getSalario().setBaseCalculoIrrf(salarioBruto);
         empregado.getContrato().getSalario().setBaseCalculoInss(salarioBruto);

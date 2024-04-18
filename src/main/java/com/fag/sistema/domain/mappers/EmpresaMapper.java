@@ -13,7 +13,9 @@ public class EmpresaMapper {
                 dto.getInscricao(),
                 dto.getCargaHorariaDiaria(),
                 dto.getDiasATrabalhar(),
-                dto.getEmpregados());
+                dto.getEmpregados(),
+                dto.getFuncionariasComSalarioMaternidade(),
+                dto.getFuncionariosAgrupados());
     }
 
     public static EmpregadorDTO toDTO(Empresa bo) {
@@ -27,6 +29,8 @@ public class EmpresaMapper {
         dto.setEmpregados(bo.getEmpregados());
         dto.setDiasATrabalhar(bo.getDiasATrabalhar());
         dto.setCargaHorariaDiaria(bo.getCargaHorariaDiaria());
+        dto.setFuncionariasComSalarioMaternidade(bo.getFuncionariasComSalarioMaternidade());
+        dto.setFuncionariosAgrupados(bo.getFuncionariosAgrupados());
 
         return dto;
     }

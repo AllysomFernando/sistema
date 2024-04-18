@@ -42,13 +42,13 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
     return totalHorasExtras;
   }
 
-  private BigDecimal valorHoraExtraEmDiasDaSemana(BigDecimal valorHoraDeTrabalho) {
+  public BigDecimal valorHoraExtraEmDiasDaSemana(BigDecimal valorHoraDeTrabalho) {
     BigDecimal referencia = new BigDecimal("0.5");
     BigDecimal result = referencia.multiply(valorHoraDeTrabalho);
 
     this.setReferencia(referencia);
 
-    return result.add(valorHoraDeTrabalho);
+    return result.add(valorHoraDeTrabalho).setScale(2,RoundingMode.HALF_DOWN);
   }
 
 }

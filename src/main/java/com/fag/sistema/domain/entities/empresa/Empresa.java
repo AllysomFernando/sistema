@@ -1,5 +1,6 @@
 package com.fag.sistema.domain.entities.empresa;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.fag.sistema.domain.entities.empregado.Empregado;
@@ -20,6 +21,8 @@ public class Empresa {
     private Float cargaHorariaDiaria;
     private Integer diasATrabalhar;
     private List<Empregado> empregados;
+    private List<Empregado> funcionariasComSalarioMaternidade;
+    private HashMap<String, List<Empregado>> funcionariosAgrupados;
 
     public void adicionarEmpregado(Empregado empregado) {
         this.empregados.add(empregado);

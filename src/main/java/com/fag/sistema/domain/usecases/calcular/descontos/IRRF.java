@@ -17,8 +17,6 @@ public class IRRF extends Provento implements IDescontoEmFolhaUseCase {
     super("IRRF");
   }
 
-  // TODO reanalizar calculo
-
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
 

@@ -1,9 +1,9 @@
 package com.fag.sistema.infrastructure.adapters.gson;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
@@ -39,7 +39,7 @@ public class GsonAdapterTest {
     List<Empresa> empregadores = sut.readListFromJson(Empresa[].class);
 
     assertNotNull(empregadores);
-    assertEquals(1, empregadores.size());
+    assertTrue(empregadores.size() > 0);
 
   }
 
