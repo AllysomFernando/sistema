@@ -14,7 +14,7 @@
     },
     "empregados": [
       {
-        "nome": "João Silva 2",
+        "nome": "João Silva",
         "genero": "MASCULINO",
         "cpf": "12345678910",
         "dataNascimento": "1990-01-15",
@@ -25,8 +25,6 @@
           "dataAdmissao": "2020-02-01",
           "cargo": "Desenvolvedor de Software",
           "funcao": "Programador Pleno",
-          "pisPasep": 123456789,
-          "horas": 160,
           "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
@@ -45,6 +43,1297 @@
           }
         },
         "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Maria Oliveira",
+        "genero": "FEMININO",
+        "cpf": "22345678910",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Beatriz Oliveira",
+        "genero": "FEMININO",
+        "cpf": "22345678911",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Carla Souza",
+        "genero": "FEMININO",
+        "cpf": "32345678912",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Daniela Santos",
+        "genero": "FEMININO",
+        "cpf": "42345678913",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Elaine Pereira",
+        "genero": "FEMININO",
+        "cpf": "52345678914",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Fernanda Lima",
+        "genero": "FEMININO",
+        "cpf": "62345678915",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Gabriela Costa",
+        "genero": "FEMININO",
+        "cpf": "72345678916",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Helena Rodrigues",
+        "genero": "FEMININO",
+        "cpf": "82345678917",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Isabela Ferreira",
+        "genero": "FEMININO",
+        "cpf": "92345678918",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Juliana Almeida",
+        "genero": "FEMININO",
+        "cpf": "10345678919",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Karina Ribeiro",
+        "genero": "FEMININO",
+        "cpf": "11345678920",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Larissa Martins",
+        "genero": "FEMININO",
+        "cpf": "12345678921",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Mariana Andrade",
+        "genero": "FEMININO",
+        "cpf": "13345678922",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Natália Cardoso",
+        "genero": "FEMININO",
+        "cpf": "14345678923",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Olivia Barros",
+        "genero": "FEMININO",
+        "cpf": "15345678924",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Patrícia Lima",
+        "genero": "FEMININO",
+        "cpf": "16345678925",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Renata Gomes",
+        "genero": "FEMININO",
+        "cpf": "17345678926",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Sandra Vieira",
+        "genero": "FEMININO",
+        "cpf": "18345678927",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Tatiana Soares",
+        "genero": "FEMININO",
+        "cpf": "19345678928",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Ursula Rocha",
+        "genero": "FEMININO",
+        "cpf": "20345678929",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Valéria Sampaio",
+        "genero": "FEMININO",
+        "cpf": "21345678930",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Wanessa Castro",
+        "genero": "FEMININO",
+        "cpf": "22345678931",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Ximena Prado",
+        "genero": "FEMININO",
+        "cpf": "23345678932",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Yasmin Oliveira",
+        "genero": "FEMININO",
+        "cpf": "24345678933",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Zuleica Silva",
+        "genero": "FEMININO",
+        "cpf": "25345678934",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Camila Lima",
+        "genero": "FEMININO",
+        "cpf": "26345678935",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Eliana Ribeiro",
+        "genero": "FEMININO",
+        "cpf": "27345678936",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Flávia Barros",
+        "genero": "FEMININO",
+        "cpf": "28345678937",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Gisele Almeida",
+        "genero": "FEMININO",
+        "cpf": "29345678938",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Heloisa Gomes",
+        "genero": "FEMININO",
+        "cpf": "30345678939",
+        "dataNascimento": "1990-01-15",
+        "dependentes": [
+          {
+            "nome": "Ana Silva",
+            "dataNascimento": "2024-01-18"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2020-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3000",
+            "liquido": "0",
+            "base": "3000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
           "horasExtras": 0,
@@ -69,30 +1358,104 @@
     },
     "empregados": [
       {
-        "nome": "Maria Oliveira",
-        "genero": "FEMININO",
-        "cpf": "22345678910",
-        "dataNascimento": "1992-05-20",
+        "nome": "Bruno Oliveira",
+        "genero": "MASCULINO",
+        "cpf": "33345678941",
+        "dataNascimento": "1980-03-20",
         "dependentes": [],
         "totalDeVendasNoMes": "0",
         "diasEmViagem": "0",
         "contrato": {
-          "dataAdmissao": "2021-03-10",
-          "cargo": "Analista de Dados",
-          "funcao": "Analista Pleno",
-          "pisPasep": 223456789,
-          "horas": 160,
+          "dataAdmissao": "2024-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
           "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
           "salario": {
-            "bruto": "3500",
+            "bruto": "4000",
             "liquido": "0",
-            "base": "3500"
+            "base": "4000"
           },
           "beneficios": {
             "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": true
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 10,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Bruno Oliveira",
+        "genero": "MASCULINO",
+        "cpf": "33345678941",
+        "dataNascimento": "1980-03-20",
+        "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2024-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Pleno",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "4000",
+            "liquido": "0",
+            "base": "4000"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": true
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 10,
+          "horasExtrasEmFinsDeSemana": 5,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Eduardo Pereira",
+        "genero": "MASCULINO",
+        "cpf": "36345678944",
+        "dataNascimento": "1980-05-20",
+        "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2019-02-01",
+          "cargo": "Desenvolvedor de Software",
+          "funcao": "Programador Junior",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "2800",
+            "liquido": "0",
+            "base": "2800"
+          },
+          "beneficios": {
+            "valeAlimentacao": false,
             "valeTransporte": true,
             "salarioMaternidade": false,
             "adicionalPericulosidade": false,
@@ -100,6 +1463,7 @@
           }
         },
         "horario": {
+          "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
           "horasExtras": 0,
@@ -124,20 +1488,31 @@
     },
     "empregados": [
       {
-        "nome": "Carlos Ferreira",
+        "nome": "Eduardo Pereira",
         "genero": "MASCULINO",
-        "cpf": "32345678910",
+        "cpf": "36345678944",
         "dataNascimento": "1985-12-05",
-        "dependentes": [],
+        "dependentes": [
+          {
+            "nome": "Pedro Silva",
+            "dataNascimento": "2024-02-10"
+          },
+          {
+            "nome": "Mariana Oliveira",
+            "dataNascimento": "2023-11-15"
+          },
+          {
+            "nome": "Lucas Ribeiro",
+            "dataNascimento": "2024-03-25"
+          }
+        ],
         "totalDeVendasNoMes": "0",
         "diasEmViagem": "0",
         "contrato": {
           "dataAdmissao": "2019-06-15",
           "cargo": "Enfermeiro",
           "funcao": "Enfermeiro Pleno",
-          "pisPasep": 323456789,
-          "horas": 180,
-          "grauInsalubridade": "NULO",
+          "grauInsalubridade": "BAIXO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
@@ -147,7 +1522,7 @@
             "base": "3200"
           },
           "beneficios": {
-            "valeAlimentacao": true,
+            "valeAlimentacao": false,
             "valeTransporte": true,
             "salarioMaternidade": false,
             "adicionalPericulosidade": false,
@@ -155,6 +1530,58 @@
           }
         },
         "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "Gisele Almeida",
+        "genero": "FEMININO",
+        "cpf": "36345678941",
+        "dataNascimento": "1985-12-05",
+        "dependentes": [
+          {
+            "nome": "Pedro Silva",
+            "dataNascimento": "2024-02-10"
+          },
+          {
+            "nome": "Mariana Oliveira",
+            "dataNascimento": "2023-11-15"
+          },
+          {
+            "nome": "Lucas Ribeiro",
+            "dataNascimento": "2024-03-25"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2019-06-15",
+          "cargo": "Enfermeiro",
+          "funcao": "Enfermeiro Pleno",
+          "grauInsalubridade": "BAIXO",
+          "tipoContrato": "CLT",
+          "ativo": false,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3200",
+            "liquido": "0",
+            "base": "3200"
+          },
+          "beneficios": {
+            "valeAlimentacao": false,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
           "horasExtras": 0,
@@ -179,30 +1606,41 @@
     },
     "empregados": [
       {
-        "nome": "Julia Costa",
-        "genero": "FEMININO",
-        "cpf": "42345678910",
-        "dataNascimento": "1995-09-10",
-        "dependentes": [],
+        "nome": "Igor Ferreira",
+        "genero": "MASCULINO",
+        "cpf": "40345678948",
+        "dataNascimento": "1985-12-05",
+        "dependentes": [
+          {
+            "nome": "Pedro Silva",
+            "dataNascimento": "2024-02-10"
+          },
+          {
+            "nome": "Mariana Oliveira",
+            "dataNascimento": "2023-11-15"
+          },
+          {
+            "nome": "Lucas Ribeiro",
+            "dataNascimento": "2024-03-25"
+          }
+        ],
         "totalDeVendasNoMes": "0",
         "diasEmViagem": "0",
         "contrato": {
-          "dataAdmissao": "2022-01-20",
+          "dataAdmissao": "2019-06-15",
           "cargo": "Professor",
-          "funcao": "Professor Pleno",
-          "pisPasep": 423456789,
-          "horas": 200,
+          "funcao": "Professor",
           "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
           "salario": {
-            "bruto": "2800",
+            "bruto": "3200",
             "liquido": "0",
-            "base": "2800"
+            "base": "3200"
           },
           "beneficios": {
-            "valeAlimentacao": true,
+            "valeAlimentacao": false,
             "valeTransporte": true,
             "salarioMaternidade": false,
             "adicionalPericulosidade": false,
@@ -210,6 +1648,58 @@
           }
         },
         "horario": {
+          "horaTrabalhada": 0,
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      },
+      {
+        "nome": "João Almeida",
+        "genero": "MASCULINO",
+        "cpf": "41345678949",
+        "dataNascimento": "1985-12-05",
+        "dependentes": [
+          {
+            "nome": "Pedro Silva",
+            "dataNascimento": "2024-02-10"
+          },
+          {
+            "nome": "Mariana Oliveira",
+            "dataNascimento": "2023-11-15"
+          },
+          {
+            "nome": "Lucas Ribeiro",
+            "dataNascimento": "2024-03-25"
+          }
+        ],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2019-06-15",
+          "cargo": "Professor",
+          "funcao": "Professor",
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3200",
+            "liquido": "0",
+            "base": "3200"
+          },
+          "beneficios": {
+            "valeAlimentacao": false,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": true,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
           "horasExtras": 0,
@@ -232,46 +1722,6 @@
       "inscricaoMunicipal": "523456",
       "inscricaoEstadual": "523456"
     },
-    "empregados": [
-      {
-        "nome": "Roberto Lima",
-        "genero": "MASCULINO",
-        "cpf": "52345678910",
-        "dataNascimento": "1988-07-12",
-        "dependentes": [],
-        "totalDeVendasNoMes": "0",
-        "diasEmViagem": "0",
-        "contrato": {
-          "dataAdmissao": "2018-04-05",
-          "cargo": "Jornalista",
-          "funcao": "Repórter",
-          "pisPasep": 523456789,
-          "horas": 160,
-          "grauInsalubridade": "NULO",
-          "tipoContrato": "CLT",
-          "ativo": true,
-          "descricao": "Contrato de trabalho efetivo.",
-          "salario": {
-            "bruto": "3100",
-            "liquido": "0",
-            "base": "3100"
-          },
-          "beneficios": {
-            "valeAlimentacao": true,
-            "valeTransporte": true,
-            "salarioMaternidade": false,
-            "adicionalPericulosidade": false,
-            "contribuicaoSindical": false
-          }
-        },
-        "horario": {
-          "horasEmDeficit": 0,
-          "justificativa": true,
-          "horasExtras": 0,
-          "horasExtrasEmFinsDeSemana": 0,
-          "horasAdicionalNoturno": 0
-        }
-      }
-    ]
+    "empregados": []
   }
 ]
