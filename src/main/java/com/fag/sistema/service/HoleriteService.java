@@ -45,6 +45,7 @@ public class HoleriteService {
         holerite.setBaseCalculoFgts(empregado.getContrato().getSalario().getBaseCalculoFGTS());
         holerite.setBaseCalculoIrrf(empregado.getContrato().getSalario().getBaseCalculoIRRF());
         holerite.setSalarioContribuicaoInss(empregado.getContrato().getSalario().getBaseCalculoInss());
+        holerite.setFgtsMensal(empregado.getContrato().getSalario().getFgtsMensal());
 
         // HoleriteDTO holeriteDTO = HoleriteMapper.toDTO(holerite);
 

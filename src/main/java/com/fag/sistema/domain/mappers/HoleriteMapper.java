@@ -9,6 +9,7 @@ public class HoleriteMapper {
         holerite.setEmpregador(dto.getEmpregador());
         holerite.setEmpregado(dto.getEmpregado());
         holerite.setProventos(ProventosMapper.toBO(dto.getProventos()));
+        holerite.setFgtsMensal(dto.getFgtsMensal());
         return holerite;
     }
 
@@ -17,6 +18,7 @@ public class HoleriteMapper {
         dto.setEmpregador(entity.getEmpregador());
         dto.setEmpregado(entity.getEmpregado());
         dto.setProventos(ProventosMapper.toDTO(entity.getProventos()));
+        dto.setFgtsMensal(entity.getFgtsMensal());
         return dto;
     }
 }

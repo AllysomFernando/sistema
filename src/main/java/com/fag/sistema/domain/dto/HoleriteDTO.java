@@ -17,4 +17,5 @@ public class HoleriteDTO {
    private BigDecimal baseCalculoInss;
    private BigDecimal baseCalculoFgts;
    private BigDecimal baseCalculoIrrf;
+   private BigDecimal fgtsMensal;
 }
