@@ -10,6 +10,7 @@ import com.fag.sistema.domain.dto.ProventosDTO;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.usecases.calcular.beneficios.IBeneficioUseCase;
+import com.fag.sistema.domain.usecases.calcular.descontos.IDescontoEmFolhaUseCase;
 import com.fag.sistema.domain.usecases.calcular.descontos.IDescontoUseCase;
 
 @Service
@@ -23,12 +24,15 @@ public class ProventosService {
     @Autowired
     private List<IDescontoUseCase> descontos;
 
+    @Autowired
+    private List<IDescontoEmFolhaUseCase> descontosEmFolha;
+
     public ProventosService() {
         this.totalBeneficios = BigDecimal.ZERO;
         this.totalDescontos = BigDecimal.ZERO;
     }
 
-    public ProventosDTO calcularProventos(Empregado empregado, Empresa empresa){
+    public ProventosDTO calcularProventos(Empregado empregado, Empresa empresa) {
 
         for (IBeneficioUseCase beneficio : beneficios) {
             this.totalBeneficios = this.totalBeneficios.add(beneficio.calculate(empregado, empresa));
@@ -38,9 +42,14 @@ public class ProventosService {
             this.totalDescontos = this.totalDescontos.add(desconto.calculate(empregado, empresa));
         }
 
+        for (IDescontoEmFolhaUseCase desconto : descontosEmFolha) {
+            this.totalDescontos = this.totalDescontos.add(desconto.calculate(empregado, empresa));
+        }
+
         ProventosDTO proventos = new ProventosDTO();
         proventos.setBeneficios(beneficios);
         proventos.setDescontos(descontos);
+        proventos.setDescontosEmFolha(descontosEmFolha);
         proventos.setTotalBeneficios(totalBeneficios);
         proventos.setTotalDescontos(totalDescontos);
 

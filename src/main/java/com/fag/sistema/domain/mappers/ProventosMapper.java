@@ -9,6 +9,7 @@ public class ProventosMapper {
     ProventosDTO proventos = new ProventosDTO();
     proventos.setBeneficios(bo.getBeneficios());
     proventos.setDescontos(bo.getDescontos());
+    proventos.setDescontosEmFolha(bo.getDescontosEmFolha());
     proventos.setTotalBeneficios(bo.getTotalBeneficios());
     proventos.setTotalDescontos(bo.getTotalDescontos());
 
@@ -19,6 +20,7 @@ public class ProventosMapper {
     Proventos proventos = new Proventos();
     proventos.setBeneficios(dto.getBeneficios());
     proventos.setDescontos(dto.getDescontos());
+    proventos.setDescontosEmFolha(dto.getDescontosEmFolha());
     proventos.setTotalBeneficios(dto.getTotalBeneficios());
     proventos.setTotalDescontos(dto.getTotalDescontos());
 
