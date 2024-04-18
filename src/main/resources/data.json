@@ -14,7 +14,7 @@
     },
     "empregados": [
       {
-        "nome": "João Silva",
+        "nome": "João Silva 2",
         "genero": "MASCULINO",
         "cpf": "12345678910",
         "dataNascimento": "1990-01-15",
@@ -51,62 +51,217 @@
           "horasExtrasEmFinsDeSemana": 0,
           "horasAdicionalNoturno": 0
         }
-      },
+      }
+    ]
+  },
+  {
+    "cnpj": "22345678000122",
+    "razaoSocial": "Empresa Y",
+    "nomeFantasia": "Empresa Y",
+    "ramoAtividade": "TECNOLOGIA DA INFORMAÇÃO",
+    "cargaHorariaDiaria": 7.5,
+    "diasATrabalhar": 25,
+    "inscricao": {
+      "tipoInscricao": "CNPJ",
+      "numero": "22345678000122",
+      "inscricaoMunicipal": "223456",
+      "inscricaoEstadual": "223456"
+    },
+    "empregados": [
       {
-        "nome": "Barry Bush",
-        "genero": "MASCULINO",
-        "cpf": "12345678911",
-        "dataNascimento": "1990-01-15",
-        "dependentes": [
-          {
-            "nome": "Ana Silva",
-            "dataNascimento": "2015-06-30"
-          }
-        ],
-        "contrato": {
-          "dataAdmissao": "2020-02-01",
-          "cargo": "Desenvolvedor de Software",
-          "funcao": "Programador Pleno",
-          "pisPasep": 123456789,
-          "horas": 160,
-          "grauInsalubridade": "BAIXO",
-          "tipoContrato": "CLT",
-          "ativo": true,
-          "descricao": "Contrato de trabalho efetivo.",
-          "salario": {
-            "bruto": "3000",
-            "liquido": 0,
-            "base": "3000"
-          }
-        },
-        "horario": {
-          "horasEmDeficit": 2,
-          "justificativa": true,
-          "horasExtras": 10,
-          "horasExtrasEmFinsDeSemana": 10,
-          "horasAdicionalNoturno": 5
-        }
-      },
-      {
-        "nome": "Eugenia Knight",
+        "nome": "Maria Oliveira",
         "genero": "FEMININO",
-        "cpf": "97766548356",
-        "dataNascimento": "1990-01-15",
+        "cpf": "22345678910",
+        "dataNascimento": "1992-05-20",
         "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
         "contrato": {
-          "dataAdmissao": "2010-02-01",
-          "cargo": "Desenvolvedor de Software",
-          "funcao": "Programador Pleno",
-          "pisPasep": 123456789,
+          "dataAdmissao": "2021-03-10",
+          "cargo": "Analista de Dados",
+          "funcao": "Analista Pleno",
+          "pisPasep": 223456789,
           "horas": 160,
           "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
           "salario": {
-            "bruto": "3000",
-            "liquido": 0,
-            "base": "3000"
+            "bruto": "3500",
+            "liquido": "0",
+            "base": "3500"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      }
+    ]
+  },
+  {
+    "cnpj": "32345678000122",
+    "razaoSocial": "Empresa Z",
+    "nomeFantasia": "Empresa Z",
+    "ramoAtividade": "SAÚDE",
+    "cargaHorariaDiaria": 8.0,
+    "diasATrabalhar": 30,
+    "inscricao": {
+      "tipoInscricao": "CNPJ",
+      "numero": "32345678000122",
+      "inscricaoMunicipal": "323456",
+      "inscricaoEstadual": "323456"
+    },
+    "empregados": [
+      {
+        "nome": "Carlos Ferreira",
+        "genero": "MASCULINO",
+        "cpf": "32345678910",
+        "dataNascimento": "1985-12-05",
+        "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2019-06-15",
+          "cargo": "Enfermeiro",
+          "funcao": "Enfermeiro Pleno",
+          "pisPasep": 323456789,
+          "horas": 180,
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3200",
+            "liquido": "0",
+            "base": "3200"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      }
+    ]
+  },
+  {
+    "cnpj": "42345678000122",
+    "razaoSocial": "Empresa W",
+    "nomeFantasia": "Empresa W",
+    "ramoAtividade": "EDUCAÇÃO",
+    "cargaHorariaDiaria": 7.5,
+    "diasATrabalhar": 24,
+    "inscricao": {
+      "tipoInscricao": "CNPJ",
+      "numero": "42345678000122",
+      "inscricaoMunicipal": "423456",
+      "inscricaoEstadual": "423456"
+    },
+    "empregados": [
+      {
+        "nome": "Julia Costa",
+        "genero": "FEMININO",
+        "cpf": "42345678910",
+        "dataNascimento": "1995-09-10",
+        "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2022-01-20",
+          "cargo": "Professor",
+          "funcao": "Professor Pleno",
+          "pisPasep": 423456789,
+          "horas": 200,
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "2800",
+            "liquido": "0",
+            "base": "2800"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
+          }
+        },
+        "horario": {
+          "horasEmDeficit": 0,
+          "justificativa": true,
+          "horasExtras": 0,
+          "horasExtrasEmFinsDeSemana": 0,
+          "horasAdicionalNoturno": 0
+        }
+      }
+    ]
+  },
+  {
+    "cnpj": "52345678000122",
+    "razaoSocial": "Empresa V",
+    "nomeFantasia": "Empresa V",
+    "ramoAtividade": "COMUNICAÇÃO",
+    "cargaHorariaDiaria": 8.0,
+    "diasATrabalhar": 26,
+    "inscricao": {
+      "tipoInscricao": "CNPJ",
+      "numero": "52345678000122",
+      "inscricaoMunicipal": "523456",
+      "inscricaoEstadual": "523456"
+    },
+    "empregados": [
+      {
+        "nome": "Roberto Lima",
+        "genero": "MASCULINO",
+        "cpf": "52345678910",
+        "dataNascimento": "1988-07-12",
+        "dependentes": [],
+        "totalDeVendasNoMes": "0",
+        "diasEmViagem": "0",
+        "contrato": {
+          "dataAdmissao": "2018-04-05",
+          "cargo": "Jornalista",
+          "funcao": "Repórter",
+          "pisPasep": 523456789,
+          "horas": 160,
+          "grauInsalubridade": "NULO",
+          "tipoContrato": "CLT",
+          "ativo": true,
+          "descricao": "Contrato de trabalho efetivo.",
+          "salario": {
+            "bruto": "3100",
+            "liquido": "0",
+            "base": "3100"
+          },
+          "beneficios": {
+            "valeAlimentacao": true,
+            "valeTransporte": true,
+            "salarioMaternidade": false,
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
           }
         },
         "horario": {

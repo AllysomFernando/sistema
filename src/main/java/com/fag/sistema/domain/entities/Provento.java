@@ -51,7 +51,10 @@ public class Provento {
     }
 
     public Float getPorcentagem(BigDecimal value) {
-        return value.multiply(new BigDecimal("100")).setScale(2, RoundingMode.DOWN).floatValue() * 1.0f;
+        if (value.compareTo(BigDecimal.ONE) <= 0) {
+            return value.multiply(new BigDecimal("100")).setScale(2, RoundingMode.DOWN).floatValue() * 1.0f;
+        }
+        return value.setScale(2, RoundingMode.DOWN).floatValue() * 1.0f;
     }
 
     public void setReferencia(BigDecimal value) {

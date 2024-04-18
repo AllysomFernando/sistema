@@ -24,7 +24,7 @@ public class HoleriteController {
 
     @PostMapping
     public ResponseEntity<Holerite> criarHolerite(@RequestBody HoleriteRequestDTO request) {
-        Holerite holeriteDTO = holeriteService.criarHolerite(request.getCpf(), request.getCnpj());
+        Holerite holeriteDTO = holeriteService.criarHolerite(request.getCpf(), request.getCnpj(), request.getHorario());
         return ResponseEntity.ok(holeriteDTO);
     }
 }

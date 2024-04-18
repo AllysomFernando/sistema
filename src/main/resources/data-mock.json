@@ -25,15 +25,13 @@
           "dataAdmissao": "2020-02-01",
           "cargo": "Desenvolvedor de Software",
           "funcao": "Programador Pleno",
-          "pisPasep": 123456789,
-          "horas": 160,
           "grauInsalubridade": "NULO",
           "tipoContrato": "CLT",
           "ativo": true,
           "descricao": "Contrato de trabalho efetivo.",
           "salario": {
             "bruto": "3000",
-            "liquido": 0,
+            "liquido": "0",
             "base": "3000"
           },
           "beneficios": {
@@ -45,6 +43,7 @@
           }
         },
         "horario": {
+          "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
           "horasExtras": 0,
@@ -68,7 +67,6 @@
           "cargo": "Desenvolvedor de Software",
           "funcao": "Programador Pleno",
           "pisPasep": 123456789,
-          "horas": 160,
           "grauInsalubridade": "NULO",
           "tipoContrato": "ESTAGIO",
           "ativo": true,

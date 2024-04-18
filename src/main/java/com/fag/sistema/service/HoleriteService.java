@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.fag.sistema.domain.dto.ProventosDTO;
 import com.fag.sistema.domain.entities.Holerite;
 import com.fag.sistema.domain.entities.empregado.Empregado;
+import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.mappers.ProventosMapper;
 
@@ -22,7 +23,7 @@ public class HoleriteService {
     @Autowired
     private ProventosService proventosService;
 
-    public Holerite criarHolerite(String cpf, String cnpj) {
+    public Holerite criarHolerite(String cpf, String cnpj, Horario horarios) {
         Empresa empregador = empresaService.getEmpresaByCnpj(cnpj);
         Empregado empregado = empregadoService.findEmpregadoByCpf(cpf);
         BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
@@ -30,6 +31,12 @@ public class HoleriteService {
         empregado.getContrato().getSalario().setBaseCalculoFGTS(salarioBruto);
         empregado.getContrato().getSalario().setBaseCalculoIrrf(salarioBruto);
         empregado.getContrato().getSalario().setBaseCalculoInss(salarioBruto);
+
+        empregado.getHorario().setHorasEmDeficit(horarios.getHorasEmDeficit());
+        empregado.getHorario().setHorasAdicionalNoturno(horarios.getHorasAdicionalNoturno());
+        empregado.getHorario().setHorasExtras(horarios.getHorasExtras());
+        empregado.getHorario().setHorasExtrasEmFinsDeSemana(horarios.getHorasExtrasEmFinsDeSemana());
+        empregado.getHorario().setHoraTrabalhada(empregador.getCargaHorariaDiaria() * empregador.getCargaHorariaDiaria());
 
         ProventosDTO proventos = proventosService.calcularProventos(empregado, empregador);
 
