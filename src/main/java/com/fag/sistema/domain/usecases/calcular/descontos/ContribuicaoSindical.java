@@ -18,6 +18,7 @@ public class ContribuicaoSindical extends Provento implements IDescontoUseCase {
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
+    if (!empregado.getContrato().getBeneficios().getContribuicaoSindical()) return BigDecimal.ZERO;
     BigDecimal referencia = new BigDecimal("50").setScale(2, RoundingMode.DOWN);
     
     this.setProvento(getDescricao(), BigDecimal.ZERO, BigDecimal.ZERO, referencia);

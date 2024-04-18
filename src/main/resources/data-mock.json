@@ -40,7 +40,8 @@
             "valeAlimentacao": true,
             "valeTransporte": true,
             "salarioMaternidade": false,
-            "adicionalPericulosidade": false
+            "adicionalPericulosidade": false,
+            "contribuicaoSindical": false
           }
         },
         "horario": {
