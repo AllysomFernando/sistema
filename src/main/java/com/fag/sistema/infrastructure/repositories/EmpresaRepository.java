@@ -41,6 +41,7 @@ public class EmpresaRepository implements IEmpresaVendor {
         return this.data.readArrayFromJson(Empresa[].class);
     }
 
+    // TODO testar os metodos abaixo
     public List<Empregado> getAllFuncionariosMulheresByEmpresaCnpj(String cnpj) {
         Empresa empresa = this.getEmpresaByCNPJ(cnpj);
         List<Empregado> funcionaria = new ArrayList<Empregado>();
@@ -53,7 +54,6 @@ public class EmpresaRepository implements IEmpresaVendor {
 
         return funcionaria;
     }
-
 
     public List<Empregado> getAllFuncionariasComSalarioMaternidade(String cnpj) {
         Empresa empresa = this.getEmpresaByCNPJ(cnpj);

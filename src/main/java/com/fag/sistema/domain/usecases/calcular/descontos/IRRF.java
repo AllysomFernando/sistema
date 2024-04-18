@@ -3,8 +3,6 @@ package com.fag.sistema.domain.usecases.calcular.descontos;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import org.springframework.core.Ordered;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.fag.sistema.domain.entities.Provento;
@@ -13,12 +11,13 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.enums.RelacaoIRRF;
 
 @Component
-@Order(Ordered.LOWEST_PRECEDENCE)
 public class IRRF extends Provento implements IDescontoEmFolhaUseCase {
 
   public IRRF() {
-    this.setDescricao("IRRF");
+    super("IRRF");
   }
+
+  // TODO reanalizar calculo
 
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
