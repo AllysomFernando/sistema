@@ -18,7 +18,7 @@ public class Comissao extends Provento implements IBeneficioUseCase {
 
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal valorVendas = empregado.getTotalDeVendasNoMes();
-    if (valorVendas.compareTo(BigDecimal.ZERO) >= 0) return BigDecimal.ZERO;
+    if (valorVendas.compareTo(BigDecimal.ZERO) <= 0) return BigDecimal.ZERO;
     
     BigDecimal referencia = new BigDecimal("0.06");
 
