@@ -40,7 +40,7 @@ public class Salario {
   public void somarBasesDeCalculo(BigDecimal value) {
     this.baseCalculoFGTS = this.baseCalculoFGTS.add(value);
     this.baseCalculoInss = this.baseCalculoInss.add(value);
-    this.baseCalculoIRRF = this.baseCalculoIRRF.add(value);
+    // this.baseCalculoIRRF = this.baseCalculoIRRF.add(value);
   }
 
   public void subtrairBasesDeCalculo(BigDecimal value) {

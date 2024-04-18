@@ -1,6 +1,7 @@
 package com.fag.sistema.infrastructure.repositories;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,5 +52,36 @@ public class EmpresaRepository implements IEmpresaVendor {
         }
 
         return funcionaria;
+    }
+
+
+    public List<Empregado> getAllFuncionariasComSalarioMaternidade(String cnpj) {
+        Empresa empresa = this.getEmpresaByCNPJ(cnpj);
+        List<Empregado> funcionaria = new ArrayList<Empregado>();
+
+        for (Empregado e : empresa.getEmpregados()) {
+            if (e.getGenero() == EnumGenero.FEMININO && e.getContrato().getBeneficios().getSalarioMaternidade()) {
+                funcionaria.add(e);
+            }
+        }
+
+        return funcionaria;
+    }
+
+    public HashMap<String, List<Empregado>> getAllFuncionariosGroupByCategoria(String cnpj) {
+        Empresa empresa = this.getEmpresaByCNPJ(cnpj);
+        HashMap<String, List<Empregado>> map = new HashMap<String, List<Empregado>>();
+
+        for (Empregado e : empresa.getEmpregados()) {
+            String key = e.getContrato().getTipoContrato().name().toLowerCase();
+            if (map.containsKey(key)) {
+                map.get(key).add(e);
+            } else {
+                map.put(key, new ArrayList<Empregado>());
+                map.get(key).add(e);
+            }
+        }
+
+        return map;
     }
 }
