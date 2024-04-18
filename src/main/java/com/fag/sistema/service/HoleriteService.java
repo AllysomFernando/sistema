@@ -1,5 +1,7 @@
 package com.fag.sistema.service;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,10 +25,11 @@ public class HoleriteService {
     public Holerite criarHolerite(String cpf, String cnpj) {
         Empresa empregador = empresaService.getEmpresaByCnpj(cnpj);
         Empregado empregado = empregadoService.getEmpregadoByCpf(cpf, empregador.getEmpregados());
+        BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
 
-        empregado.getContrato().getSalario().setBaseCalculoFGTS(empregado.getContrato().getSalario().getBruto());
-        empregado.getContrato().getSalario().setBaseCalculoIRRF(empregado.getContrato().getSalario().getBruto());
-        empregado.getContrato().getSalario().setBaseCalculoInss(empregado.getContrato().getSalario().getBruto());
+        empregado.getContrato().getSalario().setBaseCalculoFGTS(salarioBruto);
+        empregado.getContrato().getSalario().setBaseCalculoIrrf(salarioBruto);
+        empregado.getContrato().getSalario().setBaseCalculoInss(salarioBruto);
 
         ProventosDTO proventos = proventosService.calcularProventos(empregado, empregador);
 

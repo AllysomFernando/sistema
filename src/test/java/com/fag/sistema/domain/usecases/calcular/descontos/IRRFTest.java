@@ -119,7 +119,7 @@ public class IRRFTest {
   public void shouldCalculateIRRFWithSevenAndHalfPercent_INSS() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
-    empregado.getContrato().getSalario().setBaseCalculoIRRF(new BigDecimal("2722.60"));
+    empregado.getContrato().getSalario().setBaseCalculoIrrf(new BigDecimal("2722.60"));
     Empresa empresa = makeEmpresa();
     BigDecimal discount = sut.calculate(empregado, empresa);
     

@@ -63,6 +63,10 @@ public class Salario {
     this.baseCalculoFGTS = baseCalculoFGTS.add(value);
   }
 
+  public void setBaseCalculoIrrf(BigDecimal value) {
+    this.baseCalculoIRRF = baseCalculoIRRF.add(value);
+  }
+
   public void setBaseCalculoInss(BigDecimal value) {
     this.baseCalculoInss = baseCalculoInss.add(value);
   }

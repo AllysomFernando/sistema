@@ -26,6 +26,7 @@ public class SalarioMaternidade extends Provento implements IBeneficioUseCase {
 
     this.setProvento(getDescricao(), referencia, beneficiolMensal, BigDecimal.ZERO);
     empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficiolMensal);
+    empregado.getContrato().getSalario().setBaseCalculoIrrf(beneficiolMensal);
 
     return beneficiolMensal;
   }
