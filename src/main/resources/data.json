@@ -1390,15 +1390,15 @@
           "horaTrabalhada": 0,
           "horasEmDeficit": 0,
           "justificativa": true,
-          "horasExtras": 10,
+          "horasExtras": 0,
           "horasExtrasEmFinsDeSemana": 0,
           "horasAdicionalNoturno": 0
         }
       },
       {
-        "nome": "Bruno Oliveira",
+        "nome": "Bruno Rodrigo",
         "genero": "MASCULINO",
-        "cpf": "33345678941",
+        "cpf": "33345678942",
         "dataNascimento": "1980-03-20",
         "dependentes": [],
         "totalDeVendasNoMes": "0",
