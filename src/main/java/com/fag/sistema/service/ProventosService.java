@@ -41,6 +41,8 @@ public class ProventosService {
         }
 
         ProventosDTO proventos = new ProventosDTO();
+        totalBeneficios = totalBeneficios.add(empregado.getContrato().getSalario().getBruto());
+        
         proventos.setBeneficios(beneficios);
         proventos.setDescontos(descontos);
         proventos.setDescontosEmFolha(descontosEmFolha);
