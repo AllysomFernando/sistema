@@ -27,9 +27,7 @@ public class SalarioFamilia extends Provento implements IBeneficioUseCase {
     BigDecimal beneficio = BigDecimal.ZERO.setScale(2, RoundingMode.DOWN);
     Float quantidadeDependentesValidos = 0.0f;
 
-    if (empregado.getDependentes() == null || empregado.getDependentes().isEmpty()) {
-      return beneficio;
-    }
+    if (!empregado.possuiDependente()) return beneficio;
 
     List<Dependente> dependentes = empregado.getDependentes();
 
@@ -44,7 +42,7 @@ public class SalarioFamilia extends Provento implements IBeneficioUseCase {
     }
 
     this.setProvento(getDescricao(), quantidadeDependentesValidos, beneficio, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().setBaseCalculoFGTS(beneficio);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
     return beneficio;
   }
