@@ -13,16 +13,18 @@ import com.fag.sistema.domain.entities.empregado.Horario;
 import com.fag.sistema.domain.entities.empregado.Salario;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 
-public class DescansoSemanalRemuneradoTest {
+public class HorasExtrasTest {
     
-    private Empregado makeEmpregado(BigDecimal salarioBruto, int horaTrabalhada) {
+    private Empregado makeEmpregado(BigDecimal salarioBruto, int horaTrabalhada, float horasExtras) {
         Empregado empregado = new Empregado();
         Horario horario = new Horario();
         Contrato contrato = new Contrato();
         Salario salario = new Salario(salarioBruto);
 
+        horario.setHorasExtras(horasExtras);
         horario.setHoraTrabalhada(horaTrabalhada);
         contrato.setSalario(salario);
+        salario.setBruto(salarioBruto);
         
         empregado.setContrato(contrato);
         empregado.setHorario(horario);
@@ -30,22 +32,21 @@ public class DescansoSemanalRemuneradoTest {
         return empregado;
       }
     
-      private Empresa makeEmpresa(Float cargaHorariaDiaria) {
+      private Empresa makeEmpresa() {
         Empresa empresa = new Empresa();
-        empresa.setCargaHorariaDiaria(cargaHorariaDiaria);
     
         return empresa;
       }
 
     @Test
-    @Description("Retorna o valor R$150,00")
+    @Description("Deve retornar R$174,93")
     void shouldNotUpdateBaseDeCalculos() {
-    DescansoSemanalRemunerado sut = new DescansoSemanalRemunerado();
-    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 168);
-    Empresa empresa = makeEmpresa(8.4f);
+    HorasExtras sut = new HorasExtras();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 168, 7);
+    Empresa empresa = makeEmpresa();
 
     BigDecimal result = sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("150.00"), result);
+    assertEquals(new BigDecimal("175.035"), result);
   }
 }
