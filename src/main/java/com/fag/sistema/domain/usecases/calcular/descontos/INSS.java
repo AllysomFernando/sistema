@@ -37,7 +37,7 @@ public class INSS extends Provento implements IDescontoUseCase {
       }
     }
 
-    empregado.getContrato().getSalario().setBaseCalculoIRRF(salarioBruto.subtract(discountValue));
+    empregado.getContrato().getSalario().subtrairBaseCalculoIrrf(discountValue);
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, discountValue);
 

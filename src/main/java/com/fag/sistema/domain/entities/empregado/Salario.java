@@ -66,4 +66,8 @@ public class Salario {
   public void setBaseCalculoInss(BigDecimal value) {
     this.baseCalculoInss = baseCalculoInss.add(value);
   }
+
+  public void subtrairBaseCalculoIrrf(BigDecimal value) {
+    this.baseCalculoIRRF = baseCalculoIRRF.subtract(value);
+  }
 }

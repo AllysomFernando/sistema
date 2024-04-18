@@ -31,6 +31,17 @@ public class INSSTest {
   }
 
   @Test
+  public void shouldUpdateBaseDeCalculoIrrf() {
+    INSS sut = new INSS();
+    Empregado empregado = makeEmpregado(new BigDecimal("2000"));
+    Empresa empresa = makeEmpresa();
+
+    sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("1820.00"), empregado.getContrato().getSalario().getBaseCalculoIRRF());
+  }
+
+  @Test
   @Description("Should calculate INSS with 8% discount and a 1600 salary")
   public void shouldCalculateINSSWithEightPercent() {
     INSS sut = new INSS();
