@@ -25,7 +25,7 @@ public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
 
         if (horasNoturnas > 0) {
             BigDecimal salarioBase = empregado.getContrato().getSalario().getBruto();
-            float totalHoraMensais = empregado.getHorario().getHoraTrabalhada();
+            float totalHoraMensais = empresa.getCargaHorariaMensal();
 
             if (totalHoraMensais > 0 && salarioBase.compareTo(BigDecimal.ZERO) >= 0) {
                 BigDecimal porcentagem = new BigDecimal("1.5");
@@ -37,7 +37,6 @@ public class AdicionalNoturno extends Provento implements IBeneficioUseCase {
                 empregado.getContrato().getSalario().somarBasesDeCalculo(valorAdicionalNoturno);
             }
         }
-
 
         return valorAdicionalNoturno;
     }

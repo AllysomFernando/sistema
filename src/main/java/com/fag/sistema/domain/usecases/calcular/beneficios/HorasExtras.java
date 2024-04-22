@@ -22,15 +22,15 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
     if (empregado.getHorario().getHorasExtras() < 0) return BigDecimal.ZERO;
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal beneficio = BigDecimal.ZERO;
-    Float horasASeremFeitas = empresa.getDiasATrabalhar() * empresa.getCargaHorariaDiaria();
-    BigDecimal valorHora = this.valorHora(salarioBruto, horasASeremFeitas);
-    BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtra(valorHora);
+    Float cargaHorariaMensal = empresa.getCargaHorariaMensal();
+    BigDecimal valorHora = this.valorHora(salarioBruto, cargaHorariaMensal);
+    BigDecimal valorHoraExtra = this.valorHoraExtra(valorHora);
 
     float quantidadeHorasExtra = empregado.getHorario().getHorasExtras();
 
     if (quantidadeHorasExtra > 0) {
       beneficio = beneficio
-          .add(valorHoraExtraDiasDeSemana.multiply(new BigDecimal(quantidadeHorasExtra)));
+          .add(valorHoraExtra.multiply(new BigDecimal(quantidadeHorasExtra)));
     }
 
     this.setProvento(getDescricao(), quantidadeHorasExtra, beneficio, BigDecimal.ZERO);
@@ -48,9 +48,9 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
     return result.add(valorHoraDeTrabalho);
   }
 
-  public BigDecimal valorHora(BigDecimal salario, Float horasTrabalhadas) {
-    BigDecimal horasASeremFeitasBigDecimal = new BigDecimal(horasTrabalhadas, MathContext.DECIMAL128);
-    BigDecimal valorHora = salario.divide(horasASeremFeitasBigDecimal, 2, RoundingMode.HALF_UP);
+  public BigDecimal valorHora(BigDecimal salario, Float horasTrabalhadasNoMes) {
+    BigDecimal horasASeremFeitasBigDecimal = new BigDecimal(horasTrabalhadasNoMes, MathContext.DECIMAL128);
+    BigDecimal valorHora = salario.divide(horasASeremFeitasBigDecimal, 2, RoundingMode.HALF_DOWN);
 
     return valorHora;
   }

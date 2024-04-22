@@ -20,6 +20,7 @@ public class Empresa {
     private Inscricao inscricao;
     private Float cargaHorariaDiaria;
     private Integer diasATrabalhar;
+    private Float cargaHorariaMensal;
     private List<Empregado> empregados;
     private List<Empregado> funcionariasComSalarioMaternidade;
     private HashMap<String, List<Empregado>> funcionariosAgrupados;

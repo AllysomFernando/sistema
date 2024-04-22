@@ -15,14 +15,13 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 
 public class HorasExtrasTest {
 
-  private Empregado makeEmpregado(BigDecimal salarioBruto, int horaTrabalhada, float horasExtras) {
+  private Empregado makeEmpregado(BigDecimal salarioBruto, float horasExtras) {
     Empregado empregado = new Empregado();
     Horario horario = new Horario();
     Contrato contrato = new Contrato();
     Salario salario = new Salario(salarioBruto);
 
     horario.setHorasExtras(horasExtras);
-    horario.setHoraTrabalhada(horaTrabalhada);
     contrato.setSalario(salario);
     salario.setBruto(salarioBruto);
 
@@ -32,24 +31,24 @@ public class HorasExtrasTest {
     return empregado;
   }
 
-  private Empresa makeEmpresa() {
+  private Empresa makeEmpresa(Float cargaHorariaMensal) {
     Empresa empresa = new Empresa();
     empresa.setDiasATrabalhar(21);
     empresa.setCargaHorariaDiaria(8f);
+    empresa.setCargaHorariaMensal(cargaHorariaMensal);
 
     return empresa;
   }
 
   @Test
-  @Description("Deve retornar R$174,93")
   void shouldNotUpdateBaseDeCalculos() {
     HorasExtras sut = new HorasExtras();
-    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 168, 7);
-    Empresa empresa = makeEmpresa();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 7);
+    Empresa empresa = makeEmpresa(168F);
 
     BigDecimal result = sut.calculate(empregado, empresa);
 
-    assertEquals(new BigDecimal("175.035"), result);
+    assertEquals(new BigDecimal("187.53"), result);
   }
 
   @Test
@@ -79,10 +78,21 @@ public class HorasExtrasTest {
   void shouldReturnValorHoraExtra() {
     HorasExtras sut = new HorasExtras();
     BigDecimal salarioBruto = new BigDecimal("3000");
-    BigDecimal valorHora = sut.valorHora(salarioBruto,220F);
+    BigDecimal valorHora = sut.valorHora(salarioBruto, 220F);
 
     BigDecimal result = sut.valorHoraExtra(valorHora);
 
     assertEquals(new BigDecimal("20.46"), result);
+  }
+
+  @Test
+  void shouldReturnTheValueOfBonusForAnEmployee() {
+    HorasExtras sut = new HorasExtras();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 10);
+    Empresa empresa = makeEmpresa(220F);
+
+    BigDecimal result = sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("204.60"), result);
   }
 }
