@@ -21,34 +21,38 @@ public class HorasExtras extends Provento implements IBeneficioUseCase {
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     if (empregado.getHorario().getHorasExtras() < 0) return BigDecimal.ZERO;
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
+    BigDecimal beneficio = BigDecimal.ZERO;
     Float horasASeremFeitas = empresa.getDiasATrabalhar() * empresa.getCargaHorariaDiaria();
-    BigDecimal horasASeremFeitasBigDecimal = new BigDecimal(horasASeremFeitas, MathContext.DECIMAL128);
-    BigDecimal valorHora = salarioBruto.divide(horasASeremFeitasBigDecimal, 2, RoundingMode.HALF_UP).setScale(2,
-        RoundingMode.HALF_UP);
-    BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtraEmDiasDaSemana(valorHora);
+    BigDecimal valorHora = this.valorHora(salarioBruto, horasASeremFeitas);
+    BigDecimal valorHoraExtraDiasDeSemana = this.valorHoraExtra(valorHora);
 
     float quantidadeHorasExtra = empregado.getHorario().getHorasExtras();
 
-    BigDecimal totalHorasExtras = BigDecimal.ZERO.setScale(2, RoundingMode.HALF_UP);
-
     if (quantidadeHorasExtra > 0) {
-      totalHorasExtras = totalHorasExtras
+      beneficio = beneficio
           .add(valorHoraExtraDiasDeSemana.multiply(new BigDecimal(quantidadeHorasExtra)));
     }
 
-    this.setProvento(getDescricao(), quantidadeHorasExtra, totalHorasExtras, BigDecimal.ZERO);
-    empregado.getContrato().getSalario().somarBasesDeCalculo(totalHorasExtras);
+    this.setProvento(getDescricao(), quantidadeHorasExtra, beneficio, BigDecimal.ZERO);
+    empregado.getContrato().getSalario().somarBasesDeCalculo(beneficio);
 
-    return totalHorasExtras;
+    return beneficio;
   }
 
-  public BigDecimal valorHoraExtraEmDiasDaSemana(BigDecimal valorHoraDeTrabalho) {
+  public BigDecimal valorHoraExtra(BigDecimal valorHoraDeTrabalho) {
     BigDecimal referencia = new BigDecimal("0.5");
-    BigDecimal result = referencia.multiply(valorHoraDeTrabalho);
+    BigDecimal result = referencia.multiply(valorHoraDeTrabalho).setScale(2,RoundingMode.HALF_DOWN);
 
     this.setReferencia(referencia);
 
-    return result.add(valorHoraDeTrabalho).setScale(2,RoundingMode.HALF_DOWN);
+    return result.add(valorHoraDeTrabalho);
+  }
+
+  public BigDecimal valorHora(BigDecimal salario, Float horasTrabalhadas) {
+    BigDecimal horasASeremFeitasBigDecimal = new BigDecimal(horasTrabalhadas, MathContext.DECIMAL128);
+    BigDecimal valorHora = salario.divide(horasASeremFeitasBigDecimal, 2, RoundingMode.HALF_UP);
+
+    return valorHora;
   }
 
 }

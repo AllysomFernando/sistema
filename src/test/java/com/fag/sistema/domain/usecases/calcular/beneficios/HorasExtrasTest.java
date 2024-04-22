@@ -57,8 +57,32 @@ public class HorasExtrasTest {
     HorasExtras sut = new HorasExtras();
     BigDecimal valorHora = new BigDecimal("17.85");
 
-    BigDecimal result = sut.valorHoraExtraEmDiasDaSemana(valorHora);
+    BigDecimal result = sut.valorHoraExtra(valorHora);
 
     assertEquals(new BigDecimal("26.77"), result);
+  }
+
+  @Test
+  @Description("Should return the value of hour worked of an employee")
+  void shouldReturnValorHora() {
+    HorasExtras sut = new HorasExtras();
+    BigDecimal salarioBruto = new BigDecimal("3000");
+    Float cargaHorariaMensal = 220F;
+
+    BigDecimal result = sut.valorHora(salarioBruto, cargaHorariaMensal);
+
+    assertEquals(new BigDecimal("13.64"), result);
+  }
+
+  @Test
+  @Description("Should return the value of hour worked + 50% of an employee")
+  void shouldReturnValorHoraExtra() {
+    HorasExtras sut = new HorasExtras();
+    BigDecimal salarioBruto = new BigDecimal("3000");
+    BigDecimal valorHora = sut.valorHora(salarioBruto,220F);
+
+    BigDecimal result = sut.valorHoraExtra(valorHora);
+
+    assertEquals(new BigDecimal("20.46"), result);
   }
 }
