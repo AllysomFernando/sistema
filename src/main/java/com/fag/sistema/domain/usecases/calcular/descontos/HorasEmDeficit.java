@@ -21,7 +21,7 @@ public class HorasEmDeficit extends Provento implements IDescontoUseCase {
 
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
     BigDecimal horasEmDeficit = new BigDecimal(empregado.getHorario().getHorasEmDeficit()).setScale(2, RoundingMode.DOWN);
-    Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();
+    Float diasTrabalhados = empresa.getCargaHorariaMensal() / empresa.getCargaHorariaDiaria();
 
     BigDecimal diasTrabalhadosBigDecimal = new BigDecimal(Float.toString(diasTrabalhados));
 

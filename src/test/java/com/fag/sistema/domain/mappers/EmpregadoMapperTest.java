@@ -21,7 +21,6 @@ public class EmpregadoMapperTest {
     EmpregadoDTO dto = new EmpregadoDTO();
     Horario horario = new Horario();
     Contrato contrato = new Contrato();
-    horario.setHoraTrabalhada(3.5f);
 
     dto.setNome("Maude Lucas");
     dto.setGenero(EnumGenero.FEMININO);
@@ -42,8 +41,6 @@ public class EmpregadoMapperTest {
     Empregado bo = new Empregado();
     Horario horario = new Horario();
     Contrato contrato = new Contrato();
-
-    horario.setHoraTrabalhada(3.5f);
 
     bo.setNome("Maude Lucas");
     bo.setGenero(EnumGenero.FEMININO);

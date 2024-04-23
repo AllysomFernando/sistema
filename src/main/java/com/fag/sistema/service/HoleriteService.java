@@ -38,7 +38,6 @@ public class HoleriteService {
         empregado.getHorario().setHorasAdicionalNoturno(horarios.getHorasAdicionalNoturno());
         empregado.getHorario().setHorasExtras(horarios.getHorasExtras());
         empregado.getHorario().setHorasExtrasEmFinsDeSemana(horarios.getHorasExtrasEmFinsDeSemana());
-        empregado.getHorario().setHoraTrabalhada(empregador.getCargaHorariaDiaria() * empregador.getCargaHorariaDiaria());
 
         ProventosDTO proventos = proventosService.calcularProventos(empregado, empregador);
 

@@ -22,7 +22,6 @@ public class AdicionalNoturnoTest {
 
     Horario horario = new Horario();
     horario.setHorasAdicionalNoturno(horasAdicionalNoturno);
-    horario.setHoraTrabalhada(220f);
 
     contrato.setSalario(salario);
 
@@ -34,6 +33,7 @@ public class AdicionalNoturnoTest {
 
   private Empresa makeEmpresa() {
     Empresa empresa = new Empresa();
+    empresa.setCargaHorariaMensal(220F);
 
     return empresa;
   }

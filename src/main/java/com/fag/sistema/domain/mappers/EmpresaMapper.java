@@ -13,6 +13,7 @@ public class EmpresaMapper {
                 dto.getInscricao(),
                 dto.getCargaHorariaDiaria(),
                 dto.getDiasATrabalhar(),
+                dto.getCargaHorariaMensal(),
                 dto.getEmpregados(),
                 dto.getFuncionariasComSalarioMaternidade(),
                 dto.getFuncionariosAgrupados());

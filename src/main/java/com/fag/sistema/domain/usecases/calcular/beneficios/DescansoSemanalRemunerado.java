@@ -18,7 +18,7 @@ public class DescansoSemanalRemunerado extends Provento implements IBeneficioUse
   @Override
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
     BigDecimal salarioBruto = empregado.getContrato().getSalario().getBruto();
-    Float diasTrabalhados = empregado.getHorario().getHoraTrabalhada() / empresa.getCargaHorariaDiaria();
+    Float diasTrabalhados = empresa.getCargaHorariaMensal() / empresa.getCargaHorariaDiaria();
     BigDecimal valorDiaria = salarioBruto.divide(new BigDecimal(diasTrabalhados));
 
     this.setProvento(getDescricao(), new BigDecimal(diasTrabalhados), valorDiaria, BigDecimal.ZERO);

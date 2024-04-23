@@ -21,7 +21,6 @@ public class DescansoSemanalRemuneradoTest {
         Contrato contrato = new Contrato();
         Salario salario = new Salario(salarioBruto);
 
-        horario.setHoraTrabalhada(horaTrabalhada);
         contrato.setSalario(salario);
         
         empregado.setContrato(contrato);

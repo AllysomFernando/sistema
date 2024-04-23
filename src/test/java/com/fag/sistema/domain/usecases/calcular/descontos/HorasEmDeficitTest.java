@@ -43,8 +43,6 @@ public class HorasEmDeficitTest {
     Empregado empregado = makEmpregado(new BigDecimal("3000.00"), 5);
     Empresa empresa = makeEmpresa(8.0f);
 
-    empregado.getHorario().setHoraTrabalhada(empresa.getCargaHorariaDiaria() * empresa.getDiasATrabalhar());
-
     HorasEmDeficit sut = new HorasEmDeficit();
 
     BigDecimal discount = sut.calculate(empregado, empresa);
