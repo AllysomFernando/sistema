@@ -34,6 +34,7 @@ public class HorasEmDeficitTest {
     Empresa empresa = new Empresa();
     empresa.setCargaHorariaDiaria(cargaHorariaDiaria);
     empresa.setDiasATrabalhar(23);
+    empresa.setCargaHorariaMensal(empresa.getCargaHorariaDiaria() * empresa.getDiasATrabalhar());
 
     return empresa;
   }
