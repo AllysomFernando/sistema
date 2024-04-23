@@ -6,15 +6,15 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.domain.dto.EmpresaDTO;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.entities.empresa.Inscricao;
 
 public class EmpregadorMapperTest {
   
-  private EmpregadorDTO makeDto() {
-    EmpregadorDTO empresa = new EmpregadorDTO();
+  private EmpresaDTO makeDto() {
+    EmpresaDTO empresa = new EmpresaDTO();
     Inscricao inscricao = new Inscricao();
 
     empresa.setCnpj("12345678000122");
@@ -53,7 +53,7 @@ public class EmpregadorMapperTest {
 
   @Test
   void shouldMapToBO() {
-    EmpregadorDTO empresa = makeDto();
+    EmpresaDTO empresa = makeDto();
 
     Empresa bo = EmpresaMapper.toBO(empresa);
 
@@ -71,7 +71,7 @@ public class EmpregadorMapperTest {
   void shouldMapToDto() {
     Empresa empresa = makeBO();
 
-    EmpregadorDTO bo = EmpresaMapper.toDTO(empresa);
+    EmpresaDTO bo = EmpresaMapper.toDTO(empresa);
 
     assertEquals(empresa.getCnpj(), bo.getCnpj());
     assertEquals(empresa.getNomeFantasia(), bo.getNomeFantasia());

@@ -13,7 +13,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Data
-public class EmpregadorDTO {
+public class EmpresaDTO {
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;

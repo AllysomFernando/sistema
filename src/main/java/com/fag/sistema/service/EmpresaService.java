@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fag.sistema.domain.dto.EmpregadorDTO;
+import com.fag.sistema.domain.dto.EmpresaDTO;
 import com.fag.sistema.domain.entities.empregado.Empregado;
 import com.fag.sistema.domain.entities.empresa.Empresa;
 import com.fag.sistema.domain.mappers.EmpresaMapper;
@@ -18,7 +18,7 @@ public class EmpresaService {
     @Autowired
     private EmpresaRepository empresaRepository;
 
-    public List<EmpregadorDTO> getAllEmpresas() {
+    public List<EmpresaDTO> getAllEmpresas() {
         List<Empresa> empresaList = empresaRepository.getAllEmpregador();
         return empresaList.stream()
                 .map(EmpresaMapper::toDTO)
