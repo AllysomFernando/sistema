@@ -21,7 +21,7 @@ public class HorasExtrasFimDeSemanaTest {
     Contrato contrato = new Contrato();
     Salario salario = new Salario(salarioBruto);
 
-    horario.setHorasExtras(horasExtras);
+    horario.setHorasExtrasEmFinsDeSemana(horasExtras);
     contrato.setSalario(salario);
     salario.setBruto(salarioBruto);
 
@@ -61,5 +61,27 @@ public class HorasExtrasFimDeSemanaTest {
     BigDecimal result = sut.valorHoraExtra(valorHora);
 
     assertEquals(new BigDecimal("27.28"), result);
+  }
+
+  @Test
+  void shouldReturnValueOfBenefit() {
+    HorasExtrasFimDeSemana sut = new HorasExtrasFimDeSemana();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 10);
+    Empresa empresa = makeEmpresa(220F);
+
+    BigDecimal result = sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("272.80"), result);
+  }
+
+  @Test
+  void shouldReturnValueOfBenefit_Case2() {
+    HorasExtrasFimDeSemana sut = new HorasExtrasFimDeSemana();
+    Empregado empregado = makeEmpregado(new BigDecimal("3000"), 10);
+    Empresa empresa = makeEmpresa(180F);
+
+    BigDecimal result = sut.calculate(empregado, empresa);
+
+    assertEquals(new BigDecimal("333.40"), result);
   }
 }
