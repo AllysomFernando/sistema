@@ -1,6 +1,7 @@
 package com.fag.sistema.domain.usecases.calcular.beneficios;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 
 import org.springframework.stereotype.Component;
@@ -22,7 +23,7 @@ public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCas
     BigDecimal valorHora = salarioBruto.divide(new BigDecimal("220"), 2, RoundingMode.HALF_UP).setScale(2,
         RoundingMode.HALF_UP);
 
-    BigDecimal valorHoraExtraFimsDeSemana = this.valorHoraExtraEmFimsDeSemana(valorHora);
+    BigDecimal valorHoraExtraFimsDeSemana = this.valorHoraExtra(valorHora);
 
     float quantidadeHoraExtraFDS = empregado.getHorario().getHorasExtrasEmFinsDeSemana();
 
@@ -38,10 +39,17 @@ public class HorasExtrasFimDeSemana extends Provento implements IBeneficioUseCas
 
     return totalHorasExtras;
   }
+  
+  public BigDecimal valorHora(BigDecimal salario, Float horasTrabalhadasNoMes) {
+    BigDecimal horasASeremFeitasBigDecimal = new BigDecimal(horasTrabalhadasNoMes, MathContext.DECIMAL128);
+    BigDecimal valorHora = salario.divide(horasASeremFeitasBigDecimal, 2, RoundingMode.HALF_DOWN);
 
-  private BigDecimal valorHoraExtraEmFimsDeSemana(BigDecimal valorHoraDeTrabalho) {
+    return valorHora;
+  }
+
+  public BigDecimal valorHoraExtra(BigDecimal valorHoraDeTrabalho) {
     BigDecimal referencia = new BigDecimal("1.0");
-    BigDecimal result = referencia.multiply(valorHoraDeTrabalho);
+    BigDecimal result = referencia.multiply(valorHoraDeTrabalho).setScale(2, RoundingMode.HALF_DOWN);
 
     this.setReferencia(referencia);
 
