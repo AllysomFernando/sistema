@@ -13,7 +13,7 @@ import com.fag.sistema.domain.entities.empresa.Empresa;
 public class ValeTransporte extends Provento implements IDescontoUseCase {
 
   public ValeTransporte() {
-    this.setDescricao("Vale Transporte");
+    super("Vale Transporte");
   }
 
   @Override
