@@ -128,4 +128,17 @@ public class IRRFTest {
     assertEquals(new BigDecimal("61.40"), sut.getDesconto());
   }
 
+  @Test
+  @Description("Should return discount value")
+  void shouldReturnDiscountValue() {
+    IRRF sut = new IRRF();
+    Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
+    Empresa empresa = makeEmpresa();
+    
+    BigDecimal discount = sut.calculate(empregado, empresa);
+    
+    assertEquals(new BigDecimal("61.40"), discount);
+
+  }
+
 }

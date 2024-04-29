@@ -21,23 +21,25 @@ public class IRRF extends Provento implements IDescontoEmFolhaUseCase {
   public BigDecimal calculate(Empregado empregado, Empresa empresa) {
 
     BigDecimal salarioParaIRRF = empregado.getContrato().getSalario().getBaseCalculoIRRF();
-    BigDecimal referencia = new BigDecimal("0");
-    BigDecimal discountValue = new BigDecimal("0");
+    BigDecimal referencia = new BigDecimal("0.00");
+    BigDecimal discountValue = new BigDecimal("0.00");
     RelacaoIRRF[] relacaoIrrf = RelacaoIRRF.values();
 
     for (RelacaoIRRF element : relacaoIrrf) {
       if (element.compare(salarioParaIRRF)) {
         referencia = element.getReferencia();
-        BigDecimal porcentagemDoSalario = salarioParaIRRF.multiply(referencia).setScale(2, RoundingMode.DOWN);
-        discountValue = porcentagemDoSalario.subtract(element.getDeducao());
-        
+        discountValue = this.getDesconto(salarioParaIRRF, element);
         break;
       }
     }
 
     this.setProvento(getDescricao(), referencia, BigDecimal.ZERO, discountValue);
+    return discountValue;
+  }
 
-    return discountValue.setScale(2);
+  public BigDecimal getDesconto(BigDecimal salario, RelacaoIRRF relacao) {
+    BigDecimal descontoSalarial = salario.multiply(relacao.getReferencia()).setScale(2, RoundingMode.DOWN);
+    return descontoSalarial.subtract(relacao.getDeducao());
   }
 
 }
