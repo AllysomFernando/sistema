@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "João Silva",
+    "genero": "MASCULINO",
+    "cpf": "12345678910",
+    "dataNascimento": "1990-01-15",
+    "dependentes": [
+      {
+        "nome": "Ana Silva",
+        "dataNascimento": "2015-06-30"
+      }
+    ],
+    "contrato": {
+      "dataAdmissao": "2020-02-01",
+      "cargo": "Desenvolvedor de Software",
+      "funcao": "Programador Pleno",
+      "pisPasep": 123456789,
+      "horas": 160,
+      "grauInsalubridade": "BAIXO",
+      "tipoContrato": "CLT",
+      "ativo": true,
+      "descricao": "Contrato de trabalho efetivo.",
+      "salario": {
+        "bruto": "3000",
+        "liquido": 0,
+        "base": "3000"
+      }
+    },
+    "horario": {
+      "horasEmDeficit": 2,
+      "justificativa": true,
+      "horasExtras": 10,
+      "horasExtrasEmFinsDeSemana": 10,
+      "horasAdicionalNoturno": 5
+    }
+  }
+]
