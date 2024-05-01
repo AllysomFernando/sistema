@@ -29,8 +29,9 @@ public class DescansoSemanalRemuneradoTest {
         return empregado;
       }
     
-      private Empresa makeEmpresa(Float cargaHorariaDiaria) {
+      private Empresa makeEmpresa(Float cargaHorariaDiaria, Float cargaHorariaMensal) {
         Empresa empresa = new Empresa();
+        empresa.setCargaHorariaMensal(cargaHorariaMensal);
         empresa.setCargaHorariaDiaria(cargaHorariaDiaria);
     
         return empresa;
@@ -41,7 +42,7 @@ public class DescansoSemanalRemuneradoTest {
     void shouldNotUpdateBaseDeCalculos() {
     DescansoSemanalRemunerado sut = new DescansoSemanalRemunerado();
     Empregado empregado = makeEmpregado(new BigDecimal("3000"), 168);
-    Empresa empresa = makeEmpresa(8.4f);
+    Empresa empresa = makeEmpresa(8.4f, 168f);
 
     BigDecimal result = sut.calculate(empregado, empresa);
 
