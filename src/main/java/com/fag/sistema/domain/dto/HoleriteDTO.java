@@ -14,7 +14,7 @@ public class HoleriteDTO {
    private Empresa empregador;
    private Empregado empregado;
    private ProventosDTO proventos;
-   private BigDecimal baseCalculoInss;
+   private BigDecimal salarioContribuicaoInss;
    private BigDecimal baseCalculoFgts;
    private BigDecimal baseCalculoIrrf;
    private BigDecimal fgtsMensal;
