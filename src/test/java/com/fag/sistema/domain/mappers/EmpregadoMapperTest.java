@@ -80,7 +80,6 @@ public class EmpregadoMapperTest {
 
     EmpregadoDTO dto = EmpregadoMapper.toDTO(bo);
 
-
     assertEquals(bo.getNome(), dto.getNome());
     assertEquals(bo.getCpf(), dto.getCpf());
     assertEquals(bo.getGenero(), dto.getGenero());
