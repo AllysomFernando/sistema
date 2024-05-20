@@ -5,6 +5,7 @@
     "nomeFantasia": "Empresa X",
     "ramoAtividade": "COMERCIO DE PRODUTOS",
     "cargaHorariaDiaria": 8.0,
+    "cargaHorariaMensal": 200.0,
     "diasATrabalhar": 27,
     "inscricao": {
       "tipoInscricao": "CNPJ",

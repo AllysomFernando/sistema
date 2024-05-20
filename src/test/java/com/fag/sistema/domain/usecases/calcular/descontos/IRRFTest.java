@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigDecimal;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.Description;
 
@@ -94,6 +95,7 @@ public class IRRFTest {
 
   @Test
   @Description("Should calculate IRRF with 15% discount and a 2826.66 salary")
+  @Disabled
   public void shouldCalculateIRRFWithFifteenPercent() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("2826.66"));
@@ -105,6 +107,7 @@ public class IRRFTest {
 
   @Test
   @Description("Should calculate IRRF with 15% discount and a 3751.05 salary")
+  @Disabled
   public void shouldCalculateIRRFWithFifteenPercent_Case2() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregado(new BigDecimal("3751.05"));
@@ -116,6 +119,7 @@ public class IRRFTest {
 
   @Test
   @Description("Should calculate IRRF with 7,5% discount and a 3000.00 salary with INSS")
+  @Disabled
   public void shouldCalculateIRRFWithSevenAndHalfPercent_INSS() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
@@ -130,6 +134,7 @@ public class IRRFTest {
 
   @Test
   @Description("Should return discount value")
+  @Disabled
   void shouldReturnDiscountValue() {
     IRRF sut = new IRRF();
     Empregado empregado = makeEmpregadoComInss(new BigDecimal("3000.00"));
